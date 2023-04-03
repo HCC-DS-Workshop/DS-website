@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R workshop",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Resources.html#moderndive",
+    "href": "Resources.html#moderndive",
+    "title": "Resources",
+    "section": "ModernDive",
+    "text": "ModernDive"
+  },
+  {
+    "objectID": "Resources.html#data-science-in-a-box",
+    "href": "Resources.html#data-science-in-a-box",
+    "title": "Resources",
+    "section": "Data Science in a box",
+    "text": "Data Science in a box"
+  },
+  {
+    "objectID": "Resources.html#data-visualization-ggplot2",
+    "href": "Resources.html#data-visualization-ggplot2",
+    "title": "Resources",
+    "section": "Data Visualization: ggplot2",
+    "text": "Data Visualization: ggplot2"
+  },
+  {
+    "objectID": "Resources.html#data-transformation-dplyr",
+    "href": "Resources.html#data-transformation-dplyr",
+    "title": "Resources",
+    "section": "Data transformation: dplyr",
+    "text": "Data transformation: dplyr"
+  },
+  {
+    "objectID": "Resources.html#data-import-tidyr",
+    "href": "Resources.html#data-import-tidyr",
+    "title": "Resources",
+    "section": "Data Import: tidyr",
+    "text": "Data Import: tidyr"
+  },
+  {
+    "objectID": "Resources.html#rmarkdown-cheat-sheet",
+    "href": "Resources.html#rmarkdown-cheat-sheet",
+    "title": "Resources",
+    "section": "RMarkdown Cheat sheet",
+    "text": "RMarkdown Cheat sheet"
+  },
+  {
+    "objectID": "Resources.html#style-guide",
+    "href": "Resources.html#style-guide",
+    "title": "Resources",
+    "section": "Style Guide",
+    "text": "Style Guide\nThe Tidyverse Style Guide"
+  }
+]
