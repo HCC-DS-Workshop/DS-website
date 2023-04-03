@@ -1,2 +1,2 @@
 # DS-website
-This is the repository for the HCC-DS-workshop web page.
+This is the repository for the HCC-R-workshop web page.
