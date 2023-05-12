@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>HCC R workshop - Resources</title>
+<title>Stats with R workshop - Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ ul.task-list{list-style: none;}
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HCC R workshop</span>
+    <span class="navbar-title">Stats with R workshop</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -75,12 +75,9 @@ ul.task-list{list-style: none;}
     <a class="nav-link active" href="./Resources.html" aria-current="page">Resources</a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://mdsr-book.github.io/mdsr2e/"><i class="bi bi-book" role="img">
+    <a class="nav-link" href="https://www.openintro.org/book/os/"><i class="bi bi-book" role="img">
 </i> 
  </a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://moderndive.com/C-appendixC.html">T &amp; T</a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.slack.com"><i class="bi bi-slack" role="img">
@@ -97,9 +94,6 @@ ul.task-list{list-style: none;}
 </i> 
  </a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="././course-materials/syllabus/syllabus.html">Syllabus</a>
-  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -114,18 +108,32 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Title here</h2>
    
   <ul>
-  <li><a href="#fixes-to-common-issues" id="toc-fixes-to-common-issues" class="nav-link active" data-scroll-target="#fixes-to-common-issues"><span>6 fixes to common issues</span></a></li>
-  <li><a href="#other-books" id="toc-other-books" class="nav-link" data-scroll-target="#other-books"><strong>Other Books:</strong></a>
+  <li><a href="#common-errors" id="toc-common-errors" class="nav-link active" data-scroll-target="#common-errors">Common Errors</a>
   <ul class="collapse">
-  <li><a href="#moderndive" id="toc-moderndive" class="nav-link" data-scroll-target="#moderndive">ModernDive</a></li>
-  <li><a href="#data-science-in-a-box" id="toc-data-science-in-a-box" class="nav-link" data-scroll-target="#data-science-in-a-box">Data Science in a box</a></li>
+  <li><a href="#fixes-to-common-issues" id="toc-fixes-to-common-issues" class="nav-link" data-scroll-target="#fixes-to-common-issues"><span>6 fixes to common issues</span></a></li>
+  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks"><span>Tips and Tricks</span></a></li>
+  </ul></li>
+  <li><a href="#some-open-stats-books" id="toc-some-open-stats-books" class="nav-link" data-scroll-target="#some-open-stats-books"><strong>Some Open Stats Books:</strong></a>
+  <ul class="collapse">
+  <li><a href="#the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic." id="toc-the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic." class="nav-link" data-scroll-target="#the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic.">The link below has a list of stats books produced by Project Mosaic.</a></li>
+  <li><a href="#openintro-statistics" id="toc-openintro-statistics" class="nav-link" data-scroll-target="#openintro-statistics">OpenIntro Statistics</a></li>
+  <li><a href="#modern-dive" id="toc-modern-dive" class="nav-link" data-scroll-target="#modern-dive">Modern Dive</a></li>
+  <li><a href="#introduction-to-modern-statistics." id="toc-introduction-to-modern-statistics." class="nav-link" data-scroll-target="#introduction-to-modern-statistics.">Introduction to Modern Statistics.</a></li>
   </ul></li>
   <li><a href="#cheatsheets" id="toc-cheatsheets" class="nav-link" data-scroll-target="#cheatsheets"><strong>Cheatsheets:</strong></a>
   <ul class="collapse">
+  <li><a href="#mosaic-cheat-sheet" id="toc-mosaic-cheat-sheet" class="nav-link" data-scroll-target="#mosaic-cheat-sheet">Mosaic Cheat Sheet</a></li>
+  <li><a href="#mth-142-intro-to-stats-cheat-sheet" id="toc-mth-142-intro-to-stats-cheat-sheet" class="nav-link" data-scroll-target="#mth-142-intro-to-stats-cheat-sheet">MTH 142: Intro to Stats Cheat Sheet</a></li>
+  </ul></li>
+  <li><a href="#more-toward-data-science" id="toc-more-toward-data-science" class="nav-link" data-scroll-target="#more-toward-data-science">More toward Data Science</a></li>
+  <li><a href="#some-data-science-texts" id="toc-some-data-science-texts" class="nav-link" data-scroll-target="#some-data-science-texts">Some Data Science Texts</a>
+  <ul class="collapse">
+  <li><a href="#modern-data-science-with-r" id="toc-modern-data-science-with-r" class="nav-link" data-scroll-target="#modern-data-science-with-r">Modern Data Science with R</a></li>
+  <li><a href="#data-science-in-a-box" id="toc-data-science-in-a-box" class="nav-link" data-scroll-target="#data-science-in-a-box">Data Science in a box</a></li>
+  <li><a href="#rmarkdown-cheat-sheet" id="toc-rmarkdown-cheat-sheet" class="nav-link" data-scroll-target="#rmarkdown-cheat-sheet">RMarkdown Cheat sheet</a></li>
   <li><a href="#data-visualization-ggplot2" id="toc-data-visualization-ggplot2" class="nav-link" data-scroll-target="#data-visualization-ggplot2">Data Visualization: <span>ggplot2</span></a></li>
   <li><a href="#data-transformation-dplyr" id="toc-data-transformation-dplyr" class="nav-link" data-scroll-target="#data-transformation-dplyr">Data transformation: dplyr</a></li>
   <li><a href="#data-import-tidyr" id="toc-data-import-tidyr" class="nav-link" data-scroll-target="#data-import-tidyr">Data Import: tidyr</a></li>
-  <li><a href="#rmarkdown-cheat-sheet" id="toc-rmarkdown-cheat-sheet" class="nav-link" data-scroll-target="#rmarkdown-cheat-sheet">RMarkdown Cheat sheet</a></li>
   <li><a href="#style-guide" id="toc-style-guide" class="nav-link" data-scroll-target="#style-guide">Style Guide</a></li>
   </ul></li>
   </ul>
@@ -153,60 +161,116 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="fixes-to-common-issues" class="level1">
-<h1><a href="https://docs.google.com/document/d/1P7IyZ4On9OlrCOhygFxjC7XhQqyw8OludwChz-uFd_o/edit">6 fixes to common issues</a></h1>
+<section id="common-errors" class="level1">
+<h1>Common Errors</h1>
+<section id="fixes-to-common-issues" class="level2">
+<h2 class="anchored" data-anchor-id="fixes-to-common-issues"><a href="https://docs.google.com/document/d/1P7IyZ4On9OlrCOhygFxjC7XhQqyw8OludwChz-uFd_o/edit">6 fixes to common issues</a></h2>
+</section>
+<section id="tips-and-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-and-tricks"><a href="https://moderndive.com/C-appendixC.html">Tips and Tricks</a></h2>
 <hr>
 </section>
-<section id="other-books" class="level1">
-<h1><strong>Other Books:</strong></h1>
-<section id="moderndive" class="level2">
-<h2 class="anchored" data-anchor-id="moderndive">ModernDive</h2>
+</section>
+<section id="some-open-stats-books" class="level1">
+<h1><strong>Some Open Stats Books:</strong></h1>
+<section id="the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic." class="level2">
+<h2 class="anchored" data-anchor-id="the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic.">The link below has a list of stats books produced by Project Mosaic.</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://moderndive.com/index.html"><img src="images/ModernDive.png" class="img-fluid figure-img" width="369"></a></p>
+<p><a href="https://www.mosaic-web.org/mosaic-books.html"><img src="https://avatars.githubusercontent.com/u/11564185?s=200&amp;v=4.png" class="img-fluid figure-img" width="190"></a></p>
 </figure>
 </div>
 </section>
-<section id="data-science-in-a-box" class="level2">
-<h2 class="anchored" data-anchor-id="data-science-in-a-box">Data Science in a box</h2>
+<section id="openintro-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="openintro-statistics">OpenIntro Statistics</h2>
+<p>This is the text Eric and Nic currently use, there is no explicit mention of R.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://datasciencebox.org/content.html"><img src="images/dsbox.png" class="img-fluid figure-img" width="200"></a></p>
+<p><a href="https://www.openintro.org/book/os/"><img src="https://d2sofvawe08yqg.cloudfront.net/os/s_hero?1620484636.png" class="img-fluid figure-img" width="200"></a></p>
+</figure>
+</div>
+</section>
+<section id="modern-dive" class="level2">
+<h2 class="anchored" data-anchor-id="modern-dive">Modern Dive</h2>
+<p>Modern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://moderndive.com/index.html"><img src="images/ModernDive.png" class="img-fluid figure-img" width="200"></a></p>
+</figure>
+</div>
+</section>
+<section id="introduction-to-modern-statistics." class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-modern-statistics.">Introduction to Modern Statistics.</h2>
+<p>IMS teaches Statistics with the tidyverse.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://moderndive.com/index.html"><img src="https://d2sofvawe08yqg.cloudfront.net/imstat/s_hero?1624230565.png" class="img-fluid figure-img" width="200"></a></p>
 </figure>
 </div>
 </section>
 </section>
 <section id="cheatsheets" class="level1">
 <h1><strong>Cheatsheets:</strong></h1>
-<section id="data-visualization-ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="data-visualization-ggplot2">Data Visualization: <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2</a></h2>
+<section id="mosaic-cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="mosaic-cheat-sheet">Mosaic Cheat Sheet</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf"><img src="images/ggplot2.png" class="img-fluid figure-img" width="360"></a></p>
+<p><a href="https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf"><img src="images/mosaic-screenshot.png" class="img-fluid figure-img" width="200"></a></p>
+</figure>
+</div>
+</section>
+<section id="mth-142-intro-to-stats-cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="mth-142-intro-to-stats-cheat-sheet">MTH 142: Intro to Stats Cheat Sheet</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf"><img src="images/MTH142-screenshot.png" class="img-fluid figure-img" width="200"></a></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="more-toward-data-science" class="level1">
+<h1>More toward Data Science</h1>
+</section>
+<section id="some-data-science-texts" class="level1">
+<h1>Some Data Science Texts</h1>
+<section id="modern-data-science-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="modern-data-science-with-r">Modern Data Science with R</h2>
+<p>This is the text Nic has used to teach MTH 190: Intro to Data Science</p>
+<p><img src="https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png" class="img-fluid" width="200"></p>
+</section>
+<section id="data-science-in-a-box" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-in-a-box">Data Science in a box</h2>
+<p><img src="images/dsbox.png" class="img-fluid" width="200"></p>
+</section>
+<section id="rmarkdown-cheat-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="rmarkdown-cheat-sheet">RMarkdown Cheat sheet</h2>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf"><img src="images/rmarkdown.png" class="img-fluid figure-img" width="200"></a></p>
+</figure>
+</div>
+</section>
+<section id="data-visualization-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization-ggplot2">Data Visualization: <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2</a></h2>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf"><img src="images/ggplot2.png" class="img-fluid figure-img" width="200"></a></p>
 </figure>
 </div>
 </section>
 <section id="data-transformation-dplyr" class="level2">
 <h2 class="anchored" data-anchor-id="data-transformation-dplyr">Data transformation: dplyr</h2>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf"><img src="images/dplyr.png" class="img-fluid figure-img" width="360"></a></p>
+<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf"><img src="images/dplyr.png" class="img-fluid figure-img" width="200"></a></p>
 </figure>
 </div>
 </section>
 <section id="data-import-tidyr" class="level2">
 <h2 class="anchored" data-anchor-id="data-import-tidyr">Data Import: tidyr</h2>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="https://posit.co/wp-content/uploads/2022/10/tidyr.pdf"><img src="images/tidyr.png" class="img-fluid figure-img" width="360"></a></p>
-</figure>
-</div>
-</section>
-<section id="rmarkdown-cheat-sheet" class="level2">
-<h2 class="anchored" data-anchor-id="rmarkdown-cheat-sheet">RMarkdown Cheat sheet</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf"><img src="images/rmarkdown.png" class="img-fluid figure-img" width="360"></a></p>
+<p><a href="https://posit.co/wp-content/uploads/2022/10/tidyr.pdf"><img src="images/tidyr.png" class="img-fluid figure-img" width="200"></a></p>
 </figure>
 </div>
 </section>
@@ -322,7 +386,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./credits.qmd">credits</a>
+    <a class="nav-link" href="./credits.html">credits</a>
   </li>  
 </ul>
     </div>

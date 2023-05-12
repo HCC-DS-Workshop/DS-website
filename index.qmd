@@ -2,10 +2,10 @@
 title: "R workshop"
 ---
 
-This is a Quarto website.
+# Information on Workshop
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Day 1: Visualizations with R 
 
-```{r}
-1 + 1
-```
+# Day 2: Statistics Tests with R
+
+# Day 3: Slightly more Advanced

@@ -20,7 +20,7 @@ output:
 # All icons were obtained from https://icons.getbootstrap.com/
 website:
   page-navigation: true
-  title: "HCC R workshop"
+  title: "Stats with R workshop"
 
   navbar:
 
@@ -29,8 +29,8 @@ website:
       href: Resources.qmd
     - icon: book
       href: https://www.openintro.org/book/os/
-    - text: T & T
-      href: https://moderndive.com/C-appendixC.html
+  #  - text: T & T
+  #    href: https://moderndive.com/C-appendixC.html
     - icon: slack
       href: https://www.slack.com
     - text: R
@@ -45,8 +45,8 @@ website:
   #    href: projects.Rmd
   # - text: Midterms
   #   href: midterms.html
-    - text: Syllabus
-      href: ./course-materials/syllabus/syllabus.html
+  #  - text: Syllabus
+  #    href: ./course-materials/syllabus/syllabus.html
   #  - icon: fa-github fa-lg
   #    href: https://github.com/rudeboybert/SDS192
 

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R workshop",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Day 1: Visualizations with R\n\n\nDay 2: Statistics Tests with R\n\n\nDay 3: Slightly more Advanced"
   },
   {
     "objectID": "about.html",
@@ -61,5 +61,61 @@
     "title": "Resources",
     "section": "Style Guide",
     "text": "Style Guide\nThe Tidyverse Style Guide"
+  },
+  {
+    "objectID": "Resources.html#the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic.",
+    "href": "Resources.html#the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic.",
+    "title": "Resources",
+    "section": "The link below has a list of stats books produced by Project Mosaic.",
+    "text": "The link below has a list of stats books produced by Project Mosaic."
+  },
+  {
+    "objectID": "Resources.html#openintro-statistics",
+    "href": "Resources.html#openintro-statistics",
+    "title": "Resources",
+    "section": "OpenIntro Statistics",
+    "text": "OpenIntro Statistics\nThis is the text Eric and Nic currently use, there is no explicit mention of R."
+  },
+  {
+    "objectID": "Resources.html#modern-dive",
+    "href": "Resources.html#modern-dive",
+    "title": "Resources",
+    "section": "Modern Dive",
+    "text": "Modern Dive\nModern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse."
+  },
+  {
+    "objectID": "Resources.html#introduction-to-modern-statistics.",
+    "href": "Resources.html#introduction-to-modern-statistics.",
+    "title": "Resources",
+    "section": "Introduction to Modern Statistics.",
+    "text": "Introduction to Modern Statistics.\nIMS teaches Statistics with the tidyverse."
+  },
+  {
+    "objectID": "Resources.html#mosaic-cheat-sheet",
+    "href": "Resources.html#mosaic-cheat-sheet",
+    "title": "Resources",
+    "section": "Mosaic Cheat Sheet",
+    "text": "Mosaic Cheat Sheet"
+  },
+  {
+    "objectID": "Resources.html#mth-142-intro-to-stats-cheat-sheet",
+    "href": "Resources.html#mth-142-intro-to-stats-cheat-sheet",
+    "title": "Resources",
+    "section": "MTH 142: Intro to Stats Cheat Sheet",
+    "text": "MTH 142: Intro to Stats Cheat Sheet"
+  },
+  {
+    "objectID": "Resources.html#modern-data-science-with-r",
+    "href": "Resources.html#modern-data-science-with-r",
+    "title": "Resources",
+    "section": "Modern Data Science with R",
+    "text": "Modern Data Science with R\nThis is the text Nic has used to teach MTH 190: Intro to Data Science"
+  },
+  {
+    "objectID": "credits.html",
+    "href": "credits.html",
+    "title": "Funded by",
+    "section": "",
+    "text": "Faculty Participation funded by The Learn Collaborative (formally the CFE)."
   }
 ]

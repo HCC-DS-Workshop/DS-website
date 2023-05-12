@@ -16,37 +16,77 @@ execute:
   freeze: auto  # re-render only when source changes    
 ---
 
-# [6 fixes to common issues](https://docs.google.com/document/d/1P7IyZ4On9OlrCOhygFxjC7XhQqyw8OludwChz-uFd_o/edit)
+# Common Errors
+
+## [6 fixes to common issues](https://docs.google.com/document/d/1P7IyZ4On9OlrCOhygFxjC7XhQqyw8OludwChz-uFd_o/edit)
+
+## [Tips and Tricks](https://moderndive.com/C-appendixC.html)
 
 ------------------------------------------------------------------------
 
-# **Other Books:**
+# **Some Open Stats Books:**
 
-## ModernDive
+## The link below has a list of stats books produced by Project Mosaic.
 
-[![](images/ModernDive.png){width="369"}](https://moderndive.com/index.html)
+[![](https://avatars.githubusercontent.com/u/11564185?s=200&v=4){width="190"}](https://www.mosaic-web.org/mosaic-books.html)
 
-## Data Science in a box
+## OpenIntro Statistics
 
-[![](images/dsbox.png){width="200"}](https://datasciencebox.org/content.html)
+This is the text Eric and Nic currently use, there is no explicit mention of R.
+
+[![](https://d2sofvawe08yqg.cloudfront.net/os/s_hero?1620484636){width="200"}](https://www.openintro.org/book/os/)
+
+## Modern Dive
+
+Modern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse.
+
+[![](images/ModernDive.png){width="200"}](https://moderndive.com/index.html)
+
+## Introduction to Modern Statistics.
+
+IMS teaches Statistics with the tidyverse.
+
+[![](https://d2sofvawe08yqg.cloudfront.net/imstat/s_hero?1624230565){width="200"}](https://moderndive.com/index.html)
 
 # **Cheatsheets:**
 
-## Data Visualization: [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+## Mosaic Cheat Sheet
 
-[![](images/ggplot2.png){width="360"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+[![](images/mosaic-screenshot.png){width="200"}](https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf)
 
-## Data transformation: dplyr
+## MTH 142: Intro to Stats Cheat Sheet
 
-[![](images/dplyr.png){width="360"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+[![](images/MTH142-screenshot.png){width="200"}](https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf)
 
-## Data Import: tidyr
+# More toward Data Science
 
-[![](images/tidyr.png){width="360"}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
+# Some Data Science Texts
+
+## Modern Data Science with R
+
+This is the text Nic has used to teach MTH 190: Intro to Data Science
+
+![](https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png){width="200"}
+
+## Data Science in a box
+
+![](images/dsbox.png){width="200"}
 
 ## RMarkdown Cheat sheet
 
-[![](images/rmarkdown.png){width="360"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+[![](images/rmarkdown.png){fig-align="left" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+
+## Data Visualization: [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+
+[![](images/ggplot2.png){fig-align="left" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
+
+## Data transformation: dplyr
+
+[![](images/dplyr.png){fig-align="left" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+
+## Data Import: tidyr
+
+[![](images/tidyr.png){fig-align="left" width="200"}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
 
 ## Style Guide
 
