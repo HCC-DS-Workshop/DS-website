@@ -4,7 +4,7 @@ project:
 
 format:
   html:
-    theme: united
+    theme: Litera
 
 output:
   html_document:
