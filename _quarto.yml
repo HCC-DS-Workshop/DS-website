@@ -4,7 +4,7 @@ project:
 
 format:
   html:
-    theme: Litera
+    theme: litera
 
 output:
   html_document:
@@ -28,7 +28,7 @@ website:
     - text: Resources
       href: Resources.qmd
     - icon: book
-      href: https://mdsr-book.github.io/mdsr2e/
+      href: https://www.openintro.org/book/os/
     - text: T & T
       href: https://moderndive.com/C-appendixC.html
     - icon: slack
