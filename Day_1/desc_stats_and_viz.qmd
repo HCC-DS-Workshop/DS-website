@@ -2,4 +2,4 @@
 title: "Day_1:Desc_stats_and_viz"
 ---
 
-[Histograms](./Day_1/histograms.html)
+[Histograms](./histograms.html)
