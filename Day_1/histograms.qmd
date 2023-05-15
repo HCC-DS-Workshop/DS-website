@@ -1,0 +1,76 @@
+---
+title: "Histograms and Boxplots"
+author: "Schwab"
+format: revealjs
+---
+
+```{r setup}
+library(mosaic)
+library(openintro)
+
+```
+
+## Histograms and Boxplots
+
+Let's consider the `county` data frame.
+
+```{r view}
+county
+```
+
+## A simple histogram
+
+Map the unemployment rate for the counties in the US in 2019.
+
+```{r one-variable}
+gf_histogram(~unemployment_rate,data = county)
+```
+
+## Function arguments
+
+Every function in R can take a lot of arguments. Let's type `?gf_histogram` to see the arguments for that function.
+
+|                  |              |           |                     |
+|------------------|--------------|-----------|---------------------|
+| object = NULL,   | binwidth,    | linetype, | subtitle,           |
+| gformula = NULL, | alpha = 0.5, | size,     | caption,            |
+| data = NULL,     | color,       | xlab,     | geom = "bar",       |
+| ...,             | fill,        | ylab,     | stat = "bin",       |
+| bins = 25,       | group,       | title,    | position = "stack", |
+
+## What do these do?
+
+Start with the single variable histogram: `gf_histogram(~unemployment_rate,data = county,...)`
+
+::: incremental
+1.  Edit the `bins` or `binwidth`, which get priority?
+
+2.  Edit `colors` and `fill`. Which tints what? (Hint colors are strings, use quotes) [Here's a list of colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+
+3.  Add a title and caption. Remove the label from the x-axis add a good one to the y.
+
+4.  What the heck do size, linetype and group do?
+:::
+
+## Here's a graph that I made
+
+```{r my-gfhist}
+gf_histogram(~unemployment_rate,data=county,bins=10, color="black",fill="purple", xlab="",ylab="Number of unemployed", title="US Umeployment by county", caption="Data is as of 2019",linetype = 2,size=2)
+
+```
+
+## Show two variables
+
+The histogram is a single variable graph by we can break up the data by grouping it.
+
+```{r}
+gf_histogram(~unemployment_rate,data=county,binwidth=5, fill = ~median_edu,position = "dodge")
+```
+
+## Two variables (faceted):
+
+Let's make two histograms side by side.
+
+```{r two-variables}
+gf_histogram(~unemployment_rate|~metro,data = county)
+```

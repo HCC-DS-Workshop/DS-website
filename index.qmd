@@ -4,8 +4,8 @@ title: "R workshop"
 
 # Information on Workshop
 
-# Day 1: Visualizations with R 
+# [Day 1: Descriptive Statistics and Visualizations](./Day_1/desc_stats_and_viz.html)
 
-# Day 2: Statistics Tests with R
+# Day 2: Probability and Inference
 
-# Day 3: Slightly more Advanced
+# Day 3: Towards Data Science

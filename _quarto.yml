@@ -4,7 +4,7 @@ project:
 
 format:
   html:
-    theme: litera
+    theme: materia
 
 output:
   html_document:
@@ -20,15 +20,15 @@ output:
 # All icons were obtained from https://icons.getbootstrap.com/
 website:
   page-navigation: true
-  title: "Stats with R workshop"
+  title: "Intro Stats with R"
 
   navbar:
 
     left:
     - text: Resources
       href: Resources.qmd
-    - icon: book
-      href: https://www.openintro.org/book/os/
+   # - icon: book
+  #    href: https://www.openintro.org/book/os/
   #  - text: T & T
   #    href: https://moderndive.com/C-appendixC.html
     - icon: slack

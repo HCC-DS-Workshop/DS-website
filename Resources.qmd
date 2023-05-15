@@ -24,6 +24,10 @@ execute:
 
 ------------------------------------------------------------------------
 
+## [R Colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+
+------------------------------------------------------------------------
+
 # **Some Open Stats Books:**
 
 ## The link below has a list of stats books produced by Project Mosaic.
