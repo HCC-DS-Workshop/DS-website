@@ -9,8 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.0.37">
 
-  <meta name="author" content="Schwab">
-  <title>Intro Stats with R - Histograms and Boxplots</title>
+  <title>Intro Stats with R - Descriptive statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -319,123 +318,18 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Histograms and Boxplots</h1>
-  <p class="author">Schwab</p>
+  <h1 class="title">Descriptive statistics</h1>
 </section>
 
 <section class="slide level2">
 
-<div class="cell">
-
-</div>
-</section>
-<section id="histograms-and-boxplots" class="slide level2">
-<h2>Histograms and Boxplots</h2>
-<p>Let’s consider the <code>county</code> data frame.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,142 × 15
-   name    state pop2000 pop2010 pop2017 pop_c…¹ poverty homeo…² multi…³ unemp…⁴
-   &lt;chr&gt;   &lt;fct&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1 Autaug… Alab…   43671   54571   55504    1.48    13.7    77.5     7.2    3.86
- 2 Baldwi… Alab…  140415  182265  212628    9.19    11.8    76.7    22.6    3.99
- 3 Barbou… Alab…   29038   27457   25270   -6.22    27.2    68      11.1    5.9 
- 4 Bibb C… Alab…   20826   22915   22668    0.73    15.2    82.9     6.6    4.39
- 5 Blount… Alab…   51024   57322   58013    0.68    15.6    82       3.7    4.02
- 6 Bulloc… Alab…   11714   10914   10309   -2.28    28.5    76.9     9.9    4.93
- 7 Butler… Alab…   21399   20947   19825   -2.69    24.4    69      13.7    5.49
- 8 Calhou… Alab…  112249  118572  114728   -1.51    18.6    70.7    14.3    4.93
- 9 Chambe… Alab…   36583   34215   33713   -1.2     18.8    71.4     8.7    4.08
-10 Cherok… Alab…   23988   25989   25857   -0.6     16.1    77.5     4.3    4.05
-# … with 3,132 more rows, 5 more variables: metro &lt;fct&gt;, median_edu &lt;fct&gt;,
-#   per_capita_income &lt;dbl&gt;, median_hh_income &lt;int&gt;, smoking_ban &lt;fct&gt;, and
-#   abbreviated variable names ¹​pop_change, ²​homeownership, ³​multi_unit,
-#   ⁴​unemployment_rate</code></pre>
-</div>
-</div>
-<p>#Add names(county) to county. Size of df. mention dim()</p>
-</section>
-<section id="a-simple-histogram" class="slide level2">
-<h2>A simple histogram</h2>
-<p>Map the unemployment rate for the counties in the US in 2019.</p>
-
-<img data-src="histograms_files/figure-revealjs/one-variable-1.png" width="960" class="r-stretch"></section>
-<section id="function-arguments" class="slide level2">
-<h2>Function arguments</h2>
-<p>Every function in R can take a lot of arguments. Let’s type <code>?gf_histogram</code> to see the arguments for that function.</p>
-<table>
-<tbody>
-<tr class="odd">
-<td>object = NULL,</td>
-<td>binwidth,</td>
-<td>linetype,</td>
-<td>subtitle,</td>
-</tr>
-<tr class="even">
-<td>gformula = NULL,</td>
-<td>alpha = 0.5,</td>
-<td>size,</td>
-<td>caption,</td>
-</tr>
-<tr class="odd">
-<td>data = NULL,</td>
-<td>color,</td>
-<td>xlab,</td>
-<td>geom = “bar”,</td>
-</tr>
-<tr class="even">
-<td>…,</td>
-<td>fill,</td>
-<td>ylab,</td>
-<td>stat = “bin”,</td>
-</tr>
-<tr class="odd">
-<td>bins = 25,</td>
-<td>group,</td>
-<td>title,</td>
-<td>position = “stack”,</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="what-do-these-do" class="slide level2">
-<h2>What do these do?</h2>
-<p>Start with the single variable histogram: <code>gf_histogram(~unemployment_rate,data = county,...)</code></p>
-<div>
-<ol type="1">
-<li class="fragment"><p>Edit the <code>bins</code> or <code>binwidth</code>, which get priority?</p></li>
-<li class="fragment"><p>Edit <code>colors</code> and <code>fill</code>. Which tints what? (Hint colors are strings, use quotes) <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Here’s a list of colors</a></p></li>
-<li class="fragment"><p>Add a title and caption. Remove the label from the x-axis add a good one to the y.</p></li>
-<li class="fragment"><p>What the heck do size, linetype and group do?</p></li>
-</ol>
-</div>
-</section>
-<section id="heres-a-graph-that-i-made" class="slide level2">
-<h2>Here’s a graph that I made</h2>
-
-<img data-src="histograms_files/figure-revealjs/my-gfhist-1.png" width="960" class="r-stretch"></section>
-<section id="show-two-variables" class="slide level2">
-<h2>Show two variables</h2>
-<p>The histogram is a single variable graph by we can break up the data by grouping it.</p>
-
-<img data-src="histograms_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
-<section id="two-variables-faceted" class="slide level2">
-<h2>Two variables (faceted):</h2>
-<p>Let’s make two histograms side by side.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/two-variables-1.png" width="960"></p>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/boxplot-1.png" width="960"></p>
-</div>
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/boxplot-2.png" width="960"></p>
-</div>
-</div>
-<p>Some activity: Make a box plot and histogram with births14 &lt;- make a markdown to go with this. Guided questions.</p>
+<p>We’ll spend some time with the county dataset.</p>
+<p>view()</p>
+<p>names()</p>
+<p>dim()</p>
+<p>favstats()</p>
+<p>IQR()</p>
+<p>saved favstats</p>
 
 <div class="footer footer-default">
 
@@ -652,48 +546,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

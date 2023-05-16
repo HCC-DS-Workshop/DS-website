@@ -1,0 +1,19 @@
+---
+title: "Descriptive statistics"
+editor: visual
+format: revealjs
+---
+
+We'll spend some time with the county dataset.
+
+view()
+
+names()
+
+dim()
+
+favstats()
+
+IQR()
+
+saved favstats

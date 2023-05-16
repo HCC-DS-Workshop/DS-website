@@ -86,4 +86,4 @@ gf_boxplot(~unemployment_rate,data=county, color = ~metro)
 gf_boxplot(unemployment_rate~metro,data=county)
 ```
 
-Some activity: Make a box plot and histogram with births14 <- make a markdown to go with this. Guided questions. 
+Some activity: Make a box plot and histogram with births14 \<- make a markdown to go with this. Guided questions.

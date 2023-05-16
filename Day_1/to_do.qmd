@@ -1,0 +1,23 @@
+---
+title: "To bring"
+---
+
+# To bring to the workshop:
+
+-   A sweater for the AC
+
+-   A working laptop with an up to date browser on it (preferably with firefox or chrome.)
+
+-   Lunch or money for the cafeteria.
+
+    -   We'll try to get our hands on some snacks.
+
+# If you can:
+
+Log onto the [HCC Rstudio server.](http://hcc-rstudiosrv1.hcc.edu:8787/)
+
+HCC faculty your username is your hcc email with the @hcc.edu.
+
+Nic's is nschwab\@hcc.edu
+
+Your password is your hcc email password.
