@@ -5,6 +5,7 @@ format: revealjs
 ---
 
 ```{r setup}
+knitr::opts_chunk$set(include=TRUE)
 library(mosaic)
 library(openintro)
 
@@ -15,8 +16,11 @@ library(openintro)
 Let's consider the `county` data frame.
 
 ```{r view}
+#Add variable types. 
 county
 ```
+
+#Add names(county) to county. Size of df. mention dim()
 
 ## A simple histogram
 
@@ -55,7 +59,7 @@ Start with the single variable histogram: `gf_histogram(~unemployment_rate,data 
 ## Here's a graph that I made
 
 ```{r my-gfhist}
-gf_histogram(~unemployment_rate,data=county,bins=10, color="black",fill="purple", xlab="",ylab="Number of unemployed", title="US Umeployment by county", caption="Data is as of 2019",linetype = 2,size=2)
+gf_histogram(~unemployment_rate,data=county,bins=10, color="black",fill="purple", xlab="",ylab="Number of unemployed", title="US Umeployment by county", caption="Data is as of 2019",linetype = 5,size=2)
 
 ```
 
@@ -64,7 +68,8 @@ gf_histogram(~unemployment_rate,data=county,bins=10, color="black",fill="purple"
 The histogram is a single variable graph by we can break up the data by grouping it.
 
 ```{r}
-gf_histogram(~unemployment_rate,data=county,binwidth=5, fill = ~median_edu,position = "dodge")
+#Take position ="dodge" out
+gf_histogram(~unemployment_rate,data=county,bins=10, fill = ~metro)
 ```
 
 ## Two variables (faceted):
@@ -74,3 +79,11 @@ Let's make two histograms side by side.
 ```{r two-variables}
 gf_histogram(~unemployment_rate|~metro,data = county)
 ```
+
+```{r boxplot}
+gf_boxplot(~unemployment_rate,data=county, color = ~metro)
+# or 
+gf_boxplot(unemployment_rate~metro,data=county)
+```
+
+Some activity: Make a box plot and histogram with births14 <- make a markdown to go with this. Guided questions. 
