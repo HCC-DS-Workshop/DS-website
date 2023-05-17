@@ -1,9 +1,0 @@
----
-title: "Day 1:Descriptive Stats and Visualizations"
----
-
-[Introduction](./Presentation1.pdf)\<- Put Eric's intro here.
-
-Favstats()
-
-[Histograms](./histograms.html)

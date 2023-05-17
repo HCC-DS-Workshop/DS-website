@@ -2,10 +2,12 @@
 title: "Histograms and Boxplots"
 author: "Schwab"
 format: revealjs
+execute: 
+  echo: true
 ---
 
 ```{r setup}
-knitr::opts_chunk$set(include=TRUE)
+
 library(mosaic)
 library(openintro)
 
@@ -16,11 +18,8 @@ library(openintro)
 Let's consider the `county` data frame.
 
 ```{r view}
-#Add variable types. 
 county
 ```
-
-#Add names(county) to county. Size of df. mention dim()
 
 ## A simple histogram
 
@@ -86,4 +85,8 @@ gf_boxplot(~unemployment_rate,data=county, color = ~metro)
 gf_boxplot(unemployment_rate~metro,data=county)
 ```
 
-Some activity: Make a box plot and histogram with births14 \<- make a markdown to go with this. Guided questions.
+##  Activity: 
+
+Open a new .rmd file and copy and paste this code into it.
+
+[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf)

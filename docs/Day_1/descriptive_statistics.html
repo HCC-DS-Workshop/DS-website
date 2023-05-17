@@ -7,7 +7,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.2.475">
 
   <title>Intro Stats with R - Descriptive statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,10 +18,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -317,24 +322,105 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Descriptive statistics</h1>
+
+<div class="quarto-title-authors">
+</div>
+
 </section>
+<section>
+<section id="descriptive-statistics" class="title-slide slide level1 center">
+<h1>Descriptive Statistics</h1>
+<p>We’ll discuss useful functions for doing descriptive statistics.</p>
+<p>We’ll do this through the lens of the <code>county</code> dataset.</p>
+</section>
+<section id="load-the-libraries" class="slide level2">
+<h2>Load the libraries</h2>
+<p><code>library(openintro)</code></p>
+<ul>
+<li>This is where the data lives</li>
+</ul>
+<p><code>library(mosaic)</code></p>
+<ul>
+<li>This is where our statistical functions live (most of them)</li>
+</ul>
+</section>
+<section id="explore-the-data-frame" class="slide level2">
+<h2>Explore the data frame</h2>
+<p>Try the following in the console.</p>
+<div>
+<ol type="1">
+<li class="fragment"><p><code>View(x = county)</code> <sup>1</sup></p></li>
+<li class="fragment"><p><code>names(county)</code></p></li>
+<li class="fragment"><p><code>dim(county)</code></p></li>
+<li class="fragment"><p>?county</p></li>
+</ol>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>The View() function is capitalized in <code>mosaic</code> but lower case when using just the <code>tidyverse</code>.</p></li></ol></aside></section>
+<section id="the-operator" class="slide level2">
+<h2>The ? operator</h2>
+<p>The ? will bring up the help tab.</p>
+<p>Try</p>
+<div>
+<ul>
+<li class="fragment"><p>?county</p></li>
+<li class="fragment"><p>?mosaic</p></li>
+<li class="fragment"><p>?mean()</p></li>
+</ul>
+</div>
+</section>
+<section id="measures-of-center" class="slide level2">
+<h2>Measures of center</h2>
+<div>
+<ul>
+<li class="fragment"><p>mean()</p>
+<ul>
+<li class="fragment">mean(~pop2017,data=county, na.rm=TRUE)</li>
+</ul></li>
+<li class="fragment"><p>median()</p>
+<ul>
+<li class="fragment">Find the median population from 2017</li>
+</ul></li>
+<li class="fragment"><p>mode()</p></li>
+</ul>
+</div>
+</section>
+<section id="measures-of-spread" class="slide level2">
+<h2>Measures of Spread</h2>
+<div>
+<ul>
+<li class="fragment"><p>IQR(~pop2017,data=county, na.rm=TRUE)</p></li>
+<li class="fragment"><p>sd()</p></li>
+</ul>
+</div>
+</section>
+<section id="all-summary-stats" class="slide level2">
+<h2>All summary stats()</h2>
+<div>
+<ul>
+<li class="fragment"><p>fivenum()</p></li>
+<li class="fragment"><p>favstats(~pop2017,data=county, na.rm=TRUE)<sup>1</sup></p></li>
+<li class="fragment"><p>quartile()</p></li>
+</ul>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>favstats() is the friendliest and the one we use the most</p></li></ol></aside></section>
+<section id="get-specific-details-on-each-state" class="slide level2">
+<h2>Get specific details on each state</h2>
+<p>Find the mean population for all 50 states.</p>
+<p><code>mean(pop2017~state,data=county)</code></p>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>Open a new blank .rmd file</p>
 
-<section class="slide level2">
-
-<p>We’ll spend some time with the county dataset.</p>
-<p>view()</p>
-<p>names()</p>
-<p>dim()</p>
-<p>favstats()</p>
-<p>IQR()</p>
-<p>saved favstats</p>
+<img data-src="../images/new-rmd-file.png" width="150" class="r-stretch quarto-figure-center"><p>Paste this text into it.</p>
 
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
+
     </div>
   </div>
 
@@ -584,7 +670,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -614,31 +717,50 @@
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

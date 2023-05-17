@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R workshop",
     "section": "",
-    "text": "To bring to the workshop\n\n\nDay 1: Descriptive Statistics and Visualizations\n\n\nDay 2: Probability and Inference\n\n\nDay 3: Towards Data Science"
+    "text": "Information on Workshop\n\n\nTo bring to the workshop\n\n\nDay 1: Descriptive Statistics and Visualizations\n\n\nDay 2: Probability and Inference\n\n\nDay 3: Towards Data Science"
   },
   {
     "objectID": "about.html",
@@ -116,28 +116,28 @@
     "href": "credits.html",
     "title": "Funded by",
     "section": "",
-    "text": "Faculty Participation funded by The Learn Collaborative (formally the CFE)."
+    "text": "This workshop was paid for by the DSC-WAV grant.\nFaculty Participation funded by The Learn Collaborative (formally the CFE)."
   },
   {
     "objectID": "Day_1/histograms.html#histograms-and-boxplots",
     "href": "Day_1/histograms.html#histograms-and-boxplots",
     "title": "Histograms and Boxplots",
     "section": "Histograms and Boxplots",
-    "text": "Histograms and Boxplots\nLet’s consider the county data frame.\n\n\n# A tibble: 3,142 × 15\n   name    state pop2000 pop2010 pop2017 pop_c…¹ poverty homeo…² multi…³ unemp…⁴\n   <chr>   <fct>   <dbl>   <dbl>   <int>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1 Autaug… Alab…   43671   54571   55504    1.48    13.7    77.5     7.2    3.86\n 2 Baldwi… Alab…  140415  182265  212628    9.19    11.8    76.7    22.6    3.99\n 3 Barbou… Alab…   29038   27457   25270   -6.22    27.2    68      11.1    5.9 \n 4 Bibb C… Alab…   20826   22915   22668    0.73    15.2    82.9     6.6    4.39\n 5 Blount… Alab…   51024   57322   58013    0.68    15.6    82       3.7    4.02\n 6 Bulloc… Alab…   11714   10914   10309   -2.28    28.5    76.9     9.9    4.93\n 7 Butler… Alab…   21399   20947   19825   -2.69    24.4    69      13.7    5.49\n 8 Calhou… Alab…  112249  118572  114728   -1.51    18.6    70.7    14.3    4.93\n 9 Chambe… Alab…   36583   34215   33713   -1.2     18.8    71.4     8.7    4.08\n10 Cherok… Alab…   23988   25989   25857   -0.6     16.1    77.5     4.3    4.05\n# … with 3,132 more rows, 5 more variables: metro <fct>, median_edu <fct>,\n#   per_capita_income <dbl>, median_hh_income <int>, smoking_ban <fct>, and\n#   abbreviated variable names ¹​pop_change, ²​homeownership, ³​multi_unit,\n#   ⁴​unemployment_rate\n\n\n#Add names(county) to county. Size of df. mention dim()"
+    "text": "Histograms and Boxplots\nLet’s consider the county data frame.\n\ncounty\n\n# A tibble: 3,142 × 15\n   name    state pop2000 pop2010 pop2017 pop_c…¹ poverty homeo…² multi…³ unemp…⁴\n   <chr>   <fct>   <dbl>   <dbl>   <int>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1 Autaug… Alab…   43671   54571   55504    1.48    13.7    77.5     7.2    3.86\n 2 Baldwi… Alab…  140415  182265  212628    9.19    11.8    76.7    22.6    3.99\n 3 Barbou… Alab…   29038   27457   25270   -6.22    27.2    68      11.1    5.9 \n 4 Bibb C… Alab…   20826   22915   22668    0.73    15.2    82.9     6.6    4.39\n 5 Blount… Alab…   51024   57322   58013    0.68    15.6    82       3.7    4.02\n 6 Bulloc… Alab…   11714   10914   10309   -2.28    28.5    76.9     9.9    4.93\n 7 Butler… Alab…   21399   20947   19825   -2.69    24.4    69      13.7    5.49\n 8 Calhou… Alab…  112249  118572  114728   -1.51    18.6    70.7    14.3    4.93\n 9 Chambe… Alab…   36583   34215   33713   -1.2     18.8    71.4     8.7    4.08\n10 Cherok… Alab…   23988   25989   25857   -0.6     16.1    77.5     4.3    4.05\n# … with 3,132 more rows, 5 more variables: metro <fct>, median_edu <fct>,\n#   per_capita_income <dbl>, median_hh_income <int>, smoking_ban <fct>, and\n#   abbreviated variable names ¹​pop_change, ²​homeownership, ³​multi_unit,\n#   ⁴​unemployment_rate"
   },
   {
     "objectID": "Day_1/histograms.html#a-simple-histogram",
     "href": "Day_1/histograms.html#a-simple-histogram",
     "title": "Histograms and Boxplots",
     "section": "A simple histogram",
-    "text": "A simple histogram\nMap the unemployment rate for the counties in the US in 2019."
+    "text": "A simple histogram\nMap the unemployment rate for the counties in the US in 2019.\n\ngf_histogram(~unemployment_rate,data = county)"
   },
   {
     "objectID": "Day_1/histograms.html#two-variables-faceted",
     "href": "Day_1/histograms.html#two-variables-faceted",
     "title": "Histograms and Boxplots",
     "section": "Two variables (faceted):",
-    "text": "Two variables (faceted):\nLet’s make two histograms side by side.\n\n\n\n\n\n\n\n\n\n\n\n\n\nSome activity: Make a box plot and histogram with births14 <- make a markdown to go with this. Guided questions."
+    "text": "Two variables (faceted):\nLet’s make two histograms side by side.\n\ngf_histogram(~unemployment_rate|~metro,data = county)\n\n\n\n\n\ngf_boxplot(~unemployment_rate,data=county, color = ~metro)\n\n\n\n# or \ngf_boxplot(unemployment_rate~metro,data=county)"
   },
   {
     "objectID": "Day_1/histograms.html#function-arguments",
@@ -165,7 +165,7 @@
     "href": "Day_1/histograms.html#heres-a-graph-that-i-made",
     "title": "Histograms and Boxplots",
     "section": "Here’s a graph that I made",
-    "text": "Here’s a graph that I made"
+    "text": "Here’s a graph that I made\n\ngf_histogram(~unemployment_rate,data=county,bins=10, color=\"black\",fill=\"purple\", xlab=\"\",ylab=\"Number of unemployed\", title=\"US Umeployment by county\", caption=\"Data is as of 2019\",linetype = 5,size=2)"
   },
   {
     "objectID": "Day_1/histograms.html#heres-a-graph-that-i-madesmaller",
@@ -193,7 +193,7 @@
     "href": "Day_1/histograms.html#show-two-variables",
     "title": "Histograms and Boxplots",
     "section": "Show two variables",
-    "text": "Show two variables\nThe histogram is a single variable graph by we can break up the data by grouping it."
+    "text": "Show two variables\nThe histogram is a single variable graph by we can break up the data by grouping it.\n\n#Take position =\"dodge\" out\ngf_histogram(~unemployment_rate,data=county,bins=10, fill = ~metro)"
   },
   {
     "objectID": "Day_1/to_do.html",
@@ -236,5 +236,89 @@
     "title": "To dos",
     "section": "If you can have 5 minutes before hand:",
     "text": "If you can have 5 minutes before hand:\nLog onto the RStudio server\n\nHCC Faculty:\nLog onto the HCC Rstudio server.\nHCC faculty your username is your hcc email with the @hcc.edu.\nNic’s is nschwab@hcc.edu\nYour password is your hcc email password.\n\n\nWSU and STCC faculty:\nWe are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you’ll get an email from Nic with usernames by Sunday the 21."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#load-the-libraries",
+    "href": "Day_1/descriptive_statistics.html#load-the-libraries",
+    "title": "Descriptive statistics",
+    "section": "Load the libraries",
+    "text": "Load the libraries\nlibrary(openintro)\n\nThis is where the data lives\n\nlibrary(mosaic)\n\nThis is where our statistical functions live (most of them)"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#explore-the-data-frame",
+    "href": "Day_1/descriptive_statistics.html#explore-the-data-frame",
+    "title": "Descriptive statistics",
+    "section": "Explore the data frame",
+    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county\n\n\nThe View() function is capitalized in mosaic but lower case when using just the tidyverse."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#descriptive-statistics-1",
+    "href": "Day_1/descriptive_statistics.html#descriptive-statistics-1",
+    "title": "Descriptive statistics",
+    "section": "Descriptive statistics",
+    "text": "Descriptive statistics\n\n\nMeasures of center\n\nmean()\nmedian()\nmode()\n\nMeasures of Spread\n\nIQR()\nsd()\n\nBoth:\n\nfavstats()\nfivenum()"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#saving-a-value-or-summary",
+    "href": "Day_1/descriptive_statistics.html#saving-a-value-or-summary",
+    "title": "Descriptive statistics",
+    "section": "Saving a value or summary",
+    "text": "Saving a value or summary\n\nsaved values and the $ operator for accessing item from a list."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#measures-of-center",
+    "href": "Day_1/descriptive_statistics.html#measures-of-center",
+    "title": "Descriptive statistics",
+    "section": "Measures of center",
+    "text": "Measures of center\n\n\nmean()\n\nmean(~pop2017,data=county, na.rm=TRUE)\n\nmedian()\n\nFind the median population from 2017\n\nmode()"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#measures-of-spread",
+    "href": "Day_1/descriptive_statistics.html#measures-of-spread",
+    "title": "Descriptive statistics",
+    "section": "Measures of Spread",
+    "text": "Measures of Spread\n\n\nIQR(~pop2017,data=county, na.rm=TRUE)\nsd()"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#all-summary-stats",
+    "href": "Day_1/descriptive_statistics.html#all-summary-stats",
+    "title": "Descriptive statistics",
+    "section": "All summary stats()",
+    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquartile()\n\n\nfavstats() is the friendliest and the one we use the most"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#the-operator",
+    "href": "Day_1/descriptive_statistics.html#the-operator",
+    "title": "Descriptive statistics",
+    "section": "The ? operator",
+    "text": "The ? operator\nThe ? will bring up the help tab.\nTry\n\n\n?county\n?mosaic\n?mean()"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
+    "href": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
+    "title": "Descriptive statistics",
+    "section": "Get specific details on each state",
+    "text": "Get specific details on each state\nFind the mean population for all 50 states.\nmean(pop2017~state,data=county)"
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#activity",
+    "href": "Day_1/descriptive_statistics.html#activity",
+    "title": "Descriptive statistics",
+    "section": "Activity",
+    "text": "Activity\nOpen a new blank .rmd file\n\nPaste this text into it."
+  },
+  {
+    "objectID": "Day_1/day_1_desc_stats_and_viz.html",
+    "href": "Day_1/day_1_desc_stats_and_viz.html",
+    "title": "Day 1:Descriptive Stats and Visualizations",
+    "section": "",
+    "text": "May 22 9-1:30\nWelcome\nIntroduction<- Put Eric’s intro here.\nDescriptive Statistics\n\nActivity with Descriptive Statistics and births14\n\nBreak?\nHistograms and Boxplots\nThis is a discussion on graphing numeric variables in R\n\nActivity with Boxplots and births14\n\nBreak\n[Bar graphs and Mosaic Plots] <- Put Eric’s work here\n\nThis is a discussion of categorical variables in R\n\nLunch\n[Scatterplots] <- Put Eric’s work here\n\nTwo numeric variables\n\n\nOptional Homework\n\nCheck out the mosaic cheat sheet in the resources tab.\nTry to install R on your personal computer, see notes here under If you like a challenge."
+  },
+  {
+    "objectID": "Day_1/histograms.html#activity",
+    "href": "Day_1/histograms.html#activity",
+    "title": "Histograms and Boxplots",
+    "section": "Activity:",
+    "text": "Activity:\nOpen a new .rmd file and copy and paste this code into it."
   }
 ]

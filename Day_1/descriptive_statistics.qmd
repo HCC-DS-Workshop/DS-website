@@ -4,16 +4,96 @@ editor: visual
 format: revealjs
 ---
 
-We'll spend some time with the county dataset.
+# Descriptive Statistics
 
-view()
+We'll discuss useful functions for doing descriptive statistics.
 
-names()
+We'll do this through the lens of the `county` dataset.
 
-dim()
+## Load the libraries
 
-favstats()
+`library(openintro)`
 
-IQR()
+-   This is where the data lives
 
-saved favstats
+`library(mosaic)`
+
+-   This is where our statistical functions live (most of them)
+
+## Explore the data frame
+
+Try the following in the console.
+
+::: incremental
+1.  `View(x = county)` [^1]
+
+2.  `names(county)`
+
+3.  `dim(county)`
+
+4.  ?county
+:::
+
+[^1]: The View() function is capitalized in `mosaic` but lower case when using just the `tidyverse`.
+
+## The ? operator
+
+The ? will bring up the help tab.
+
+Try
+
+::: incremental
+-   ?county
+
+-   ?mosaic
+
+-   ?mean()
+:::
+
+## Measures of center
+
+::: incremental
+-   mean()
+
+    -   mean(\~pop2017,data=county, na.rm=TRUE)
+
+-   median()
+
+    -   Find the median population from 2017
+
+-   mode()
+:::
+
+## Measures of Spread
+
+::: incremental
+-   IQR(\~pop2017,data=county, na.rm=TRUE)
+
+-   sd()
+:::
+
+## All summary stats()
+
+::: incremental
+-   fivenum()
+
+-   favstats(\~pop2017,data=county, na.rm=TRUE)[^2]
+
+-   quartile()
+:::
+
+[^2]: favstats() is the friendliest and the one we use the most
+
+## Get specific details on each state
+
+Find the mean population for all 50 states.
+
+`mean(pop2017~state,data=county)`
+
+## Activity
+
+Open a new blank .rmd file
+
+[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf)
+
+Paste this text into it.

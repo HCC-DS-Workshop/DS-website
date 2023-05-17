@@ -60,7 +60,7 @@ IMS teaches Statistics with the tidyverse.
 
 ## MTH 142: Intro to Stats Cheat Sheet
 
-[![](images/MTH142-screenshot.png){fig-align="center" width="200"}](https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf)
+[![](images/MTH142-screenshot.png){fig-align="center" width="200"}](./images/MTH-142-CheatSheet-v9.pdf)
 
 # More toward Data Science
 

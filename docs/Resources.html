@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -63,31 +68,35 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Intro Stats with R</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./Resources.html" aria-current="page">Resources</a>
+    <a class="nav-link active" href="./Resources.html" aria-current="page">
+ <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.slack.com"><i class="bi bi-slack" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in">R</a>
+    <a class="nav-link" href="http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in">
+ <span class="menu-text">R</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/HCC-R-Workshop/R-workshop-website"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -99,15 +108,15 @@ ul.task-list{list-style: none;}
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Title here</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#common-errors" id="toc-common-errors" class="nav-link active" data-scroll-target="#common-errors">Common Errors</a>
   <ul class="collapse">
-  <li><a href="#fixes-to-common-issues" id="toc-fixes-to-common-issues" class="nav-link" data-scroll-target="#fixes-to-common-issues"><span>6 fixes to common issues</span></a></li>
-  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks"><span>Tips and Tricks</span></a></li>
-  <li><a href="#r-colors" id="toc-r-colors" class="nav-link" data-scroll-target="#r-colors"><span>R Colors</span></a></li>
+  <li><a href="#fixes-to-common-issues" id="toc-fixes-to-common-issues" class="nav-link" data-scroll-target="#fixes-to-common-issues">6 fixes to common issues</a></li>
+  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks">Tips and Tricks</a></li>
+  <li><a href="#r-colors" id="toc-r-colors" class="nav-link" data-scroll-target="#r-colors">R Colors</a></li>
   </ul></li>
   <li><a href="#some-open-stats-books" id="toc-some-open-stats-books" class="nav-link" data-scroll-target="#some-open-stats-books"><strong>Some Open Stats Books:</strong></a>
   <ul class="collapse">
@@ -127,7 +136,7 @@ ul.task-list{list-style: none;}
   <li><a href="#modern-data-science-with-r" id="toc-modern-data-science-with-r" class="nav-link" data-scroll-target="#modern-data-science-with-r">Modern Data Science with R</a></li>
   <li><a href="#data-science-in-a-box" id="toc-data-science-in-a-box" class="nav-link" data-scroll-target="#data-science-in-a-box">Data Science in a box</a></li>
   <li><a href="#rmarkdown-cheat-sheet" id="toc-rmarkdown-cheat-sheet" class="nav-link" data-scroll-target="#rmarkdown-cheat-sheet">RMarkdown Cheat sheet</a></li>
-  <li><a href="#data-visualization-ggplot2" id="toc-data-visualization-ggplot2" class="nav-link" data-scroll-target="#data-visualization-ggplot2">Data Visualization: <span>ggplot2</span></a></li>
+  <li><a href="#data-visualization-ggplot2" id="toc-data-visualization-ggplot2" class="nav-link" data-scroll-target="#data-visualization-ggplot2">Data Visualization: ggplot2</a></li>
   <li><a href="#data-transformation-dplyr" id="toc-data-transformation-dplyr" class="nav-link" data-scroll-target="#data-transformation-dplyr">Data transformation: dplyr</a></li>
   <li><a href="#data-import-tidyr" id="toc-data-import-tidyr" class="nav-link" data-scroll-target="#data-import-tidyr">Data Import: tidyr</a></li>
   <li><a href="#style-guide" id="toc-style-guide" class="nav-link" data-scroll-target="#style-guide">Style Guide</a></li>
@@ -151,6 +160,7 @@ ul.task-list{list-style: none;}
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -223,7 +233,7 @@ ul.task-list{list-style: none;}
 <h2 class="anchored" data-anchor-id="mth-142-intro-to-stats-cheat-sheet">MTH 142: Intro to Stats Cheat Sheet</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf"><img src="images/MTH142-screenshot.png" class="img-fluid figure-img" width="200"></a></p>
+<p><a href="./images/MTH-142-CheatSheet-v9.pdf"><img src="images/MTH142-screenshot.png" class="img-fluid figure-img" width="200"></a></p>
 </figure>
 </div>
 </section>
@@ -332,7 +342,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -360,31 +387,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

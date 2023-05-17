@@ -1,0 +1,40 @@
+---
+title: "Day 1:Descriptive Stats and Visualizations"
+---
+
+# May 22 9-1:30
+
+Welcome
+
+[Introduction](./Presentation1.pdf)\<- Put Eric's intro here.
+
+[Descriptive Statistics](./descriptive_statistics.html)
+
+-   Activity with Descriptive Statistics and births14
+
+Break?
+
+[Histograms and Boxplots](./histograms.html)
+
+This is a discussion on graphing numeric variables in R
+
+-   Activity with Boxplots and births14
+
+Break
+
+\[Bar graphs and Mosaic Plots\] \<- Put Eric's work here
+
+-   This is a discussion of categorical variables in R
+
+Lunch
+
+\[Scatterplots\] \<- Put Eric's work here
+
+-   Two numeric variables
+
+------------------------------------------------------------------------
+
+Optional Homework
+
+-   Check out the mosaic cheat sheet in the resources tab.
+-   Try to install R on your personal computer, [see notes here](./to_do.html) under *If you like a challenge*.
