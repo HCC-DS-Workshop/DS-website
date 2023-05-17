@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro Stats with R - To bring</title>
+<title>Intro Stats with R - To dos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -63,31 +68,35 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Intro Stats with R</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../Resources.html">Resources</a>
+    <a class="nav-link" href="../Resources.html">
+ <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.slack.com"><i class="bi bi-slack" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in">R</a>
+    <a class="nav-link" href="http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in">
+ <span class="menu-text">R</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/HCC-R-Workshop/R-workshop-website"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -105,7 +114,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">To bring</h1>
+<h1 class="title">To dos</h1>
 </div>
 
 
@@ -113,14 +122,15 @@ ul.task-list{list-style: none;}
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<section id="to-bring-to-the-workshop" class="level1">
-<h1>To bring to the workshop:</h1>
+<section id="to-bring-to-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="to-bring-to-the-workshop">To bring to the workshop:</h2>
 <ul>
 <li><p>A sweater for the AC</p></li>
 <li><p>A working laptop with an up to date browser on it (preferably with firefox or chrome.)</p></li>
@@ -130,12 +140,28 @@ ul.task-list{list-style: none;}
 </ul></li>
 </ul>
 </section>
-<section id="if-you-can" class="level1">
-<h1>If you can:</h1>
+<section id="if-you-can-have-5-minutes-before-hand" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-can-have-5-minutes-before-hand">If you can have 5 minutes before hand:</h2>
+<p>Log onto the RStudio server</p>
+<section id="hcc-faculty" class="level4">
+<h4 class="anchored" data-anchor-id="hcc-faculty">HCC Faculty:</h4>
 <p>Log onto the <a href="http://hcc-rstudiosrv1.hcc.edu:8787/">HCC Rstudio server.</a></p>
 <p>HCC faculty your username is your hcc email with the <span class="citation" data-cites="hcc.edu">@hcc.edu</span>.</p>
 <p>Nic’s is nschwab@hcc.edu</p>
 <p>Your password is your hcc email password.</p>
+</section>
+<section id="wsu-and-stcc-faculty" class="level4">
+<h4 class="anchored" data-anchor-id="wsu-and-stcc-faculty">WSU and STCC faculty:</h4>
+<p>We are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you’ll get an email from Nic with usernames by Sunday the 21.</p>
+</section>
+</section>
+<section id="if-you-like-a-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-like-a-challenge">If you like a challenge:</h2>
+<p><a href="https://posit.co/download/rstudio-desktop/">Install R and R Studio</a> then type the following into the console:</p>
+<p><code>install.packages("mosaic")</code></p>
+<p><code>install.packages("tidyverse")</code></p>
+<p><code>install.packages("openintro")</code></p>
+<p>note: its not that hard, but you may experience errors that the rest of the group does get, we’ll help you with those.</p>
 
 
 </section>
@@ -182,7 +208,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -210,31 +253,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

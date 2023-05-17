@@ -198,9 +198,9 @@
   {
     "objectID": "Day_1/to_do.html",
     "href": "Day_1/to_do.html",
-    "title": "To bring",
+    "title": "To dos",
     "section": "",
-    "text": "If you can:\nLog onto the HCC Rstudio server.\nHCC faculty your username is your hcc email with the @hcc.edu.\nNic’s is nschwab@hcc.edu\nYour password is your hcc email password."
+    "text": "A sweater for the AC\nA working laptop with an up to date browser on it (preferably with firefox or chrome.)\nLunch or money for the cafeteria.\n\nWe’ll try to get our hands on some snacks."
   },
   {
     "objectID": "Day_1/Activity_Boxplot.html",
@@ -215,5 +215,26 @@
     "title": "Activity_Boxplot",
     "section": "Including Plots",
     "text": "Including Plots\nYou can also embed plots, for example:\n\n\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot."
+  },
+  {
+    "objectID": "Day_1/to_do.html#if-you-like-a-challenge",
+    "href": "Day_1/to_do.html#if-you-like-a-challenge",
+    "title": "To dos",
+    "section": "If you like a challenge:",
+    "text": "If you like a challenge:\nInstall R and R Studio then type the following into the console:\ninstall.packages(\"mosaic\")\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nnote: its not that hard, but you may experience errors that the rest of the group does get, we’ll help you with those."
+  },
+  {
+    "objectID": "Day_1/to_do.html#if-you-can",
+    "href": "Day_1/to_do.html#if-you-can",
+    "title": "To dos",
+    "section": "If you can:",
+    "text": "If you can:\nHCC Faculty:\nLog onto the HCC Rstudio server.\nHCC faculty your username is your hcc email with the @hcc.edu.\nNic’s is nschwab@hcc.edu\nYour password is your hcc email password.\nWSU and STTC faculty:\nWe are working on getting you temporary usernames and passwords for HCC Rstudio Server."
+  },
+  {
+    "objectID": "Day_1/to_do.html#if-you-can-have-5-minutes-before-hand",
+    "href": "Day_1/to_do.html#if-you-can-have-5-minutes-before-hand",
+    "title": "To dos",
+    "section": "If you can have 5 minutes before hand:",
+    "text": "If you can have 5 minutes before hand:\nLog onto the RStudio server\n\nHCC Faculty:\nLog onto the HCC Rstudio server.\nHCC faculty your username is your hcc email with the @hcc.edu.\nNic’s is nschwab@hcc.edu\nYour password is your hcc email password.\n\n\nWSU and STCC faculty:\nWe are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you’ll get an email from Nic with usernames by Sunday the 21."
   }
 ]

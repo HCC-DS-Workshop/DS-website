@@ -1,8 +1,9 @@
 ---
-title: "To bring"
+title: "To dos"
 ---
 
-# To bring to the workshop:
+## To bring to the workshop:
+
 
 -   A sweater for the AC
 
@@ -12,7 +13,11 @@ title: "To bring"
 
     -   We'll try to get our hands on some snacks.
 
-# If you can:
+## If you can have 5 minutes before hand:
+
+Log onto the RStudio server 
+
+#### HCC Faculty:
 
 Log onto the [HCC Rstudio server.](http://hcc-rstudiosrv1.hcc.edu:8787/)
 
@@ -21,3 +26,21 @@ HCC faculty your username is your hcc email with the @hcc.edu.
 Nic's is nschwab\@hcc.edu
 
 Your password is your hcc email password.
+
+#### WSU and STCC faculty:
+
+We are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you'll get an email from Nic with usernames by Sunday the 21. 
+
+
+## If you like a challenge:
+
+
+[Install R and R Studio](https://posit.co/download/rstudio-desktop/) then type the following into the console:
+
+`install.packages("mosaic")`
+
+`install.packages("tidyverse")`
+
+`install.packages("openintro")`
+
+note: its not that hard, but you may experience errors that the rest of the group does get, we'll help you with those.
