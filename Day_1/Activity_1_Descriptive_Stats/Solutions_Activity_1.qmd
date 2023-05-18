@@ -1,0 +1,68 @@
+---
+title: "Solutions Activity Descriptive Stats"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+These are some solutions, you should do the activity first. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#This is the setup chunk. The libraries must be loaded here. type: library(mosaic) and library(openintro) below then hit the green play button in the upper right hand corner to run the chunk.
+
+library(mosaic)
+library(openintro)
+library(tidyverse)
+```
+
+1.  We should always attempt to understand our data first.
+
+view births14 in the chunk below. You can also use the `?` operator to learn more.
+
+```{r understand-data}
+
+view(births14)
+births14
+?births14
+```
+
+The grey rectangles are called code chunks.
+
+To make a new code chunk you can type three tick marks \`\`\` (the tick is above the tab key) and a curly bracket with the letter r in the middle {r}. You end a chunk with three more tick marks, like the chunks above.
+
+2.  Make a chunk below and use `favstats()` to get an idea of the summary statistics for a baby's birthweight. You can give it a name after the r like understand-data above. No space allowed in chunk names.
+
+```{r new-chunk}
+favstats(~weight,data=births14)
+
+```
+
+3.  Use favstats() and a formula (use the \~) to break up the weight summary statistics by the sex of the child.
+
+```{r two-variables}
+favstats(weight~sex, data=births14)
+
+```
+
+4.  Challenge: Add another variable to your favstats: whether the mother was a smoker or nonsmoker. The formula will be similar to the chunk above but will include a plus sign after the second variable.
+
+```{r three-variables}
+favstats(weight~sex + habit , data=births14)
+```
+
+5.  What happens when you switch the `sex` and `habit` variables in the chunk above?
+
+A: The summaries are the same, but is listed differently. For more examples see ?favstats()
+
+```{r three-variables-again}
+favstats(weight~habit + sex , data=births14)
+```
+
+6.  Can you use the same formulas above for the mean() and IQR() functions?
+
+A: Yes you can!
+
+```{r mean-iqr}
+mean(weight~habit + sex , data=births14)
+```

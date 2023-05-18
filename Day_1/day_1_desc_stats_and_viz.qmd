@@ -6,11 +6,11 @@ title: "Day 1:Descriptive Stats and Visualizations"
 
 Welcome
 
-[Introduction](./Presentation1.pdf){target="_blank"}\<- Put Eric's intro here.
+[Introduction](./Teaching_Introductory_Statistics_with_R_Day1_Opening.pdf){target="_blank"}
 
 [Descriptive Statistics](./descriptive_statistics.html){target="_blank"}
 
--   Activity with Descriptive Statistics and births14
+-   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt)
 
 Break?
 
@@ -18,7 +18,7 @@ Break?
 
 This is a discussion on graphing numeric variables in R
 
--   Activity with Boxplots and births14
+-   Activity 2 with Boxplots and births14
 
 Break
 
@@ -30,11 +30,14 @@ Lunch
 
 \[Scatterplots\] \<- Put Eric's work here
 
--   Two numeric variables
+-   [Activity 3 with Categorical Variables, Scatter plots, Correlation](./LAB_WSDay1_Categorical-Data_Scatterplots_Correlation.pdf)
 
 ------------------------------------------------------------------------
 
-Optional Homework
+*Solutions*
 
--   Check out the mosaic cheat sheet in the resources tab.
--   Try to install R on your personal computer, [see notes here](./to_do.html){target="_blank"} under *If you like a challenge*.
+[Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
+
+Activity 2
+
+Activity 3

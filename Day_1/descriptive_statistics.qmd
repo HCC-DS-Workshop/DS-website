@@ -94,6 +94,6 @@ Find the mean population for all 50 states.
 
 Open a new blank .rmd file
 
-[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf){target="_blank"}
+[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf)
 
-Paste this text into it.
+[Paste this text into it.](./Activity_1_Descriptive_Stats/Activity_1.txt)
