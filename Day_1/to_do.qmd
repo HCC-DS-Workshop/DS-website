@@ -19,7 +19,7 @@ Log onto the RStudio server
 
 #### HCC Faculty:
 
-Log onto the [HCC Rstudio server.](http://hcc-rstudiosrv1.hcc.edu:8787/)
+Log onto the [HCC Rstudio server.](http://hcc-rstudiosrv1.hcc.edu:8787/){target="_blank"}
 
 HCC faculty your username is your hcc email with the @hcc.edu.
 
@@ -35,7 +35,7 @@ We are working on getting you temporary usernames and passwords for HCC Rstudio 
 ## If you like a challenge:
 
 
-[Install R and R Studio](https://posit.co/download/rstudio-desktop/) then type the following into the console:
+[Install R and R Studio](https://posit.co/download/rstudio-desktop/){target="_blank"} then type the following into the console:
 
 `install.packages("mosaic")`
 

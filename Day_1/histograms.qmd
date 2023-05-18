@@ -79,13 +79,7 @@ Let's make two histograms side by side.
 gf_histogram(~unemployment_rate|~metro,data = county)
 ```
 
-```{r boxplot}
-gf_boxplot(~unemployment_rate,data=county, color = ~metro)
-# or 
-gf_boxplot(unemployment_rate~metro,data=county)
-```
-
-##  Activity: 
+## Activity:
 
 Open a new .rmd file and copy and paste this code into it.
 

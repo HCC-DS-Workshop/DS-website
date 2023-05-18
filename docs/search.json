@@ -130,7 +130,7 @@
     "href": "Day_1/histograms.html#two-variables-faceted",
     "title": "Histograms and Boxplots",
     "section": "Two variables (faceted):",
-    "text": "Two variables (faceted):\nLet’s make two histograms side by side.\n\ngf_histogram(~unemployment_rate|~metro,data = county)\n\n\n\n\n\ngf_boxplot(~unemployment_rate,data=county, color = ~metro)\n\n\n\n# or \ngf_boxplot(unemployment_rate~metro,data=county)"
+    "text": "Two variables (faceted):\nLet’s make two histograms side by side.\n\ngf_histogram(~unemployment_rate|~metro,data = county)"
   },
   {
     "objectID": "Day_1/histograms.html#activity",

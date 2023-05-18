@@ -6,15 +6,15 @@ title: "Day 1:Descriptive Stats and Visualizations"
 
 Welcome
 
-[Introduction](./Presentation1.pdf)\<- Put Eric's intro here.
+[Introduction](./Presentation1.pdf){target="_blank"}\<- Put Eric's intro here.
 
-[Descriptive Statistics](./descriptive_statistics.html)
+[Descriptive Statistics](./descriptive_statistics.html){target="_blank"}
 
 -   Activity with Descriptive Statistics and births14
 
 Break?
 
-[Histograms and Boxplots](./histograms.html)
+[Histograms and Boxplots](./histograms.html){target="_blank"}
 
 This is a discussion on graphing numeric variables in R
 
@@ -37,4 +37,4 @@ Lunch
 Optional Homework
 
 -   Check out the mosaic cheat sheet in the resources tab.
--   Try to install R on your personal computer, [see notes here](./to_do.html) under *If you like a challenge*.
+-   Try to install R on your personal computer, [see notes here](./to_do.html){target="_blank"} under *If you like a challenge*.

@@ -511,22 +511,9 @@ Schwab
 <p>Let’s make two histograms side by side.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>unemployment_rate<span class="sc">|</span><span class="er">~</span>metro,<span class="at">data =</span> county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/two-variables-1.png" width="960"></p>
+
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">gf_boxplot</span>(<span class="sc">~</span>unemployment_rate,<span class="at">data=</span>county, <span class="at">color =</span> <span class="sc">~</span>metro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/boxplot-1.png" width="960"></p>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># or </span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">gf_boxplot</span>(unemployment_rate<span class="sc">~</span>metro,<span class="at">data=</span>county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img data-src="histograms_files/figure-revealjs/boxplot-2.png" width="960"></p>
-</div>
-</div>
-</section>
+<img data-src="histograms_files/figure-revealjs/two-variables-1.png" width="960" class="r-stretch"></section>
 <section id="activity" class="slide level2">
 <h2>Activity:</h2>
 <p>Open a new .rmd file and copy and paste this code into it.</p>

@@ -4,6 +4,7 @@ project:
 
 format:
   html:
+    link-newwindow: true
     theme: materia
 
 output:
@@ -17,7 +18,7 @@ output:
     self_contained: no
     includes:
      in_header: "favicon.html"
-    link-external-newwindow: true
+
 
 
 # All icons were obtained from https://icons.getbootstrap.com/
@@ -30,14 +31,18 @@ website:
     left:
     - text: Resources
       href: Resources.qmd
+
    # - icon: book
   #    href: https://www.openintro.org/book/os/
   #  - text: T & T
   #    href: https://moderndive.com/C-appendixC.html
     - icon: slack
       href: https://www.slack.com
+
+
     - text: R
       href: http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in
+
 
     right:
     - icon: github
