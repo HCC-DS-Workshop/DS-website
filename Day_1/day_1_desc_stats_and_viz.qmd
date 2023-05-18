@@ -30,7 +30,7 @@ Lunch
 
 \[Scatterplots\] \<- Put Eric's work here
 
--   [Activity 3 with Categorical Variables, Scatter plots, Correlation](./LAB_WSDay1_Categorical-Data_Scatterplots_Correlation.pdf)
+-   [Activity 3 with Categorical Variables, Scatter plots, Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical-Data_Scatterplots_Correlation.pdf)
 
 ------------------------------------------------------------------------
 
@@ -40,4 +40,4 @@ Lunch
 
 Activity 2
 
-Activity 3
+[Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
