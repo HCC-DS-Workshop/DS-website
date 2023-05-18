@@ -1,0 +1,54 @@
+---
+title: "Activity 2: Boxplots"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+This is a .txt file you should copy and paste it into a new .rmd file. 
+
+Boxplots are another common way of displaying numeric data. Let's continue our exploration of births14. I've loaded the libraries below for you.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(mosaic)
+library(openintro)
+
+```
+
+We're going to be using the boxplot function type ?gf_boxplot() into the console or a new chunk to get a sense of the argument this function takes.
+
+Recall where we left off with Activity 1.
+
+```{r recall-favstats}
+favstats(weight~sex,data=births14)
+```
+
+The mosaic package is nice, because all of the functions have very similar setups.
+
+
+
+1.  Make a boxplot with the function gf_boxplot(). Copy and past the arguments from the favstats function above (don't copy the favstats part).
+
+```{r copy-paste}
+gf_boxplot()
+```
+
+2.  Notice all of the outliers! We don't know how to remove them yet, but we will later. We can pretend they are not there by adjusting the coef argument. Set coef=5. Do that in the chunk below.
+
+```{r hide-outliers}
+
+
+```
+
+If you remember the formula for calculating outliers (Q1-1.5 \*IQR, Q3+1.5 \* IQR), this is the formula R uses by default. coef = 5 changes the 1.5 to 5.
+
+3.  Put the outliers back and figure out how to change their shape and stroke. Just like with histograms we can add change the x and y labels and add a title. Add the chunk below and change the outliers shape.
+
+
+
+
+4.  Can you map the color (or fill) argument to the smoking habit of the mother, so we can see three variables at once?
+
+```{r three-variables}
+
+```

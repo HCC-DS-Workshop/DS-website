@@ -25,7 +25,7 @@
     "href": "Day_1/day_1_desc_stats_and_viz.html",
     "title": "Day 1:Descriptive Stats and Visualizations",
     "section": "",
-    "text": "May 22 9-1:30\nWelcome\nIntroduction\nDescriptive Statistics\n\nActivity 1 with Descriptive Statistics and births14\n\nBreak?\nHistograms and Boxplots\nThis is a discussion on graphing numeric variables in R\n\nActivity 2 with Boxplots and births14\n\nBreak\n[Bar graphs and Mosaic Plots] <- Put Eric’s work here\n\nThis is a discussion of categorical variables in R\n\nLunch\n[Scatterplots] <- Put Eric’s work here\n\nActivity 3 with Categorical Variables, Scatter plots, Correlation\n\n\nSolutions\nActivity 1\nActivity 2\nActivity 3"
+    "text": "May 22 9-1:30\nWelcome\nIntroduction\nDescriptive Statistics\n\nActivity 1 with Descriptive Statistics and births14\n\nBreak?\nHistograms and Boxplots\n\nActivity 2 with Boxplots and births14\n\nBreak\n[Bar graphs and Mosaic Plots] <- Put Eric’s work here\nLunch\n[Scatterplots] <- Put Eric’s work here\n\nActivity 3 with Categorical Variables, Scatter plots, Correlation\n\n\nSolutions\nActivity 1\nActivity 2\nActivity 3"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#load-the-libraries",
@@ -39,7 +39,7 @@
     "href": "Day_1/descriptive_statistics.html#explore-the-data-frame",
     "title": "Descriptive statistics",
     "section": "Explore the data frame",
-    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county\n\n\nThe View() function is capitalized in mosaic but lower case when using just the tidyverse."
+    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#the-operator",
@@ -67,7 +67,7 @@
     "href": "Day_1/descriptive_statistics.html#all-summary-stats",
     "title": "Descriptive statistics",
     "section": "All summary stats()",
-    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquartile()\n\n\nfavstats() is the friendliest and the one we use the most"
+    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)2\nquartile()"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
@@ -81,7 +81,7 @@
     "href": "Day_1/descriptive_statistics.html#activity",
     "title": "Descriptive statistics",
     "section": "Activity",
-    "text": "Activity\nOpen a new blank .rmd file\n\nPaste this text into it."
+    "text": "Activity\nOpen a new blank .rmd file\n\n\n\n\n\nPaste this text into it."
   },
   {
     "objectID": "Day_1/histograms.html#histograms-and-boxplots",
@@ -102,14 +102,14 @@
     "href": "Day_1/histograms.html#function-arguments",
     "title": "Histograms and Boxplots",
     "section": "Function arguments",
-    "text": "Function arguments\nEvery function in R can take a lot of arguments. Let’s type ?gf_histogram to see the arguments for that function.\n\n\n\nobject = NULL,\nbinwidth,\nlinetype,\nsubtitle,\n\n\ngformula = NULL,\nalpha = 0.5,\nsize,\ncaption,\n\n\ndata = NULL,\ncolor,\nxlab,\ngeom = “bar”,\n\n\n…,\nfill,\nylab,\nstat = “bin”,\n\n\nbins = 25,\ngroup,\ntitle,\nposition = “stack”,"
+    "text": "Function arguments\nEvery function in R can take a lot of arguments. Let’s type  ?gf_histogram to see the arguments for that function.\n\n\n\nobject = NULL,\nbinwidth,\nlinetype,\nsubtitle,\n\n\ngformula = NULL,\nalpha = 0.5,\nsize,\ncaption,\n\n\ndata = NULL,\ncolor,\nxlab,\ngeom = “bar”,\n\n\n…,\nfill,\nylab,\nstat = “bin”,\n\n\nbins = 25,\ngroup,\ntitle,\nposition = “stack”,"
   },
   {
     "objectID": "Day_1/histograms.html#what-do-these-do",
     "href": "Day_1/histograms.html#what-do-these-do",
     "title": "Histograms and Boxplots",
     "section": "What do these do?",
-    "text": "What do these do?\nStart with the single variable histogram: gf_histogram(~unemployment_rate,data = county,...)\n\n\nEdit the bins or binwidth, which get priority?\nEdit colors and fill. Which tints what? (Hint colors are strings, use quotes) Here’s a list of colors\nAdd a title and caption. Remove the label from the x-axis add a good one to the y.\nWhat the heck do size, linetype and group do?"
+    "text": "What do these do?\nStart with the single variable histogram: gf_histogram(~unemployment_rate,data = county,...)\n\n\nEdit the bins or binwidth, which get priority?\nEdit colors and fill. Which tints what? (Hint colors are in quotes, color=“pink” works) Here’s a list of colors\nAdd a title and caption. Remove the label from the x-axis add a good one to the y.\nWhat the heck do size, linetype and group do?"
   },
   {
     "objectID": "Day_1/histograms.html#heres-a-graph-that-i-made",
@@ -123,7 +123,7 @@
     "href": "Day_1/histograms.html#show-two-variables",
     "title": "Histograms and Boxplots",
     "section": "Show two variables",
-    "text": "Show two variables\nThe histogram is a single variable graph by we can break up the data by grouping it.\n\n#Take position =\"dodge\" out\ngf_histogram(~unemployment_rate,data=county,bins=10, fill = ~metro)"
+    "text": "Show two variables\nThe histogram is a single variable graph by we can break up the data by grouping it.\n\ngf_histogram(~unemployment_rate,data=county,bins=10, fill = ~metro)"
   },
   {
     "objectID": "Day_1/histograms.html#two-variables-faceted",
@@ -271,5 +271,54 @@
     "title": "Solutions Activity Descriptive Stats",
     "section": "",
     "text": "These are some solutions, you should do the activity first.\n\nWe should always attempt to understand our data first.\n\nview births14 in the chunk below. You can also use the ? operator to learn more.\n\nview(births14)\nbirths14\n\n# A tibble: 1,000 × 13\n    fage  mage mature      weeks premie visits gained weight lowbi…¹ sex   habit\n   <int> <dbl> <chr>       <dbl> <chr>   <dbl>  <dbl>  <dbl> <chr>   <chr> <chr>\n 1    34    34 younger mom    37 full …     14     28   6.96 not low male  nons…\n 2    36    31 younger mom    41 full …     12     41   8.86 not low fema… nons…\n 3    37    36 mature mom     37 full …     10     28   7.51 not low fema… nons…\n 4    NA    16 younger mom    38 full …     NA     29   6.19 not low male  nons…\n 5    32    31 younger mom    36 premie     12     48   6.75 not low fema… nons…\n 6    32    26 younger mom    39 full …     14     45   6.69 not low fema… nons…\n 7    37    36 mature mom     36 premie     10     20   6.13 not low fema… nons…\n 8    29    24 younger mom    40 full …     13     65   6.74 not low male  nons…\n 9    30    32 younger mom    39 full …     15     25   8.94 not low fema… nons…\n10    29    26 younger mom    39 full …     11     22   9.12 not low male  nons…\n# … with 990 more rows, 2 more variables: marital <chr>, whitemom <chr>, and\n#   abbreviated variable name ¹​lowbirthweight\n\n?births14\n\nThe grey rectangles are called code chunks.\nTo make a new code chunk you can type three tick marks ``` (the tick is above the tab key) and a curly bracket with the letter r in the middle {r}. You end a chunk with three more tick marks, like the chunks above.\n\nMake a chunk below and use favstats() to get an idea of the summary statistics for a baby’s birthweight. You can give it a name after the r like understand-data above. No space allowed in chunk names.\n\n\nfavstats(~weight,data=births14)\n\n  min    Q1 median Q3   max    mean       sd    n missing\n 0.75 6.545   7.31  8 10.62 7.19816 1.306775 1000       0\n\n\n\nUse favstats() and a formula (use the ~) to break up the weight summary statistics by the sex of the child.\n\n\nfavstats(weight~sex, data=births14)\n\n     sex  min    Q1 median    Q3   max     mean       sd   n missing\n1 female 0.75 6.435   7.19 7.785  9.68 7.017253 1.271234 495       0\n2   male 1.12 6.690   7.44 8.240 10.62 7.375485 1.318031 505       0\n\n\n\nChallenge: Add another variable to your favstats: whether the mother was a smoker or nonsmoker. The formula will be similar to the chunk above but will include a plus sign after the second variable.\n\n\nfavstats(weight~sex + habit , data=births14)\n\n         sex.habit  min     Q1 median     Q3   max     mean       sd   n\n1 female.nonsmoker 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2   male.nonsmoker 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n3    female.smoker 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n4      male.smoker 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nWhat happens when you switch the sex and habit variables in the chunk above?\n\nA: The summaries are the same, but is listed differently. For more examples see ?favstats()\n\nfavstats(weight~habit + sex , data=births14)\n\n         habit.sex  min     Q1 median     Q3   max     mean       sd   n\n1 nonsmoker.female 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2    smoker.female 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n3   nonsmoker.male 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n4      smoker.male 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nCan you use the same formulas above for the mean() and IQR() functions?\n\nA: Yes you can!\n\nmean(weight~habit + sex , data=births14)\n\nnonsmoker.female    smoker.female   nonsmoker.male      smoker.male \n        7.095724         6.430377         7.445231         6.891639"
+  },
+  {
+    "objectID": "Day_1/histograms.html#how-to-follow-along.",
+    "href": "Day_1/histograms.html#how-to-follow-along.",
+    "title": "Histograms and Boxplots",
+    "section": "How to Follow Along.",
+    "text": "How to Follow Along.\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in the console or in a new .rmd file.\n\nThe .rmd file you can save, the console you cannot."
+  },
+  {
+    "objectID": "Day_1/histograms.html#load-the-libraries.",
+    "href": "Day_1/histograms.html#load-the-libraries.",
+    "title": "Histograms and Boxplots",
+    "section": "Load the Libraries.",
+    "text": "Load the Libraries.\n\nlibrary(mosaic)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "Day_1/histograms.html#how-to-follow-along",
+    "href": "Day_1/histograms.html#how-to-follow-along",
+    "title": "Histograms and Boxplots",
+    "section": "How to Follow Along",
+    "text": "How to Follow Along\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in the console or in a new .rmd file.\n\nThe .rmd file you can save, the console you cannot."
+  },
+  {
+    "objectID": "Day_1/histograms.html#functions-arguments",
+    "href": "Day_1/histograms.html#functions-arguments",
+    "title": "Histograms and Boxplots",
+    "section": "Function’s arguments",
+    "text": "Function’s arguments\nEvery function in R can take a lot of arguments. Let’s type  ?gf_histogram to see the arguments for that function.\n\n\n\nobject = NULL,\nbinwidth,\nlinetype,\nsubtitle,\n\n\ngformula = NULL,\nalpha = 0.5,\nsize,\ncaption,\n\n\ndata = NULL,\ncolor,\nxlab,\ngeom = “bar”,\n\n\n…,\nfill,\nylab,\nstat = “bin”,\n\n\nbins = 25,\ngroup,\ntitle,\nposition = “stack”,"
+  },
+  {
+    "objectID": "Day_1/histograms.html#make-a-pretty-histogram.",
+    "href": "Day_1/histograms.html#make-a-pretty-histogram.",
+    "title": "Histograms and Boxplots",
+    "section": "Make a pretty histogram.",
+    "text": "Make a pretty histogram.\nStart with the single variable histogram: gf_histogram(~unemployment_rate,data = county,...) and add some arguments.\n\n\nEdit the bins or binwidth, which get priority?\nEdit color and fill. Which tints what? (Hint colors are in quotes, color=“pink” works) Here’s a list of colors\nAdd a title and caption. Remove the label from the x-axis add a good one to the y.\nWhat the heck do size, linetype, and group do?"
+  },
+  {
+    "objectID": "Day_1/Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html",
+    "href": "Day_1/Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html",
+    "title": "Solutions Activity 2: Boxplots",
+    "section": "",
+    "text": "These are the solutions to Activity 2: Boxplots. You should try that one first.\nBoxplots are another common way of displaying numeric data. Let’s continue our exploration of births14. I’ve loaded the libraries below for you.\nWe’re going to be using the boxplot function type ?gf_boxplot() into the console or a new chunk to get a sense of the argument this function takes.\nRecall where we left off with Activity 1.\n\nfavstats(weight~sex,data=births14)\n\n     sex  min    Q1 median    Q3   max     mean       sd   n missing\n1 female 0.75 6.435   7.19 7.785  9.68 7.017253 1.271234 495       0\n2   male 1.12 6.690   7.44 8.240 10.62 7.375485 1.318031 505       0\n\n\nThe mosaic package is nice, because all of the functions have very similar setups.\n\nMake a boxplot with the function gf_boxplot(). Copy and past the arguments from the favstats function above (don’t copy the favstats part).\n\n\ngf_boxplot(weight~sex,data=births14)\n\n\n\n\n\nNotice all of the outliers! We don’t know how to remove them yet, but we will later. We can pretend they are not there by adjusting the coef argument. Set coef=5. Do that in the chunk below.\n\n\ngf_boxplot(weight~sex,data=births14,coef = 5)\n\n\n\n\nIf you remember the formula for calculating outliers (Q1-1.5 *IQR, Q3+1.5 * IQR), this is the formula R uses by default. coef = 5 changes the 1.5 to 5.\n\nPut the outliers back and figure out how to change their shape and stroke. Just like with histograms we can add change the x and y labels and add a title. Add the chunk below and change the outliers shape.\n\n\ngf_boxplot(weight~sex,data=births14,outlier.shape = 3,outlier.stroke = 2, xlab=\"Child's Birth Sex\",ylab=\"Birthweight In Pounds\",title = \"Babies Weigh A Little When Born\")\n\n\n\n\n\nCan you map the color (or fill) argument to the smoking habit of the mother, so we can see three variables at once?\n\n\ngf_boxplot(weight~sex,data=births14, fill=~habit, xlab=\"Child's Birth Sex\",ylab=\"Birthweight In Pounds\",title = \"New Born Babies' Weight By Mother's Smoking Habit\")\n\n\n\n\nI promise when we get to Day 3 we’ll talk about removing outliers. We have to use the filter function."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html",
+    "href": "Day_1/descriptive_statistics.html",
+    "title": "Descriptive statistics",
+    "section": "",
+    "text": "Open this presentation in a new browser tab. You can copy and paste code from there.\nWork in the console.\nWe’ll discuss other methods (.rmd, .qmd, scripts) of working in R later."
   }
 ]

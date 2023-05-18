@@ -399,8 +399,16 @@ Schwab
 </div>
 
 </section>
-<section class="slide level2">
-
+<section id="how-to-follow-along" class="slide level2">
+<h2>How to Follow Along</h2>
+<p><br> Open this presentation in a new browser tab. You can copy and paste code from there.</p>
+<p><br></p>
+<p>Work in the console or in a new .rmd file.</p>
+<p><br></p>
+<p>The .rmd file you can save, the console you cannot.</p>
+</section>
+<section id="load-the-libraries." class="slide level2">
+<h2>Load the Libraries.</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(mosaic)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -440,9 +448,9 @@ Schwab
 
 </div>
 <img data-src="histograms_files/figure-revealjs/one-variable-1.png" width="960" class="r-stretch"></section>
-<section id="function-arguments" class="slide level2">
-<h2>Function arguments</h2>
-<p>Every function in R can take a lot of arguments. Let’s type <code>?gf_histogram</code> to see the arguments for that function.</p>
+<section id="functions-arguments" class="slide level2">
+<h2>Function’s arguments</h2>
+<p>Every function in R can take a lot of arguments. Let’s type <br> <code>?gf_histogram</code> to see the arguments for that function.</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -478,15 +486,15 @@ Schwab
 </tbody>
 </table>
 </section>
-<section id="what-do-these-do" class="slide level2">
-<h2>What do these do?</h2>
-<p>Start with the single variable histogram: <code>gf_histogram(~unemployment_rate,data = county,...)</code></p>
+<section id="make-a-pretty-histogram." class="slide level2">
+<h2>Make a pretty histogram.</h2>
+<p>Start with the single variable histogram: <code>gf_histogram(~unemployment_rate,data = county,...)</code> and add some arguments.</p>
 <div>
 <ol type="1">
 <li class="fragment"><p>Edit the <code>bins</code> or <code>binwidth</code>, which get priority?</p></li>
-<li class="fragment"><p>Edit <code>colors</code> and <code>fill</code>. Which tints what? (Hint colors are strings, use quotes) <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Here’s a list of colors</a></p></li>
+<li class="fragment"><p>Edit <code>color</code> and <code>fill</code>. Which tints what? (Hint colors are in quotes, color=“pink” works) <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">Here’s a list of colors</a></p></li>
 <li class="fragment"><p>Add a title and caption. Remove the label from the x-axis add a good one to the y.</p></li>
-<li class="fragment"><p>What the heck do size, linetype and group do?</p></li>
+<li class="fragment"><p>What the heck do size, linetype, and group do?</p></li>
 </ol>
 </div>
 </section>
@@ -501,8 +509,7 @@ Schwab
 <h2>Show two variables</h2>
 <p>The histogram is a single variable graph by we can break up the data by grouping it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#Take position ="dodge" out</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>unemployment_rate,<span class="at">data=</span>county,<span class="at">bins=</span><span class="dv">10</span>, <span class="at">fill =</span> <span class="sc">~</span>metro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">gf_histogram</span>(<span class="sc">~</span>unemployment_rate,<span class="at">data=</span>county,<span class="at">bins=</span><span class="dv">10</span>, <span class="at">fill =</span> <span class="sc">~</span>metro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="histograms_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>

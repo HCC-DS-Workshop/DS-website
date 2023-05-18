@@ -16,15 +16,11 @@ Break?
 
 [Histograms and Boxplots](./histograms.html){target="_blank"}
 
-This is a discussion on graphing numeric variables in R
-
--   Activity 2 with Boxplots and births14
+-   [Activity 2 with Boxplots and births14](./Activity_2_Boxplots/Boxplots.txt){target="_blank"}
 
 Break
 
 \[Bar graphs and Mosaic Plots\] \<- Put Eric's work here
-
--   This is a discussion of categorical variables in R
 
 Lunch
 
@@ -38,6 +34,6 @@ Lunch
 
 [Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html){target="_blank"}
 
-Activity 2
+[Activity 2](./Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html){target="_blank"}
 
-[Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
+[Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf){target="_blank"}

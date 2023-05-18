@@ -4,6 +4,14 @@ editor: visual
 format: revealjs
 ---
 
+## How to Follow Along.
+
+Open this presentation in a new browser tab. You can copy and paste code from there.
+
+Work in the console.
+
+We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.
+
 # Descriptive Statistics
 
 We'll discuss useful functions for doing descriptive statistics.
