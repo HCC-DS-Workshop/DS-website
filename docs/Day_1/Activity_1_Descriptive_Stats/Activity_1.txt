@@ -1,6 +1,7 @@
 ---
-title: "Activity-Descriptive-Stats"
+title: "Activity Descriptive Stats"
 output: html_document
+author: "Your name here"
 date: "`r Sys.Date()`"
 ---
 

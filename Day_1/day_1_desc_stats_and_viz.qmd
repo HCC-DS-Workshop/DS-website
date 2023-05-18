@@ -10,7 +10,7 @@ Welcome
 
 [Descriptive Statistics](./descriptive_statistics.html){target="_blank"}
 
--   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt)
+-   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt){target="_blank"}
 
 Break?
 
@@ -36,7 +36,7 @@ Lunch
 
 *Solutions*
 
-[Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
+[Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html){target="_blank"}
 
 Activity 2
 
