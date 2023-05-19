@@ -14,26 +14,52 @@ Welcome
 
 Break?
 
-[Histograms and Boxplots](./histograms.html){target="_blank"}
+[Numeric Data Histograms and Boxplots](./histograms.html){target="_blank"}
 
 -   [Activity 2 with Boxplots and births14](./Activity_2_Boxplots/Boxplots.txt)
 
 Break
 
-\[Bar graphs and Mosaic Plots\] \<- Put Eric's work here
+[Categorical Data Scatter Plots and Correlations](./Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
+
+::: download_btn
+```{r}
+#| echo: false
+
+library(downloadthis)
+
+download_file(
+  path = "./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd",
+  output_name = "Notebook Categorical Data Scatter Plots and Correlation",
+  button_label = "Download data",
+  button_type = c("default"),
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE,
+
+)
+```
+:::
+
+-   [Notebook Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd)
 
 Lunch
 
-\[Scatterplots\] \<- Put Eric's work here
-
--   [Activity 3 with Categorical Variables, Scatter plots, Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical-Data_Scatterplots_Correlation.pdf)
+-   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation.Rmd)
 
 ------------------------------------------------------------------------
 
 *Solutions*
 
-[Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
 
-[Activity 2](./Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html)
+```{r include=FALSE,echo=FALSE}
 
-[Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
+ 
+# [Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
+# [Activity 2](./Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html)
+# [Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
+```
+
+
+
+
