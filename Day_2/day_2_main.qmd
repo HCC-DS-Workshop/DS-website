@@ -1,0 +1,27 @@
+---
+title: "Day 2: Probability and Inference"
+editor: visual
+---
+
+Probability
+
+-   Activity 4
+
+Inference Confidence Intervals and Hypothesis Testing
+
+-   Activity 5
+
+Getting Data into R and some Latex Notation
+
+[Cheatsheets](../Resources.html)
+
+Regression
+
+-   Activity 6
+
+ANOVA
+
+-   Activity 7
+
+
+[If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)

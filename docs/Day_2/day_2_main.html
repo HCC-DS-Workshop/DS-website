@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name Here">
-<meta name="dcterms.date" content="2023-05-19">
 
-<title>Intro Stats with R - NOTEBOOK: Workshop Day 1</title>
+<title>Intro Stats with R - Day 2: Probability and Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Intro Stats with R</span>
     </a>
   </div>
@@ -81,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../Resources.html">
+    <a class="nav-link" href="../Resources.html">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item compact">
@@ -116,27 +114,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NOTEBOOK: Workshop Day 1</h1>
-<p class="subtitle lead">Categorial Variables, Scatterplots, Correlation</p>
+<h1 class="title">Day 2: Probability and Inference</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name Here </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 19, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -144,87 +129,27 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="categorical-variables" class="level1">
-<h1>Categorical Variables</h1>
-<section id="contingency-tables" class="level3">
-<h3 class="anchored" data-anchor-id="contingency-tables">Contingency Tables</h3>
-<p>The tally function counts the levels of a categorical variable. For the <em>loans_full_schema</em> data frame, count the levels of the homeownership variable.</p>
-<div class="cell">
-
-</div>
-<p>Count all combinations of homeownership and application_type.</p>
-<div class="cell">
-
-</div>
-<p>Add row/column totals using margin argument.</p>
-<div class="cell">
-
-</div>
-</section>
-<section id="bar-plots" class="level3">
-<h3 class="anchored" data-anchor-id="bar-plots">Bar Plots</h3>
-<p>Create bar plot of a categorical variable with counts on the y-axis.</p>
-<div class="cell">
-
-</div>
-<p>Proportions on the y-axis.</p>
-<div class="cell">
-
-</div>
-<p>Percents on the y-axis.</p>
-<div class="cell">
-
-</div>
-<p>Two Categorical variable Stacked Bar Plot.</p>
-<div class="cell">
-
-</div>
-<p>Side-By-Side Stacked Bar Plot.</p>
-<div class="cell">
-
-</div>
-</section>
-<section id="mosaic-plots" class="level3">
-<h3 class="anchored" data-anchor-id="mosaic-plots">Mosaic Plots</h3>
-</section>
-</section>
-<section id="scatterplots" class="level1">
-<h1>Scatterplots</h1>
-<p>We start with the Births78 data frame in the <em>mosaicData</em> package.<br>
-Plot births on the y-axis, date on the x-axis.</p>
-<div class="cell">
-
-</div>
-<p>Let’s add a color and label the axes and give it a title.</p>
-<div class="cell">
-
-</div>
-<p>Color the points according to the variable wday.</p>
-<div class="cell">
-
-</div>
-<p>Facet.</p>
-<div class="cell">
-
-</div>
-<p>Facet with a mosaic function gf_facet_wrap().</p>
-<div class="cell">
-
-</div>
-<p>With <em>mtcars</em>, Map as many variables as we can to the plot!<br>
-In the console, type ?mtcars to learn about the variables.</p>
-<div class="cell">
-
-</div>
-</section>
-<section id="correlation" class="level1">
-<h1>Correlation</h1>
-<p>We can add linear and non-linear models to a scatterplot. Let’s plot mpg on the y-axis against drat, hp, wt.<br>
-mpg ~ drat mpg ~ hp mpg ~ wt</p>
-<p>Compute correlations for each of the three cases.</p>
+<p>Probability</p>
+<ul>
+<li>Activity 4</li>
+</ul>
+<p>Inference Confidence Intervals and Hypothesis Testing</p>
+<ul>
+<li>Activity 5</li>
+</ul>
+<p>Getting Data into R and some Latex Notation</p>
+<p><a href="../Resources.html">Cheatsheets</a></p>
+<p>Regression</p>
+<ul>
+<li>Activity 6</li>
+</ul>
+<p>ANOVA</p>
+<ul>
+<li>Activity 7</li>
+</ul>
+<p><a href="https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing">If you want to leave feedback or have ideas</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -366,7 +291,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../credits.html">credits</a>
+    <a class="nav-link" href="../credits.html">credits</a>
   </li>  
 </ul>
     </div>

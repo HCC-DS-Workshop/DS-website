@@ -1,11 +1,13 @@
 ---
 title: "Info and schedule"
+
+
 ---
 
 # [Workshop information](./Day_1/to_do.html)
 
-# [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_desc_stats_and_viz.html)
+# [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_main.html)
 
 # Day 2: Probability and Inference
 
-# Day 3: Towards Data Science
+# Day 3: Topics

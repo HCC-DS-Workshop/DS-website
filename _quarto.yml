@@ -23,6 +23,11 @@ output:
 
 # All icons were obtained from https://icons.getbootstrap.com/
 website:
+#   comments:
+#     utterances:
+#       repo: quarto-dev/quarto-web
+#       theme: preferred-color-scheme
+
   page-navigation: true
   title: "Intro Stats with R"
 

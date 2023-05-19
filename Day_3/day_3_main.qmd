@@ -1,0 +1,26 @@
+---
+title: "Day 3: Additional Topics"
+editor: visual
+---
+
+Bringing R into the classroom:
+
+-   Pitfalls
+
+-   Our favorite Data sets from Mosaic and Open Intro and why
+
+-   MyOpenMath
+
+Intro to tidyverse. 
+
+-   To remove outliers: filter()
+
+Introduction to Modern Statistics
+
+-   A text that uses the tidyverse
+
+Quarto- the newer rmd
+
+Wrap up Discussion
+
+[If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)

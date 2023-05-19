@@ -1,5 +1,6 @@
 ---
 title: "Day 1:Descriptive Stats and Visualizations"
+
 ---
 
 # May 22 9-1:30
@@ -22,34 +23,33 @@ Break
 
 [Categorical Data Scatter Plots and Correlations](./Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
 
-::: download_btn
-```{r}
-#| echo: false
+<!-- ::: download_btn -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
 
-library(downloadthis)
+<!-- library(downloadthis) -->
 
-download_file(
-  path = "./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd",
-  output_name = "Notebook Categorical Data Scatter Plots and Correlation",
-  button_label = "Download data",
-  button_type = c("default"),
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE,
+<!-- download_link( -->
+<!--   link = "https://github.com/HCC-R-Workshop/R-workshop-website/blob/main/Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd", -->
+<!--   button_label = "Download Categorical Rmd", -->
+<!--   button_type = c("success"), -->
+<!--   has_icon = TRUE, -->
+<!--   icon = "fa fa-save", -->
+<!--   self_contained = FALSE -->
 
-)
-```
-:::
+<!-- ) -->
+<!-- ``` -->
+<!-- ::: -->
 
--   [Notebook Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd)
+-   [Notebook Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.txt)
 
 Lunch
 
--   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation.Rmd)
+-   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation.txt)
 
 ------------------------------------------------------------------------
 
-*Solutions*
+*Solutions posted later*
 
 
 ```{r include=FALSE,echo=FALSE}
@@ -61,5 +61,4 @@ Lunch
 ```
 
 
-
-
+[If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)
