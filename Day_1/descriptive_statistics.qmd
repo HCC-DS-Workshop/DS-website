@@ -4,6 +4,14 @@ editor: visual
 format: revealjs
 ---
 
+```{r setup, echo=FALSE}
+#These libraries are only for the map of Mass
+library(tidyverse)
+library(tidygeocoder)
+library(maps)
+
+```
+
 ## How to Follow Along.
 
 Open this presentation in a new browser tab. You can copy and paste code from there.
@@ -17,6 +25,30 @@ We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.
 We'll discuss useful functions for doing descriptive statistics.
 
 We'll do this through the lens of the `county` dataset.
+
+## Lets talk about counties
+
+```{r map-with-schools}
+#| echo: FALSE
+
+addresses<- tibble(address=c("Westfield State University, Westfield, MA","Holyoke Community College, Holyoke,MA", "SpringField Technical Community College, Springfield, MA")) |>
+geocode(address, method="osm") |>
+  mutate(name = c("WSU","HCC","STCC"))
+
+ma_cities <- us.cities %>% 
+  filter(country.etc =="MA") |>
+  select(name, long, lat)
+
+ma_counties <- map_data("county", "massachusetts") %>% 
+  select( long, lat, group, id = subregion)
+
+ma_counties |> ggplot(aes(long,lat))+
+  geom_polygon(fill = "white", colour = "grey50",aes(group=group)) +
+   #geom_point(data=ma_cities)
+  geom_point(addresses,mapping=aes(long,lat)) 
+  
+  
+```
 
 ## Load the libraries
 

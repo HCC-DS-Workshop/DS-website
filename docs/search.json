@@ -39,7 +39,7 @@
     "href": "Day_1/descriptive_statistics.html#explore-the-data-frame",
     "title": "Descriptive statistics",
     "section": "Explore the data frame",
-    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county"
+    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county\n\n\nThe View() function is capitalized in mosaic but lower case when using just the tidyverse."
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#the-operator",
@@ -67,7 +67,7 @@
     "href": "Day_1/descriptive_statistics.html#all-summary-stats",
     "title": "Descriptive statistics",
     "section": "All summary stats()",
-    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)2\nquartile()"
+    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquartile()\n\n\nfavstats() is the friendliest and the one we use the most"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
@@ -81,7 +81,7 @@
     "href": "Day_1/descriptive_statistics.html#activity",
     "title": "Descriptive statistics",
     "section": "Activity",
-    "text": "Activity\nOpen a new blank .rmd file\n\n\n\n\n\nPaste this text into it."
+    "text": "Activity\nOpen a new blank .rmd file\n\nPaste this text into it."
   },
   {
     "objectID": "Day_1/histograms.html#histograms-and-boxplots",
@@ -320,5 +320,19 @@
     "title": "Descriptive statistics",
     "section": "",
     "text": "Open this presentation in a new browser tab. You can copy and paste code from there.\nWork in the console.\nWe’ll discuss other methods (.rmd, .qmd, scripts) of working in R later."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#how-to-follow-along.",
+    "href": "Day_1/descriptive_statistics.html#how-to-follow-along.",
+    "title": "Descriptive statistics",
+    "section": "How to Follow Along.",
+    "text": "How to Follow Along.\nOpen this presentation in a new browser tab. You can copy and paste code from there.\nWork in the console.\nWe’ll discuss other methods (.rmd, .qmd, scripts) of working in R later."
+  },
+  {
+    "objectID": "Day_1/descriptive_statistics.html#lets-talk-about-counties",
+    "href": "Day_1/descriptive_statistics.html#lets-talk-about-counties",
+    "title": "Descriptive statistics",
+    "section": "Lets talk about counties",
+    "text": "Lets talk about counties"
   }
 ]
