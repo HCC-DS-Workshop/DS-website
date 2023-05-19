@@ -2,7 +2,7 @@
 title: "Info and schedule"
 ---
 
-# [To bring to the workshop](./Day_1/to_do.html)
+# [Workshop information](./Day_1/to_do.html)
 
 # [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_desc_stats_and_viz.html)
 
