@@ -1,12 +1,10 @@
 ---
-title: "R workshop"
+title: "Info and schedule"
 ---
 
-# Information on Workshop
+# [To bring to the workshop](./Day_1/to_do.html)
 
-# [To bring to the workshop](./Day_1/to_do.html){target="_blank"}
-
-# [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_desc_stats_and_viz.html){target="_blank"}
+# [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_desc_stats_and_viz.html)
 
 # Day 2: Probability and Inference
 

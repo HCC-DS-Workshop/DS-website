@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "R workshop",
+    "title": "Info and schedule",
     "section": "",
-    "text": "Information on Workshop\n\n\nTo bring to the workshop\n\n\nDay 1: Descriptive Statistics and Visualizations\n\n\nDay 2: Probability and Inference\n\n\nDay 3: Towards Data Science"
+    "text": "To bring to the workshop\n\n\nDay 1: Descriptive Statistics and Visualizations\n\n\nDay 2: Probability and Inference\n\n\nDay 3: Towards Data Science"
   },
   {
     "objectID": "about.html",
@@ -156,9 +156,9 @@
   {
     "objectID": "Day_1/to_do.html",
     "href": "Day_1/to_do.html",
-    "title": "To dos",
+    "title": "Workshop information",
     "section": "",
-    "text": "A sweater for the AC\nA working laptop with an up to date browser on it (preferably with firefox or chrome.)\nLunch or money for the cafeteria.\n\nWe’ll try to get our hands on some snacks."
+    "text": "A sweater for the AC\nA working laptop with an up to date browser on it (preferably firefox or chrome.)\nLunch or money for the cafeteria."
   },
   {
     "objectID": "Day_1/to_do.html#if-you-can-have-5-minutes-before-hand",
@@ -170,7 +170,7 @@
   {
     "objectID": "Day_1/to_do.html#if-you-like-a-challenge",
     "href": "Day_1/to_do.html#if-you-like-a-challenge",
-    "title": "To dos",
+    "title": "Workshop information",
     "section": "If you like a challenge:",
     "text": "If you like a challenge:\nInstall R and R Studio then type the following into the console:\ninstall.packages(\"mosaic\")\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nnote: its not that hard, but you may experience errors that the rest of the group does get, we’ll help you with those."
   },
@@ -334,5 +334,54 @@
     "title": "Descriptive statistics",
     "section": "Lets talk about counties",
     "text": "Lets talk about counties"
+  },
+  {
+    "objectID": "Day_1/histograms.html#load-the-libraries",
+    "href": "Day_1/histograms.html#load-the-libraries",
+    "title": "Histograms and Boxplots",
+    "section": "Load the Libraries",
+    "text": "Load the Libraries\n\nlibrary(mosaic)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "Day_1/histograms.html#make-a-pretty-histogram",
+    "href": "Day_1/histograms.html#make-a-pretty-histogram",
+    "title": "Histograms and Boxplots",
+    "section": "Make a pretty histogram",
+    "text": "Make a pretty histogram\nStart with the single variable histogram: gf_histogram(~unemployment_rate,data = county,...) and add some arguments.\n\n\nEdit the bins or binwidth, which get priority?\nEdit color and fill. Which tints what? (Hint colors are in quotes, color=“pink” works) Here’s a list of colors\nAdd a title and caption. Remove the label from the x-axis add a good one to the y.\nWhat the heck do size, linetype, and group do?"
+  },
+  {
+    "objectID": "Day_1/to_do.html#location-and-parking",
+    "href": "Day_1/to_do.html#location-and-parking",
+    "title": "Workshop information",
+    "section": "Location and Parking",
+    "text": "Location and Parking\nThe room is in the Kittredge Center (KC) 205. Here’s a campus map.\nVistors can park in any lot, no parking permits are being enforced on campus. E, F or S lots are closest."
+  },
+  {
+    "objectID": "Day_1/to_do.html#guest-wifi",
+    "href": "Day_1/to_do.html#guest-wifi",
+    "title": "Workshop information",
+    "section": "Guest wifi",
+    "text": "Guest wifi\nFor those of you visiting from other colleges see these instructions for signing onto the wifi."
+  },
+  {
+    "objectID": "Day_1/to_do.html#if-you-can-have-5-minutes-before-the-workshop",
+    "href": "Day_1/to_do.html#if-you-can-have-5-minutes-before-the-workshop",
+    "title": "Workshop information",
+    "section": "If you can have 5 minutes before the workshop",
+    "text": "If you can have 5 minutes before the workshop\nYou should log onto the RStudio server. The server is on campus, but you can log in remotely.\n\n\nHCC Faculty:\nLog onto the HCC Rstudio server.\nHCC faculty your username is your hcc email with the @hcc.edu.\nNic’s is nschwab@hcc.edu\nYour password is your hcc email password.\n\n\n\nWSU and STCC faculty:\nWe are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you’ll get an email from Nic with usernames by the end of the day on Friday the 19."
+  },
+  {
+    "objectID": "Day_1/to_do.html#if-you-like-a-challenge1",
+    "href": "Day_1/to_do.html#if-you-like-a-challenge1",
+    "title": "Workshop information",
+    "section": "If you like a challenge1:",
+    "text": "If you like a challenge1:\n(or you are a WSU of STCC faculty and are tired of waiting for your server password)\nInstall R and R Studio then type the following into the console:\ninstall.packages(\"mosaic\")\ninstall.packages(\"tidyverse\")\ninstall.packages(\"openintro\")\nnote: its not that hard, but you may experience errors that the rest of the group does get, we’ll help you with those."
+  },
+  {
+    "objectID": "Day_1/to_do.html#slack",
+    "href": "Day_1/to_do.html#slack",
+    "title": "Workshop information",
+    "section": "Slack?",
+    "text": "Slack?\nMaybe we’ll set up a slack account for this workshop."
   }
 ]

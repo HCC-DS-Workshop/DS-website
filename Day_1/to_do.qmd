@@ -1,21 +1,36 @@
 ---
-title: "To dos"
+title: "Workshop information"
 ---
 
 ## To bring to the workshop:
 
-
 -   A sweater for the AC
 
--   A working laptop with an up to date browser on it (preferably with firefox or chrome.)
+-   A working laptop with an up to date browser on it (preferably firefox or chrome.)
 
 -   Lunch or money for the cafeteria.
 
-    -   We'll try to get our hands on some snacks.
+<br>
 
-## If you can have 5 minutes before hand:
+## Location and Parking
 
-Log onto the RStudio server 
+The room is in the Kittredge Center (KC) 205. [Here's a campus map.](https://www.hcc.edu/Documents/About/Visit/Campus_Map_sp23.pdf)
+
+Vistors can park in any lot, no parking permits are being enforced on campus. E, F or S lots are closest.
+
+<br>
+
+## Guest wifi
+
+For those of you visiting from other colleges [see these instructions](https://www.hcc.edu/Documents/ITD/HCC-Wireless(0).pdf) for signing onto the wifi.
+
+<br>
+
+## If you can have 5 minutes before the workshop
+
+You should log onto the RStudio server. The server is on campus, but you can log in remotely.
+
+<br>
 
 #### HCC Faculty:
 
@@ -27,13 +42,19 @@ Nic's is nschwab\@hcc.edu
 
 Your password is your hcc email password.
 
+<br>
+
 #### WSU and STCC faculty:
 
-We are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you'll get an email from Nic with usernames by Sunday the 21. 
+We are working on getting you temporary usernames and passwords for HCC Rstudio Server. Hopefully you'll get an email from Nic with usernames by the end of the day on Friday the 19.
 
+<br>
 
-## If you like a challenge:
+## If you like a challenge[^1]:
 
+[^1]: As far as we know this process will not work on a chrome book. If you have a chromebook see [these instructions](./Sign-up-for-Posit-Cloud-1.pdf) that I made for my students, if the server does not work for you.
+
+(or you are a WSU of STCC faculty and are tired of waiting for your server password)
 
 [Install R and R Studio](https://posit.co/download/rstudio-desktop/){target="_blank"} then type the following into the console:
 
@@ -44,3 +65,7 @@ We are working on getting you temporary usernames and passwords for HCC Rstudio 
 `install.packages("openintro")`
 
 note: its not that hard, but you may experience errors that the rest of the group does get, we'll help you with those.
+
+## Slack? 
+
+Maybe we'll set up a slack account for this workshop.
