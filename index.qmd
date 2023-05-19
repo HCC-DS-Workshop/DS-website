@@ -1,13 +1,11 @@
 ---
 title: "Info and schedule"
-
-
 ---
 
 # [Workshop information](./Day_1/to_do.html)
 
 # [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_main.html)
 
-# Day 2: Probability and Inference
+# [Day 2: Probability and Inference](./Day_2/day_2_main.html)
 
-# Day 3: Topics
+# [Day 3: Topics](./Day_3/day_3_main.html)
