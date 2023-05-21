@@ -1,5 +1,6 @@
 ---
 title: "Descriptive statistics"
+subtitle: "Working with Data Frames and Numeric Data "
 editor: visual
 format: revealjs
 ---
@@ -13,12 +14,14 @@ library(maps)
 ```
 
 ## How to Follow Along.
+<br>
+Open this presentation in a new browser tab. You can copy and paste code from there.  
+<br>
 
-Open this presentation in a new browser tab. You can copy and paste code from there.
+Work in the console.  
+<br>
 
-Work in the console.
-
-We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.
+We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.  
 
 # Descriptive Statistics
 
@@ -58,14 +61,18 @@ ma_counties |> ggplot(aes(long,lat))+
 
 `library(mosaic)`
 
--   This is where our statistical functions live (most of them)
+-   This is where (most of) our statistical functions live 
+
+`library(tidyverse)`
+
+-   This is where the `view()` function lives
 
 ## Explore the data frame
 
 Try the following in the console.
 
 ::: incremental
-1.  `View(x = county)` [^1]
+1.  `view(x = county)`
 
 2.  `names(county)`
 
@@ -73,8 +80,6 @@ Try the following in the console.
 
 4.  ?county
 :::
-
-[^1]: The View() function is capitalized in `mosaic` but lower case when using just the `tidyverse`.
 
 ## The ? operator
 
@@ -134,6 +139,6 @@ Find the mean population for all 50 states.
 
 Open a new blank .rmd file
 
-[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf)
+[![](../images/new-rmd-file.png){fig-align="center"}](./images/MTH-142-CheatSheet-v9.pdf)
 
 [Paste this text into it.](./Activity_1_Descriptive_Stats/Activity_1.txt)

@@ -41,8 +41,7 @@ website:
   #    href: https://www.openintro.org/book/os/
   #  - text: T & T
   #    href: https://moderndive.com/C-appendixC.html
-    - icon: slack
-      href: https://www.slack.com
+
 
     - text: R
       href: http://hcc-rstudiosrv1.hcc.edu:8787/auth-sign-in
@@ -50,6 +49,8 @@ website:
     right:
     - icon: github
       href: https://github.com/HCC-R-Workshop/R-workshop-website
+    - icon: files
+      href: https://drive.google.com/drive/folders/1ubYbrOS4eAG7QXU03IsgkVAYX03AULGk?usp=share_link
   # - text: Problem Sets
   #   href: PS.html
   #  - text: Mini-Projects

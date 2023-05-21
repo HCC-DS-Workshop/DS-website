@@ -1,6 +1,6 @@
 ---
 title: "Histograms and Boxplots"
-author: "Schwab"
+subtitle: "Exploring numeric data with the gf_plot() functions"
 format: revealjs
 execute: 
   echo: true
@@ -12,13 +12,15 @@ execute:
 
 <br>
 
-Work in the console or in a new .rmd file.
+Work in a new .rmd file.
 
 <br>
 
-The .rmd file you can save, the console you cannot.
+The .rmd file you can save.
 
 ## Load the Libraries
+
+If you are working in a .rmd file you will need to put these two lines of code in the set up chunk.
 
 ```{r setup}
 
@@ -97,4 +99,4 @@ gf_histogram(~unemployment_rate|~metro,data = county)
 
 Open a new .rmd file and copy and [paste this code into it.](./Activity_2_Boxplots/Boxplots.txt)
 
-[![](/images/new-rmd-file.png){fig-align="center" width="150"}](./images/MTH-142-CheatSheet-v9.pdf)
+[![](../images/new-rmd-file.png){fig-align="center"}](./images/MTH-142-CheatSheet-v9.pdf)

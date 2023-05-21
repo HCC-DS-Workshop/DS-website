@@ -1,0 +1,131 @@
+---
+title: "Confidence Interval and Hypothesis Testing"
+subtitle: "Also getting numeric data into R"
+format: revealjs
+editor: visual
+---
+
+## Functions for Confidence Intervals
+
+```{r setup}
+#|echo:FALSE
+library(mosaic)
+library(openintro)
+```
+
+<br>
+
+These are the functions for confidence intervals.
+
+<br>
+
+-   prop.test(...., correct =FALSE)
+
+-   t.test()
+
+<br>
+
+The same functions are used for hypothesis testing.
+
+## The Data Sets
+
+<br>
+
+We'll use a couple of different data sets for the different CI and hypothesis tests.
+
+-   For a proportion we'll use the `exclusive_relationship` data set.
+
+-   For a single mean lets use `cars93`.
+
+-   For a difference of Means test we'll use the `Sleep` data frame (captial S).
+
+## Proportions
+
+If we were to run `?proptest` we'd find.
+
+x- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.
+
+n- sample size (successes + failures) or a data frame (for the formula interface).
+
+conf.level- the confidence level must be between 0 and 1.
+
+::: incremental
+-   The "correct" argument is not listed.
+:::
+
+## Confidence Interval for Proportions
+
+What is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?
+
+```{r tally-conditions}
+#| echo: TRUE
+#Assume independence
+#At least 10 successes/failures
+tally(~num==4, data=exclusive_relationship)
+```
+
+```{r exclusive-relationships}
+#| echo: TRUE
+
+prop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
+
+```
+
+## To make the CI look better
+
+<br> You can use the \$ operator <br>
+
+```{r dollar-sign}
+#| echo: TRUE
+
+results <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
+results$conf.int
+```
+
+<br> or you can use the wrapper confint() <br>
+
+```{r wrapper}
+#| echo: TRUE
+confint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))
+```
+
+## You can also make a CI from a homework problem. {.smaller}
+
+> *A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they'd received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they'd received in the mail.*
+
+A sample size n=603 and 142 successes.
+
+```{r CI-homework}
+#| echo: TRUE
+confint(prop.test(x=142,n=603,correct=FALSE))
+
+```
+
+## A Warning on Proportions
+
+`prop.test(... correct= FALSE)` is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. \n.
+
+If you are using a different problem set and `prop.test()` doesn't work, you should check out `binom.test()`. \n.
+
+`binom.test(... method="Wald")` returns the same values that a TI-83 calculator would produce.
+
+## Proportion Hypothesis Test {.smaller}
+
+To make a hypothesis we need two more arguments. <br>
+
+-   p - This is the population proportion from the null hypothesis
+
+-   alternative - c("two.sided", "less", "greater")
+
+$H_0: p= 0.3$
+
+$H_1: p\ne 0.3$
+
+$\alpha=0.05$
+
+```{r prop-hy-test}
+#| echo: TRUE
+
+prop.test(x=~num==4, p=0.3, alternative="t", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
+
+```

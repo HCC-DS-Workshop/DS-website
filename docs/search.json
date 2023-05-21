@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "Day_3/day_3_main.html",
+    "href": "Day_3/day_3_main.html",
+    "title": "Day 3: Additional Topics",
+    "section": "",
+    "text": "Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntro to tidyverse. \n\nTo remove outliers: filter()\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nIf you want to leave feedback or have ideas"
+  },
+  {
     "objectID": "Day_2/day_2_main.html",
     "href": "Day_2/day_2_main.html",
     "title": "Day 2: Probability and Inference",
@@ -39,7 +46,7 @@
     "href": "Day_1/descriptive_statistics.html#how-to-follow-along.",
     "title": "Descriptive statistics",
     "section": "How to Follow Along.",
-    "text": "How to Follow Along.\nOpen this presentation in a new browser tab. You can copy and paste code from there.\nWork in the console.\nWe’ll discuss other methods (.rmd, .qmd, scripts) of working in R later."
+    "text": "How to Follow Along.\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in the console.\n\nWe’ll discuss other methods (.rmd, .qmd, scripts) of working in R later."
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#lets-talk-about-counties",
@@ -53,14 +60,14 @@
     "href": "Day_1/descriptive_statistics.html#load-the-libraries",
     "title": "Descriptive statistics",
     "section": "Load the libraries",
-    "text": "Load the libraries\nlibrary(openintro)\n\nThis is where the data lives\n\nlibrary(mosaic)\n\nThis is where our statistical functions live (most of them)"
+    "text": "Load the libraries\nlibrary(openintro)\n\nThis is where the data lives\n\nlibrary(mosaic)\n\nThis is where (most of) our statistical functions live\n\nlibrary(tidyverse)\n\nThis is where the view() function lives"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#explore-the-data-frame",
     "href": "Day_1/descriptive_statistics.html#explore-the-data-frame",
     "title": "Descriptive statistics",
     "section": "Explore the data frame",
-    "text": "Explore the data frame\nTry the following in the console.\n\n\nView(x = county) 1\nnames(county)\ndim(county)\n?county\n\n\nThe View() function is capitalized in mosaic but lower case when using just the tidyverse."
+    "text": "Explore the data frame\nTry the following in the console.\n\n\nview(x = county)\nnames(county)\ndim(county)\n?county"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#the-operator",
@@ -109,14 +116,14 @@
     "href": "Day_1/histograms.html#how-to-follow-along",
     "title": "Histograms and Boxplots",
     "section": "How to Follow Along",
-    "text": "How to Follow Along\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in the console or in a new .rmd file.\n\nThe .rmd file you can save, the console you cannot."
+    "text": "How to Follow Along\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in a new .rmd file.\n\nThe .rmd file you can save."
   },
   {
     "objectID": "Day_1/histograms.html#load-the-libraries",
     "href": "Day_1/histograms.html#load-the-libraries",
     "title": "Histograms and Boxplots",
     "section": "Load the Libraries",
-    "text": "Load the Libraries\n\nlibrary(mosaic)\nlibrary(openintro)"
+    "text": "Load the Libraries\nIf you are working in a .rmd file you will need to put these two lines of code in the set up chunk.\n\nlibrary(mosaic)\nlibrary(openintro)"
   },
   {
     "objectID": "Day_1/histograms.html#histograms-and-boxplots",
@@ -180,6 +187,20 @@
     "title": "Day 1:Descriptive Stats and Visualizations",
     "section": "",
     "text": "May 22 9-1:30\nWelcome\nIntroduction\nDescriptive Statistics\n\nActivity 1 with Descriptive Statistics and births14\n\nBreak?\nNumeric Data Histograms and Boxplots\n\nActivity 2 with Boxplots and births14\n\nBreak\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nLunch\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\n\nSolutions posted later\nIf you want to leave feedback or have ideas"
+  },
+  {
+    "objectID": "Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation copy.html",
+    "href": "Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation copy.html",
+    "title": "LAB ACTIVITY: R Workshop Day 1",
+    "section": "",
+    "text": "There is a data frame called penguins inside a package called palmerpenguins. In the console, you can use the view() function to open this data frame in a new tab.\nPlease insert code chunks below each question.\nUse the names() function to list all the variables in this data.\n\nPART 1. CATEGORICAL VARIABLES\nIn your view(penguins) tab, see that there are two categorical variables: species and island.\nSPECIES\nUse the tally() function to count how many penguins of each species are in this data.\nLet’s make visualizations of the above table.\nUse gf_counts() to make a bar plot of the different species. Use color and fill commands to make it more visually appealing!\nUse the mosaic() function to make a mosaic plot of the species variable.\nISLAND\nUse the tally() function to find out the penguin count on each island for this data set. BE CAREFUL! Do not click “islands” suggestion! That is the name of different data set that RStudio is recognizing!\nLet’s make visualizations of the above table.\nUse gf_props() to make a bar plot of the island variable. Use color and fill commands to make it more visually appealing!\nUse the mosaic() function to make a mosaic plot of the island variable.\nSPECIES ON EACH ISLAND\nUse the tally() function to count the number of each different species on each of the different islands. (This is a 2-by-2 contingency table!)\n\n\n\nIntepret the values in the above table. Which species/island combination is most represented in this data? In words, what do the zeros mean?\nLet’s make visualizations of the above table.\nUse gf_percents() to make a bar plot of the different species and the fill = to color each bar according the island variable. This allow us to see for each species, how many came from each island.\nUse the mosaic() function to make one mosaic plot of the species and island variables together.\nFor an extra challenge, let’s try adding color.\nUse the highlighting argument to specify a variable to highlight with variable name in quotes.\nFor example, highlighting = “species”.\nUse the highlighting_fill argument to specify your colors. In this case, three colors are needed.\nFor example, highlighting_fill = c(“color1”, “color2”, “color3”) Insert your color names inside quotes!\n\n\nPART 2. ONE NUMERICAL VARIABLE, ONE CATEGORICAL VARIABLE\nRecall from class how we made comparative side-by-side boxplots using the county data. We did this by taking the numerical variable of poverty rates (called poverty) separating the poverty rates into two groups based on the “yes or no” levels of the categorical variable metro. Recall that metro was “yes” if county has a large urban metro area) or “no” (county does not have a large urban metro area.)\nThe code we used for this is given below:\n\ngf_boxplot(poverty ~ metro, data = county)\n\n\n\n\nUse this same idea to make comparative side-by-side boxplots of the numerical variable called body_mass_g which gives the weight of the penguins in grams.\nWhich penguin species has the largest median weight? Did any species have outliers? Which species has the smallest IQR (DO you remember how to see IQR in a boxplot?) Do any species data show skew? Symmetric?\nUse the same technique above with favstats() to find all the major summary statistics of body_mass_g for all three species using just one line of code! Be careful of the order of the variables! What happens if you reverse them? (Notice in the output that there is missing data.)\nUse the same technique above to compute IQR for each species. Again, be careful of the order of the variables!You need to use an argument to remove missing data.\nWhich species has the least variability in the middle 50%? Does this agree with what you saw in the side-by-side boxplots?\nMake a histogram of body mass faceted by species and also colored by species.\n\n\nPART 3. TWO NUMERICAL VARIABLES - SCATTERPLOTS AND CORRELATION.\nIt seems plausible that, regardless of species, penguins with larger body mass could also have longer flippers and a longer bill. Let’s make scatterplots for each of these variables to examine their relationship with body mass. And from the graphs, we will consider which of these two variables seems to be more highly correlated with body mass.\nFirst, make a scatterplot with bill length on the y-axis, body mass on the x-axis. (Make sure you get the correct variable names! Use the names() function or go look at the data frame! And remember y-axis variable goes first inside the function as y ~ x). Be sure to include the straight trend line to your plot with *geom_lm().\nNext, make a scatterplot with flipper length on the y-axis, body mass on the x-axis. Be sure to include the straight trend line to your plot with *geom_lm().\nFrom these two scatterplots, do you see a linear relationship? You should! Does bill length or flipper length appear to be more highly correlated with body mass or do they look about the same? In other words, do the points appear more closely clustered around the straight line in one of the scatterplots?\nLet’s dig deeper into this question by finding the value of the correlation statistic. There is missing data so include the command use = “complete”\nCompute the Correlation statistic for bill length and body mass.\nCompute the Correlation statistic for flipper length and body mass.\n\n\nPART 4. FUN CHALLENGE!\n\nMULTIVARIABLE SCATTERPLOT\nChoose one of the scatterplots above and try to map as many variables as you can to the plot. Can you get 6 of the 8 variables onto the plot?\n\n\n\nPART 5. OPTIONAL HOMEWORK!\n\n1) Finish the activity above if you have not done so already.\n\n\nAND/OR\n\n\n2) Repeat some of the same analyses on a different data frame as decribed below.\nIn the mdsr package, there is a data frame called HELPrct. The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. In the console, type ?HELPrct to learn more.\nUse categorical variables substance, homeless, sex and numerical variables cesd (measure of depressive symptoms, higher scores indicate more symptoms) and mcs (mental component score, higher scores indicate better functioning). Experiment with tally, bar plots, mosaic plots, scatterplots of cesd and mcs, correlation, etc."
+  },
+  {
+    "objectID": "Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation copy.html",
+    "href": "Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation copy.html",
+    "title": "NOTEBOOK: Workshop Day 1",
+    "section": "",
+    "text": "Categorical Variables\n\nContingency Tables\nThe tally function counts the levels of a categorical variable. For the loans_full_schema data frame, count the levels of the homeownership variable.\n\n\n\nCount all combinations of homeownership and application_type.\n\n\n\nAdd row/column totals using margin argument.\n\n\n\n\n\nBar Plots\nCreate bar plot of a categorical variable with counts on the y-axis.\n\n\n\nProportions on the y-axis.\n\n\n\nPercents on the y-axis.\n\n\n\nTwo Categorical variable Stacked Bar Plot.\n\n\n\nSide-By-Side Stacked Bar Plot.\n\n\n\n\n\nMosaic Plots\n\n\n\nScatterplots\nWe start with the Births78 data frame in the mosaicData package. Plot births on the y-axis, date on the x-axis.\n\n\n\nLet’s add a color and label the axes and give it a title.\n\n\n\nColor the points according to the variable wday.\n\n\n\nFacet.\n\n\n\nFacet with a mosaic function gf_facet_wrap().\n\n\n\nWith mtcars, Map as many variables as we can to the plot! In the console, type ?mtcars to learn about the variables.\n\n\n\n\n\nCorrelation\nWe can add linear and non-linear models to a scatterplot. Let’s plot mpg on the y-axis against drat, hp, wt. mpg ~ drat mpg ~ hp mpg ~ wt\nCompute correlations for each of the three cases."
   },
   {
     "objectID": "Day_1/Activity_1_Descriptive_Stats/Solutions_Activity_1.html",
@@ -322,10 +343,136 @@
     "text": "Style Guide\nThe Tidyverse Style Guide"
   },
   {
-    "objectID": "Day_3/day_3_main.html",
-    "href": "Day_3/day_3_main.html",
-    "title": "Day 3: Additional Topics",
+    "objectID": "CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "href": "CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Functions for Confidence Intervals",
+    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#the-data-sets",
+    "href": "CI-and-hypothesis-testing.html#the-data-sets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The Data Sets",
+    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use cars93.\nFor a difference of Means test we’ll use the Sleep data frame (captial S)."
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#proportions",
+    "href": "CI-and-hypothesis-testing.html#proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportions",
+    "text": "Proportions\nIf we were to run ?proptest we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "href": "CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Confidence Interval for Proportions",
+    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#what-the-heck-is-continuity-correction",
+    "href": "CI-and-hypothesis-testing.html#what-the-heck-is-continuity-correction",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "What the heck is Continuity Correction?",
+    "text": "What the heck is Continuity Correction?\nYou can use the special $ operator \n\nresults <- prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE))\n\n          p     lower     upper level\n1 0.2610837 0.2137559 0.3146963   0.9"
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#make-the-ci-look-better",
+    "href": "CI-and-hypothesis-testing.html#make-the-ci-look-better",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Make the CI look better?",
+    "text": "Make the CI look better?\nYou can use the $ operator \n\nresults <- prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE))\n\n          p     lower     upper level\n1 0.2610837 0.2137559 0.3146963   0.9"
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "href": "CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "To make the CI look better",
+    "text": "To make the CI look better\n You can use the $ operator \n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "href": "CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "You can also make a CI from a homework problem.",
+    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\nA sample size n=603 and 142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "href": "CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "A Warning on Proportions",
+    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf you are using a different problem set and prop.test() doesn’t work, you should check out binom.test(). .\nbinom.test(... method=\"Wald\") returns the same values that a TI-83 calculator would produce."
+  },
+  {
+    "objectID": "CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "href": "CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportion Hypothesis Test",
+    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two more arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html",
+    "href": "Day_2/CI-and-hypothesis-testing.html",
+    "title": "Confidence Interval and Hypothesis Testing",
     "section": "",
-    "text": "Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntro to tidyverse. \n\nTo remove outliers: filter()\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nIf you want to leave feedback or have ideas"
+    "text": "library(mosaic)\n\nRegistered S3 method overwritten by 'mosaic':\n  method                           from   \n  fortify.SpatialPolygonsDataFrame ggplot2\n\n\n\nThe 'mosaic' package masks several functions from core packages in order to add \nadditional features.  The original behavior of these functions should not be affected by this.\n\n\n\nAttaching package: 'mosaic'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    count, do, tally\n\n\nThe following object is masked from 'package:Matrix':\n\n    mean\n\n\nThe following object is masked from 'package:ggplot2':\n\n    stat\n\n\nThe following objects are masked from 'package:stats':\n\n    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,\n    quantile, sd, t.test, var\n\n\nThe following objects are masked from 'package:base':\n\n    max, mean, min, prod, range, sample, sum\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\nAttaching package: 'openintro'\n\n\nThe following object is masked from 'package:mosaic':\n\n    dotPlot\n\n\nThe following objects are masked from 'package:lattice':\n\n    ethanol, lsegments\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The Data Sets",
+    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use cars93.\nFor a difference of Means test we’ll use the Sleep data frame (captial S)."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportions",
+    "text": "Proportions\nIf we were to run ?proptest we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Confidence Interval for Proportions",
+    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "href": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "To make the CI look better",
+    "text": "To make the CI look better\n You can use the $ operator \n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "href": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "You can also make a CI from a homework problem.",
+    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\nA sample size n=603 and 142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "A Warning on Proportions",
+    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf you are using a different problem set and prop.test() doesn’t work, you should check out binom.test(). .\nbinom.test(... method=\"Wald\") returns the same values that a TI-83 calculator would produce."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportion Hypothesis Test",
+    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two more arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "href": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Functions for Confidence Intervals",
+    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
   }
 ]

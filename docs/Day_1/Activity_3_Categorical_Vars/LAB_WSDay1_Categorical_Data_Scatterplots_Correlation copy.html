@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name Here">
+<meta name="dcterms.date" content="2023-05-21">
 
-<title>Intro Stats with R - About</title>
+<title>Intro Stats with R - LAB ACTIVITY: R Workshop Day 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,22 +88,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Intro Stats with R</span>
     </a>
   </div>
@@ -142,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Resources.html">
+    <a class="nav-link" href="../../Resources.html">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
@@ -177,14 +179,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">LAB ACTIVITY: R Workshop Day 1</h1>
+<p class="subtitle lead">Categorial Variables, Scatterplots, Correlation</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name Here </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 21, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -192,15 +207,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>About this site</p>
+<p>There is a data frame called <strong>penguins</strong> inside a package called <strong>palmerpenguins.</strong> In the console, you can use the view() function to open this data frame in a new tab.</p>
+<p>Please insert code chunks below each question.</p>
+<p>Use the <strong>names()</strong> function to list all the variables in this data.</p>
+<section id="part-1.-categorical-variables" class="level1">
+<h1>PART 1. CATEGORICAL VARIABLES</h1>
+<p>In your view(penguins) tab, see that there are two categorical variables: species and island.</p>
+<p><strong>SPECIES</strong><br>
+Use the <strong>tally()</strong> function to count how many penguins of each species are in this data.</p>
+<p>Let’s make visualizations of the above table.</p>
+<p>Use <strong>gf_counts()</strong> to make a bar plot of the different species. Use color and fill commands to make it more visually appealing!</p>
+<p>Use the <strong>mosaic()</strong> function to make a mosaic plot of the species variable.</p>
+<p><strong>ISLAND</strong><br>
+Use the <strong>tally()</strong> function to find out the penguin count on each island for this data set. <em>BE CAREFUL! Do not click “islands” suggestion! That is the name of different data set that RStudio is recognizing!</em></p>
+<p>Let’s make visualizations of the above table.</p>
+<p>Use <strong>gf_props()</strong> to make a bar plot of the island variable. Use color and fill commands to make it more visually appealing!</p>
+<p>Use the <strong>mosaic()</strong> function to make a mosaic plot of the island variable.</p>
+<p><strong>SPECIES ON EACH ISLAND</strong></p>
+<p>Use the tally() function to count the number of each different species on each of the different islands. (This is a <em>2-by-2 contingency table!</em>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+
+</div>
+<p>Intepret the values in the above table. Which species/island combination is most represented in this data? In words, what do the zeros mean?</p>
+<p>Let’s make visualizations of the above table.</p>
+<p>Use <strong>gf_percents()</strong> to make a bar plot of the different species and the fill = to color each bar according the island variable. This allow us to see for each species, how many came from each island.</p>
+<p>Use the <strong>mosaic()</strong> function to make one mosaic plot of the species and island variables together.</p>
+<p>For an extra challenge, let’s try adding color.<br>
+Use the highlighting argument to specify a variable to highlight with variable name in quotes.<br>
+For example, highlighting = “species”.<br>
+Use the highlighting_fill argument to specify your colors. In this case, three colors are needed.<br>
+For example, highlighting_fill = c(“color1”, “color2”, “color3”) Insert your color names inside quotes!</p>
+</section>
+<section id="part-2.-one-numerical-variable-one-categorical-variable" class="level1">
+<h1>PART 2. ONE NUMERICAL VARIABLE, ONE CATEGORICAL VARIABLE</h1>
+<p>Recall from class how we made comparative side-by-side boxplots using the <strong>county</strong> data. We did this by taking the numerical variable of poverty rates (called <strong>poverty</strong>) separating the poverty rates into two groups based on the “yes or no” levels of the categorical variable <strong>metro</strong>. Recall that metro was “yes” if county has a large urban metro area) or “no” (county does not have a large urban metro area.)<br>
+The code we used for this is given below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(poverty <span class="sc">~</span> metro, <span class="at">data =</span> county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="LAB_WSDay1_Categorical_Data_Scatterplots_Correlation-copy_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Use this same idea to make comparative side-by-side boxplots of the numerical variable called <strong>body_mass_g</strong> which gives the weight of the penguins in grams.</p>
+<p>Which penguin species has the largest median weight? Did any species have outliers? Which species has the smallest IQR (DO you remember how to see IQR in a boxplot?) Do any species data show skew? Symmetric?</p>
+<p>Use the same technique above with <strong>favstats()</strong> to find all the major summary statistics of <strong>body_mass_g</strong> for all three species using just one line of code! Be careful of the order of the variables! What happens if you reverse them? (Notice in the output that there is missing data.)</p>
+<p>Use the same technique above to compute IQR for each species. Again, be careful of the order of the variables!You need to use an argument to remove missing data.</p>
+<p>Which species has the least variability in the middle 50%? Does this agree with what you saw in the side-by-side boxplots?</p>
+<p>Make a histogram of body mass faceted by species and also colored by species.</p>
+</section>
+<section id="part-3.-two-numerical-variables---scatterplots-and-correlation." class="level1">
+<h1>PART 3. TWO NUMERICAL VARIABLES - SCATTERPLOTS AND CORRELATION.</h1>
+<p>It seems plausible that, regardless of species, penguins with larger body mass could also have longer flippers and a longer bill. Let’s make scatterplots for each of these variables to examine their relationship with body mass. And from the graphs, we will consider which of these two variables seems to be more highly correlated with body mass.</p>
+<p>First, make a scatterplot with bill length on the y-axis, body mass on the x-axis. (Make sure you get the correct variable names! Use the names() function or go look at the data frame! And remember y-axis variable goes first inside the function as y ~ x). Be sure to include the straight trend line to your plot with *<strong>geom_lm()</strong>.</p>
+<p>Next, make a scatterplot with flipper length on the y-axis, body mass on the x-axis. Be sure to include the straight trend line to your plot with *<strong>geom_lm()</strong>.</p>
+<p>From these two scatterplots, do you see a linear relationship? You should! Does bill length or flipper length appear to be more highly correlated with body mass or do they look about the same? In other words, do the points appear more closely clustered around the straight line in one of the scatterplots?</p>
+<p>Let’s dig deeper into this question by finding the value of the correlation statistic. There is missing data so include the command <strong>use = “complete”</strong></p>
+<p>Compute the Correlation statistic for bill length and body mass.</p>
+<p>Compute the Correlation statistic for flipper length and body mass.</p>
+</section>
+<section id="part-4.-fun-challenge" class="level1">
+<h1>PART 4. FUN CHALLENGE!</h1>
+<section id="multivariable-scatterplot" class="level3">
+<h3 class="anchored" data-anchor-id="multivariable-scatterplot">MULTIVARIABLE SCATTERPLOT</h3>
+<p>Choose one of the scatterplots above and try to map as many variables as you can to the plot. Can you get 6 of the 8 variables onto the plot?</p>
+</section>
+</section>
+<section id="part-5.-optional-homework" class="level1">
+<h1>PART 5. OPTIONAL HOMEWORK!</h1>
+<section id="finish-the-activity-above-if-you-have-not-done-so-already." class="level3">
+<h3 class="anchored" data-anchor-id="finish-the-activity-above-if-you-have-not-done-so-already.">1) Finish the activity above if you have not done so already.</h3>
+</section>
+<section id="andor" class="level3">
+<h3 class="anchored" data-anchor-id="andor">AND/OR</h3>
+</section>
+<section id="repeat-some-of-the-same-analyses-on-a-different-data-frame-as-decribed-below." class="level3">
+<h3 class="anchored" data-anchor-id="repeat-some-of-the-same-analyses-on-a-different-data-frame-as-decribed-below.">2) Repeat some of the same analyses on a different data frame as decribed below.</h3>
+<p>In the <strong>mdsr</strong> package, there is a data frame called HELPrct. The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. In the console, type ?HELPrct to learn more.</p>
+<p>Use categorical variables substance, homeless, sex and numerical variables cesd (measure of depressive symptoms, higher scores indicate more symptoms) and mcs (mental component score, higher scores indicate better functioning). Experiment with tally, bar plots, mosaic plots, scatterplots of cesd and mcs, correlation, etc.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -342,7 +429,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./credits.html">credits</a>
+    <a class="nav-link" href="../../credits.html">credits</a>
   </li>  
 </ul>
     </div>

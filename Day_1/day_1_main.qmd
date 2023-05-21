@@ -41,11 +41,11 @@ Break
 <!-- ``` -->
 <!-- ::: -->
 
--   [Notebook Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.txt)
+-   [Notebook Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=1UDrEYbRr_gSGkxLTPQaNlajx9J1bRAVL)
 
 Lunch
 
--   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](./Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation.txt)
+-   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan)
 
 ------------------------------------------------------------------------
 

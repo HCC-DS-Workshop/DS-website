@@ -7,7 +7,7 @@ Probability
 
 -   Activity 4
 
-Inference Confidence Intervals and Hypothesis Testing
+[Inference Confidence Intervals and Hypothesis Testing](./CI-and-hypothesis-testing.html)
 
 -   Activity 5
 
