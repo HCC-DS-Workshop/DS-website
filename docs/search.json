@@ -11,7 +11,7 @@
     "href": "Day_2/day_2_main.html",
     "title": "Day 2: Probability and Inference",
     "section": "",
-    "text": "Probability\n\nActivity 4\n\nInference Confidence Intervals and Hypothesis Testing\n\nActivity 5\n\nGetting Data into R and some Latex Notation\nCheatsheets\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\nIf you want to leave feedback or have ideas"
+    "text": "Probability\n\nActivity 4\n\nInference Confidence Intervals and Hypothesis Testing\n\nActivity 5\n\nCheatsheets\nGetting Data into R and some Latex Notation\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\nIf you want to leave feedback or have ideas"
   },
   {
     "objectID": "index.html",
@@ -116,14 +116,14 @@
     "href": "Day_1/histograms.html#how-to-follow-along",
     "title": "Histograms and Boxplots",
     "section": "How to Follow Along",
-    "text": "How to Follow Along\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in a new .rmd file.\n\nThe .rmd file you can save."
+    "text": "How to Follow Along\n Open this presentation in a new browser tab. You can copy and paste code from there.\n\nWork in the console or in a new .rmd file.\n\nThe .rmd file you can save, the console you cannot."
   },
   {
     "objectID": "Day_1/histograms.html#load-the-libraries",
     "href": "Day_1/histograms.html#load-the-libraries",
     "title": "Histograms and Boxplots",
     "section": "Load the Libraries",
-    "text": "Load the Libraries\nIf you are working in a .rmd file you will need to put these two lines of code in the set up chunk.\n\nlibrary(mosaic)\nlibrary(openintro)"
+    "text": "Load the Libraries\n\nlibrary(mosaic)\nlibrary(openintro)"
   },
   {
     "objectID": "Day_1/histograms.html#histograms-and-boxplots",
@@ -474,5 +474,12 @@
     "title": "Confidence Interval and Hypothesis Testing",
     "section": "Functions for Confidence Intervals",
     "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The cheat sheets",
+    "text": "The cheat sheets\nThere are two statistics related cheat sheets in the resources tab.\n\n\nThe mosaic cheat sheet\n\nThis is the official cheat sheet put out by Mosaic\n\nThe MTH 142 Intro to Statistics cheat sheet\n\nNic made this one for class\n\n\n\nLets take a look a"
   }
 ]

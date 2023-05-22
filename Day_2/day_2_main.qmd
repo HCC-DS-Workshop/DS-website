@@ -11,9 +11,9 @@ Probability
 
 -   Activity 5
 
-Getting Data into R and some Latex Notation
-
 [Cheatsheets](../Resources.html)
+
+Getting Data into R and some Latex Notation
 
 Regression
 
