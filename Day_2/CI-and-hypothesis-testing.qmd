@@ -8,7 +8,7 @@ editor: visual
 ## Functions for Confidence Intervals
 
 ```{r setup}
-#|echo:FALSE
+#| echo:FALSE
 library(mosaic)
 library(openintro)
 ```
