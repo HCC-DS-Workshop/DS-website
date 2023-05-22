@@ -3,6 +3,32 @@ title: "Day 2: Probability and Inference"
 editor: visual
 ---
 
+[Categorical Data Scatter Plots and Correlations](../Day_1/Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
+
+<!-- ::: download_btn -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+
+<!-- library(downloadthis) -->
+
+<!-- download_link( -->
+<!--   link = "https://github.com/HCC-R-Workshop/R-workshop-website/blob/main/Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd", -->
+<!--   button_label = "Download Categorical Rmd", -->
+<!--   button_type = c("success"), -->
+<!--   has_icon = TRUE, -->
+<!--   icon = "fa fa-save", -->
+<!--   self_contained = FALSE -->
+
+<!-- ) -->
+<!-- ``` -->
+<!-- ::: -->
+
+-   [Notebook Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=1UDrEYbRr_gSGkxLTPQaNlajx9J1bRAVL)
+
+Break
+
+-   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan)
+
 Probability
 
 -   Activity 4
@@ -22,6 +48,15 @@ Regression
 ANOVA
 
 -   Activity 7
+
+---
+
+*Solutions posted later*
+<!-- # [Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf) -->
+
+
+
+
 
 
 [If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)
