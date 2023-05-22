@@ -1,14 +1,17 @@
 ---
 title: "Confidence Interval and Hypothesis Testing"
-subtitle: "Also getting numeric data into R"
+subtitle: "Also getting data into R"
 format: revealjs
 editor: visual
+
+title-slide-attributes:
+  data-background-color: "hotpink"
 ---
 
 ## Functions for Confidence Intervals
 
 ```{r setup}
-#|echo:FALSE
+#| echo: FALSE
 library(mosaic)
 library(openintro)
 ```
@@ -129,3 +132,21 @@ $\alpha=0.05$
 prop.test(x=~num==4, p=0.3, alternative="t", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
 
 ```
+
+## The cheat sheets
+
+There are two statistics related cheat sheets in the resources tab.
+
+<br>
+
+1.  The mosaic cheat sheet
+
+    -   This is the official cheat sheet put out by Mosaic
+
+2.  The MTH 142 Intro to Statistics cheat sheet
+
+    -   Nic made this one for class
+
+<br>
+
+Lets take a look a
