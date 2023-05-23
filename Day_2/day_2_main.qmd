@@ -3,13 +3,7 @@ title: "Day 2: Probability and Inference"
 editor: visual
 ---
 
-Notes from Monday:
-
--   quantile(\~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))
-
--   list of graphs for ggplot in resources
-
--   Amelia McNamera's video comparision of R syntaxes in resources
+[Notes from Monday](./Notes-From-Monday.html)
 
 [Categorical Data Scatter Plots and Correlations](../Day_1/Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
 
@@ -47,7 +41,7 @@ Break
 
 -   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan)
 
-Probability
+[Probability](./SLIDES_Day2-Probabilty_CLT.pdf)
 
 -   Activity 4
 

@@ -1,0 +1,39 @@
+---
+title: "Notes from Monday"
+editor: visual
+---
+
+Notes from Monday:
+
+-   How to find specific percentiles with the **quantile()** function.
+
+quantile(\~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))
+
+<br>
+
+-   **Graphs** In the resources tab there are two links:
+
+    -   The first one is to a list of different plots in the mosaic package.
+
+    -   The second (and more helpful) is a list of examples.
+
+    -   The links are under the [colorful squares](../Resources.html) that represent Project Mosaic.  
+
+<br>
+
+-   Amelia McNamera's video **comparison of R syntax** in [resources](../Resources.html).
+
+She did an experiment where she compared the three different types of R syntax that Eric mentioned in the Introduction on Monday.   
+<br>
+
+-   **Sage** The sage manual for interface to RStudio is [here.](https://doc.sagemath.org/html/en/reference/interfaces/sage/interfaces/r.html)
+
+    <br>
+
+-   **Cheat Sheets**
+
+    -   **Mosaic Cheat Sheet** The link to the mosaic library in [resources](../Resources.html) is fixed. Here is a [direct link.](../images/mosaic-cheatsheet-gf.pdf)
+
+    -   Nic's **MTH142CheatSheet** The pptx file of Nic's cheat sheet is in resources. You can edit it to make it your own, or better.
+
+    -   Eric's **cheat sheet** is posted to Resources

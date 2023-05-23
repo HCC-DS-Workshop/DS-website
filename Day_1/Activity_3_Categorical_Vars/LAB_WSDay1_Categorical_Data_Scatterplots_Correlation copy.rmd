@@ -5,14 +5,14 @@ author: "Your Name Here"
 date: '`r Sys.Date()`'
 output: 
   pdf_document:
-    fig_height: 4
-    fig_width: 6
+    fig_height: 6
+    fig_width: 8
   word_document:
-    fig_height: 4
-    fig_width: 6
+    fig_height: 6
+    fig_width: 8
   html_document:
-    fig_height:
-    fig_width: 6
+    fig_height: 6
+    fig_width: 8
 ---
 
 ```{r setup, include=FALSE}
@@ -60,24 +60,59 @@ islands. (This is a *2-by-2 contingency table!*)
 
 ```
 
-Intepret the values in the above table. Which species/island combination is most represented in this data? In words, what do the zeros mean?   
+Intepret the values in the above table. Which species/island combination is most represented in this data? What do the zeros mean?   
 
 Let's make visualizations of the above table.   
 
-Use **gf_percents()** to make a bar plot of the different species and the fill = to color each bar according the island variable. This allow us to see for each species, how many came from each island.   
+Use **gf_percents()** to make a bar plot of the different species and *fill =* to color each bar according the island variable. This allow us to see for each species, how many came from each island.   
 
 Use the **mosaic()** function to make one mosaic plot of the species and island variables together.   
 
 For an extra challenge, let's try adding color.  
-Use the highlighting argument to specify a variable to highlight with variable name in quotes.   
-For example, highlighting = "species".   
-Use the highlighting_fill argument to specify your colors. In this case, three colors are needed.  
+Use the *highlighting* argument to specify a variable to highlight with variable name in quotes.   
+For example, **highlighting = "species"**.   
+Use the *highlighting_fill* argument to specify your colors. In this case, three colors are needed.  
 For example, highlighting_fill = c("color1", "color2", "color3") Insert your color names inside quotes!   
 
+# PART 2. TWO NUMERICAL VARIABLES - SCATTERPLOTS AND CORRELATION.
+It seems plausible that, regardless of species, penguins with larger body mass could also have longer flippers and a longer bill. Let's make scatterplots for each of these variables to examine their relationship with body mass. And from the graphs, we will consider which of these two variables seems to be more highly correlated with body mass.
 
-# PART 2. ONE NUMERICAL VARIABLE, ONE CATEGORICAL VARIABLE 
+First, make a scatterplot with bill length on the y-axis, body mass on the x-axis. (Make sure you get the correct variable names! Use the names() function or go look at the data frame! And remember y-axis variable goes first inside the function as y ~ x). Be sure to include the straight trend line to your plot with ***geom_lm()**. 
 
-Recall from class how we made comparative side-by-side boxplots using the **county** data.  We did this by taking the numerical variable of poverty rates (called **poverty**) separating the poverty rates into two groups based on the "yes or no" levels of the categorical variable **metro**.    Recall that metro was "yes" if county has a large urban metro area) or "no" (county does not have a large urban metro area.)   
+Next, make a scatterplot with flipper length on the y-axis, body mass on the x-axis. Be sure to include the straight trend line to your plot with ***geom_lm()**.      
+
+From these two scatterplots, do you see a linear relationship? You should! Does bill length or flipper length appear to be more highly correlated with body mass or do they look about the same? In other words, do the points appear more closely clustered around the straight line in one of the scatterplots?   
+
+Let's confirm what we see by finding the correlation statistic. There is missing data so include the argument **use = "complete"**   
+
+Compute the Correlation statistic for bill length and body mass.   
+
+Compute the Correlation statistic for flipper length and body mass.  
+
+Pipe %>% from the penguins data into the select function to select all 4 numerical variables. Store these into a variable called pen_vars and then apply the cor() function to this variable.   
+pen_vars <-penguins %>% select(.,.,.,.)   
+
+
+Save the correlations in a variable called pen_cor.    
+Then apply corrplot() to this variable.  
+
+    
+With corrplot, try using the argument *method = "number"*.  
+Check help menu with ?corrplot to see other options for this method.   
+
+
+
+----------------------------------------------------------------------------------
+
+# PART 3. FUN CHALLENGE! 
+### MULTIVARIABLE SCATTERPLOT
+Choose one of the scatterplots above and try to map as many variables as you can to the plot. Can you get 6 of the 8 variables onto the plot?  
+
+
+# PART 4. OPTIONAL If you finish early! - Practice Day 1 Topics!  
+# ONE NUMERICAL VARIABLE, ONE CATEGORICAL VARIABLE 
+
+Earlier, we made comparative side-by-side boxplots using the **county** data.  We did this by taking the numerical variable of poverty rates (called **poverty**) separating the poverty rates into two groups based on the "yes or no" levels of the categorical variable **metro**.    Recall that metro was "yes" if county has a large urban metro area) or "no" (county does not have a large urban metro area.)   
 The code we used for this is given below:   
 ```{r}
 gf_boxplot(poverty ~ metro, data = county)
@@ -93,26 +128,7 @@ Use the same technique above to compute IQR for each species. Again, be careful 
 
 Which species has the least variability in the middle 50%? Does this agree with what you saw in the side-by-side boxplots? 
 
-Make a histogram of body mass faceted by species and also colored by species.       
-
-# PART 3. TWO NUMERICAL VARIABLES - SCATTERPLOTS AND CORRELATION.
-It seems plausible that, regardless of species, penguins with larger body mass could also have longer flippers and a longer bill. Let's make scatterplots for each of these variables to examine their relationship with body mass. And from the graphs, we will consider which of these two variables seems to be more highly correlated with body mass.
-
-First, make a scatterplot with bill length on the y-axis, body mass on the x-axis. (Make sure you get the correct variable names! Use the names() function or go look at the data frame! And remember y-axis variable goes first inside the function as y ~ x). Be sure to include the straight trend line to your plot with ***geom_lm()**. 
-
-Next, make a scatterplot with flipper length on the y-axis, body mass on the x-axis. Be sure to include the straight trend line to your plot with ***geom_lm()**.      
-
-From these two scatterplots, do you see a linear relationship? You should! Does bill length or flipper length appear to be more highly correlated with body mass or do they look about the same? In other words, do the points appear more closely clustered around the straight line in one of the scatterplots?   
-
-Let's dig deeper into this question by finding the value of the correlation statistic. There is missing data so include the command **use = "complete"**   
-
-Compute the Correlation statistic for bill length and body mass.   
-
-Compute the Correlation statistic for flipper length and body mass.   
-
-# PART 4. FUN CHALLENGE! 
-### MULTIVARIABLE SCATTERPLOT
-Choose one of the scatterplots above and try to map as many variables as you can to the plot. Can you get 6 of the 8 variables onto the plot?   
+Make a histogram of body mass faceted by species and also colored by species.  
 
 
 # PART 5. OPTIONAL HOMEWORK! 

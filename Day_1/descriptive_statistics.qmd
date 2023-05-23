@@ -122,7 +122,7 @@ Try
 
 -   favstats(\~pop2017,data=county, na.rm=TRUE)[^1]
 
--   quantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))
+-   quantile(\~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))
 :::
 
 [^1]: favstats() is the friendliest and the one we use the most

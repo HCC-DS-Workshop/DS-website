@@ -73,6 +73,8 @@ This is the cheatsheet Nic uses for class
 
 [![](images/MTH142-screenshot.png){fig-align="center" width="200"}](./images/MTH-142-CheatSheet-v9.pdf)
 
+Here's the [pptx file](./images/MTH-142-Cheat-Sheet-v8.pptx) if you want to edit it.
+
 # All the R you need
 
 # More toward Data Science
