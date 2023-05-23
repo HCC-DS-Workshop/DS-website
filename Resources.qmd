@@ -23,9 +23,13 @@ execute:
 
 ## [Tips and Tricks](https://moderndive.com/C-appendixC.html){target="_blank"}
 
-------------------------------------------------------------------------
-
 ## [R Colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf){target="_blank"}
+
+# Videos
+
+[Amelia McNamara's Case study in R syntaxes](https://www.youtube.com/watch?v=aq5SrjXZDy4)
+
+This video compares Moasic, Base R and Tidyverse in an introductory statistics course.
 
 ------------------------------------------------------------------------
 
@@ -33,35 +37,43 @@ execute:
 
 ## The link below has a list of stats books produced by Project Mosaic.
 
-[![](https://avatars.githubusercontent.com/u/11564185?s=200&v=4){fig-align="center" width="190"}](https://www.mosaic-web.org/mosaic-books.html){target="_blank"}
+[![](https://avatars.githubusercontent.com/u/11564185?s=200&v=4){fig-align="center" width="190"}](https://www.mosaic-web.org/mosaic-books.html)
+
+Project MOSAIC: [Exhaustive list of graphs.](https://www.mosaic-web.org/ggformula/reference/index.html)
+
+Project MOSAIC: [Graph Examples.](https://www.mosaic-web.org/ggformula/articles/pkgdown/ggformula-long.html)
 
 ## OpenIntro Statistics
 
 This is the text Eric and Nic currently use, there is no explicit mention of R.
 
-[![](https://d2sofvawe08yqg.cloudfront.net/os/s_hero?1620484636){fig-align="center" width="200"}](https://www.openintro.org/book/os/){target="_blank"}
+[![](https://d2sofvawe08yqg.cloudfront.net/os/s_hero?1620484636){fig-align="center" width="200"}](https://www.openintro.org/book/os/)
 
 ## Modern Dive
 
 Modern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse.
 
-[![](images/ModernDive.png){fig-align="center" width="200"}](https://moderndive.com/index.html){target="_blank"}
+[![](images/ModernDive.png){fig-align="center" width="200"}](https://moderndive.com/index.html)
 
 ## Introduction to Modern Statistics.
 
 IMS teaches Statistics with the tidyverse.
 
-[![](https://d2sofvawe08yqg.cloudfront.net/imstat/s_hero?1624230565){fig-align="center" width="200"}](https://moderndive.com/index.html){target="_blank"}
+[![](https://d2sofvawe08yqg.cloudfront.net/imstat/s_hero?1624230565){fig-align="center" width="200"}](https://moderndive.com/index.html)
 
 # **Cheatsheets:**
 
 ## Mosaic Cheat Sheet
 
-[![](images/mosaic-screenshot.png){fig-align="center" width="200"}](https://github.com/mlaviolet/Mosaic-cheatsheets/blob/master/mosaic-cheatsheet-gf.pdf){target="_blank"}
+[![](images/mosaic-screenshot.png){fig-align="center" width="200"}](./images/mosaic-cheatsheet-gf.pdf)
 
 ## MTH 142: Intro to Stats Cheat Sheet
 
-[![](images/MTH142-screenshot.png){fig-align="center" width="200"}](./images/MTH-142-CheatSheet-v9.pdf){target="_blank"}
+This is the cheatsheet Nic uses for class
+
+[![](images/MTH142-screenshot.png){fig-align="center" width="200"}](./images/MTH-142-CheatSheet-v9.pdf)
+
+# All the R you need
 
 # More toward Data Science
 
@@ -71,27 +83,27 @@ IMS teaches Statistics with the tidyverse.
 
 This is the text Nic has used to teach MTH 190: Intro to Data Science
 
-![](https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png){fig-align="center" width="200"}{target="_blank"}
+![](https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png){fig-align="center" width="200"}
 
 ## Data Science in a box
 
-![](images/dsbox.png){fig-align="center" width="200"}{target="_blank"}
+![](images/dsbox.png){fig-align="center" width="200"}
 
 ## RMarkdown Cheat sheet
 
-[![](images/rmarkdown.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf){target="_blank"}
+[![](images/rmarkdown.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
 
 ## Data Visualization: [ggplot2](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf){target="_blank"}
 
-[![](images/ggplot2.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf){target="_blank"}
+[![](images/ggplot2.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 
 ## Data transformation: dplyr
 
-[![](images/dplyr.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf){target="_blank"}
+[![](images/dplyr.png){fig-align="center" width="200"}](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 
 ## Data Import: tidyr
 
-[![](images/tidyr.png){fig-align="center" width="200"}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf){target="_blank"}
+[![](images/tidyr.png){fig-align="center" width="200"}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf)
 
 ## Style Guide
 

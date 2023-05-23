@@ -11,7 +11,70 @@
     "href": "Day_2/day_2_main.html",
     "title": "Day 2: Probability and Inference",
     "section": "",
-    "text": "Categorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\n\nActivity 4\n\nInference Confidence Intervals and Hypothesis Testing\n\nActivity 5\n\nCheatsheets\nGetting Data into R and some Latex Notation\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions posted later \nIf you want to leave feedback or have ideas"
+    "text": "Notes from Monday:\n\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))\nlist of graphs for ggplot in resources\nAmelia McNamera’s video comparision of R syntaxes in resources\n\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\n\nActivity 4\n\nInference Confidence Intervals and Hypothesis Testing\n\nActivity 5\n\nCheatsheets\nGetting Data into R and some Latex Notation\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions posted later \nIf you want to leave feedback or have ideas"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "href": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Functions for Confidence Intervals",
+    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The Data Sets",
+    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use cars93.\nFor a difference of Means test we’ll use the Sleep data frame (captial S)."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportions",
+    "text": "Proportions\nIf we were to run ?proptest we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Confidence Interval for Proportions",
+    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "href": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "To make the CI look better",
+    "text": "To make the CI look better\n You can use the $ operator \n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "href": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "You can also make a CI from a homework problem.",
+    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\nA sample size n=603 and 142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "A Warning on Proportions",
+    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf you are using a different problem set and prop.test() doesn’t work, you should check out binom.test(). .\nbinom.test(... method=\"Wald\") returns the same values that a TI-83 calculator would produce."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportion Hypothesis Test",
+    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two more arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The cheat sheets",
+    "text": "The cheat sheets\nThere are two statistics related cheat sheets in the resources tab.\n\n\nThe mosaic cheat sheet\n\nThis is the official cheat sheet put out by Mosaic\n\nThe MTH 142 Intro to Statistics cheat sheet\n\nNic made this one for class\n\n\n\nLets take a look a"
   },
   {
     "objectID": "index.html",
@@ -81,7 +144,7 @@
     "href": "Day_1/descriptive_statistics.html#measures-of-center",
     "title": "Descriptive statistics",
     "section": "Measures of center",
-    "text": "Measures of center\n\n\nmean()\n\nmean(~pop2017,data=county, na.rm=TRUE)\n\nmedian()\n\nFind the median population from 2017\n\nmode()"
+    "text": "Measures of center\n\n\nmean()\n\nmean(~pop2017,data=county, na.rm=TRUE)\n\nmedian()\n\nFind the median population from 2017"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#measures-of-spread",
@@ -95,7 +158,7 @@
     "href": "Day_1/descriptive_statistics.html#all-summary-stats",
     "title": "Descriptive statistics",
     "section": "All summary stats()",
-    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquartile()\n\n\nfavstats() is the friendliest and the one we use the most"
+    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))\n\n\nfavstats() is the friendliest and the one we use the most"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
@@ -186,7 +249,7 @@
     "href": "Day_1/day_1_main.html",
     "title": "Day 1:Descriptive Stats and Visualizations",
     "section": "",
-    "text": "May 22 9-1:30\nWelcome\nIntroduction\nDescriptive Statistics\n\nActivity 1 with Descriptive Statistics and births14\n\nBreak?\nNumeric Data Histograms and Boxplots\n\nActivity 2 with Boxplots and births14\n\nBreak\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nLunch\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\n\nSolutions posted later\nIf you want to leave feedback or have ideas"
+    "text": "May 22 9-1:30\nComputer Support\nStart 9:15\nWelcome\nIntroduction\nDescriptive Statistics\n\nActivity 1 with Descriptive Statistics and births14\n\nLunch\nNumeric Data Histograms and Boxplots\n\nActivity 2 with Boxplots and births14\n\nEnd 1:30\n\nSolutions posted later\nActivity 1 solutions Activity 2 solutions\nIf you want to leave feedback or have ideas"
   },
   {
     "objectID": "Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_Categorical_Data_Scatterplots_Correlation copy.html",
@@ -256,7 +319,7 @@
     "href": "Resources.html#the-link-below-has-a-list-of-stats-books-produced-by-project-mosaic.",
     "title": "Intro Stats with R",
     "section": "The link below has a list of stats books produced by Project Mosaic.",
-    "text": "The link below has a list of stats books produced by Project Mosaic."
+    "text": "The link below has a list of stats books produced by Project Mosaic.\n\n\n\n\n\nProject MOSAIC: Exhaustive list of graphs.\nProject MOSAIC: Graph Examples."
   },
   {
     "objectID": "Resources.html#openintro-statistics",
@@ -291,21 +354,21 @@
     "href": "Resources.html#mth-142-intro-to-stats-cheat-sheet",
     "title": "Intro Stats with R",
     "section": "MTH 142: Intro to Stats Cheat Sheet",
-    "text": "MTH 142: Intro to Stats Cheat Sheet"
+    "text": "MTH 142: Intro to Stats Cheat Sheet\nThis is the cheatsheet Nic uses for class"
   },
   {
     "objectID": "Resources.html#modern-data-science-with-r",
     "href": "Resources.html#modern-data-science-with-r",
     "title": "Intro Stats with R",
     "section": "Modern Data Science with R",
-    "text": "Modern Data Science with R\nThis is the text Nic has used to teach MTH 190: Intro to Data Science\n{target=“_blank”}"
+    "text": "Modern Data Science with R\nThis is the text Nic has used to teach MTH 190: Intro to Data Science"
   },
   {
     "objectID": "Resources.html#data-science-in-a-box",
     "href": "Resources.html#data-science-in-a-box",
     "title": "Intro Stats with R",
     "section": "Data Science in a box",
-    "text": "Data Science in a box\n{target=“_blank”}"
+    "text": "Data Science in a box"
   },
   {
     "objectID": "Resources.html#rmarkdown-cheat-sheet",
@@ -341,145 +404,5 @@
     "title": "Intro Stats with R",
     "section": "Style Guide",
     "text": "Style Guide\nThe Tidyverse Style Guide"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "href": "CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Functions for Confidence Intervals",
-    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#the-data-sets",
-    "href": "CI-and-hypothesis-testing.html#the-data-sets",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "The Data Sets",
-    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use cars93.\nFor a difference of Means test we’ll use the Sleep data frame (captial S)."
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#proportions",
-    "href": "CI-and-hypothesis-testing.html#proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportions",
-    "text": "Proportions\nIf we were to run ?proptest we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "href": "CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Confidence Interval for Proportions",
-    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#what-the-heck-is-continuity-correction",
-    "href": "CI-and-hypothesis-testing.html#what-the-heck-is-continuity-correction",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "What the heck is Continuity Correction?",
-    "text": "What the heck is Continuity Correction?\nYou can use the special $ operator \n\nresults <- prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE))\n\n          p     lower     upper level\n1 0.2610837 0.2137559 0.3146963   0.9"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#make-the-ci-look-better",
-    "href": "CI-and-hypothesis-testing.html#make-the-ci-look-better",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Make the CI look better?",
-    "text": "Make the CI look better?\nYou can use the $ operator \n\nresults <- prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE))\n\n          p     lower     upper level\n1 0.2610837 0.2137559 0.3146963   0.9"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "href": "CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "To make the CI look better",
-    "text": "To make the CI look better\n You can use the $ operator \n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "href": "CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "You can also make a CI from a homework problem.",
-    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\nA sample size n=603 and 142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "href": "CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "A Warning on Proportions",
-    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf you are using a different problem set and prop.test() doesn’t work, you should check out binom.test(). .\nbinom.test(... method=\"Wald\") returns the same values that a TI-83 calculator would produce."
-  },
-  {
-    "objectID": "CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "href": "CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportion Hypothesis Test",
-    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two more arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html",
-    "href": "Day_2/CI-and-hypothesis-testing.html",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "",
-    "text": "#| echo: FALSE\n\nlibrary(mosaic)\n\nRegistered S3 method overwritten by 'mosaic':\n  method                           from   \n  fortify.SpatialPolygonsDataFrame ggplot2\n\n\n\nThe 'mosaic' package masks several functions from core packages in order to add \nadditional features.  The original behavior of these functions should not be affected by this.\n\n\n\nAttaching package: 'mosaic'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    count, do, tally\n\n\nThe following object is masked from 'package:Matrix':\n\n    mean\n\n\nThe following object is masked from 'package:ggplot2':\n\n    stat\n\n\nThe following objects are masked from 'package:stats':\n\n    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,\n    quantile, sd, t.test, var\n\n\nThe following objects are masked from 'package:base':\n\n    max, mean, min, prod, range, sample, sum\n\nlibrary(openintro)\n\nLoading required package: airports\n\n\nLoading required package: cherryblossom\n\n\nLoading required package: usdata\n\n\n\nAttaching package: 'openintro'\n\n\nThe following object is masked from 'package:mosaic':\n\n    dotPlot\n\n\nThe following objects are masked from 'package:lattice':\n\n    ethanol, lsegments\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
-    "href": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "The Data Sets",
-    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use cars93.\nFor a difference of Means test we’ll use the Sleep data frame (captial S)."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportions",
-    "text": "Proportions\nIf we were to run ?proptest we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Confidence Interval for Proportions",
-    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "href": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "To make the CI look better",
-    "text": "To make the CI look better\n You can use the $ operator \n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "You can also make a CI from a homework problem.",
-    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\nA sample size n=603 and 142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "A Warning on Proportions",
-    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf you are using a different problem set and prop.test() doesn’t work, you should check out binom.test(). .\nbinom.test(... method=\"Wald\") returns the same values that a TI-83 calculator would produce."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "href": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportion Hypothesis Test",
-    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two more arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "href": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Functions for Confidence Intervals",
-    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
-    "href": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "The cheat sheets",
-    "text": "The cheat sheets\nThere are two statistics related cheat sheets in the resources tab.\n\n\nThe mosaic cheat sheet\n\nThis is the official cheat sheet put out by Mosaic\n\nThe MTH 142 Intro to Statistics cheat sheet\n\nNic made this one for class\n\n\n\nLets take a look a"
   }
 ]

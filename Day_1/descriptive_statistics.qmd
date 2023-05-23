@@ -14,14 +14,14 @@ library(maps)
 ```
 
 ## How to Follow Along.
-<br>
-Open this presentation in a new browser tab. You can copy and paste code from there.  
+
+<br> Open this presentation in a new browser tab. You can copy and paste code from there.\
 <br>
 
-Work in the console.  
+Work in the console.\
 <br>
 
-We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.  
+We'll discuss other methods (.rmd, .qmd, scripts) of working in R later.
 
 # Descriptive Statistics
 
@@ -61,7 +61,7 @@ ma_counties |> ggplot(aes(long,lat))+
 
 `library(mosaic)`
 
--   This is where (most of) our statistical functions live 
+-   This is where (most of) our statistical functions live
 
 `library(tidyverse)`
 
@@ -105,8 +105,6 @@ Try
 -   median()
 
     -   Find the median population from 2017
-
--   mode()
 :::
 
 ## Measures of Spread
@@ -122,12 +120,12 @@ Try
 ::: incremental
 -   fivenum()
 
--   favstats(\~pop2017,data=county, na.rm=TRUE)[^2]
+-   favstats(\~pop2017,data=county, na.rm=TRUE)[^1]
 
--   quartile()
+-   quantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))
 :::
 
-[^2]: favstats() is the friendliest and the one we use the most
+[^1]: favstats() is the friendliest and the one we use the most
 
 ## Get specific details on each state
 

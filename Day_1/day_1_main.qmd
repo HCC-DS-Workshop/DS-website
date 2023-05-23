@@ -5,6 +5,10 @@ title: "Day 1:Descriptive Stats and Visualizations"
 
 # May 22 9-1:30
 
+Computer Support 
+
+Start 9:15
+
 Welcome
 
 [Introduction](./Teaching_Introductory_Statistics_with_R_Day1_Opening.pdf){target="_blank"}
@@ -13,52 +17,24 @@ Welcome
 
 -   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt)
 
-Break?
+Lunch
 
 [Numeric Data Histograms and Boxplots](./histograms.html){target="_blank"}
 
 -   [Activity 2 with Boxplots and births14](./Activity_2_Boxplots/Boxplots.txt)
 
-Break
+End 1:30
 
-[Categorical Data Scatter Plots and Correlations](./Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
-
-<!-- ::: download_btn -->
-<!-- ```{r} -->
-<!-- #| echo: false -->
-
-<!-- library(downloadthis) -->
-
-<!-- download_link( -->
-<!--   link = "https://github.com/HCC-R-Workshop/R-workshop-website/blob/main/Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd", -->
-<!--   button_label = "Download Categorical Rmd", -->
-<!--   button_type = c("success"), -->
-<!--   has_icon = TRUE, -->
-<!--   icon = "fa fa-save", -->
-<!--   self_contained = FALSE -->
-
-<!-- ) -->
-<!-- ``` -->
-<!-- ::: -->
-
--   [Notebook Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=1UDrEYbRr_gSGkxLTPQaNlajx9J1bRAVL)
-
-Lunch
-
--   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan)
 
 ------------------------------------------------------------------------
 
 *Solutions posted later*
 
-
-```{r include=FALSE,echo=FALSE}
-
  
-# [Activity 1](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
-# [Activity 2](./Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html)
-# [Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
-```
+[Activity 1 solutions](./Activity_1_Descriptive_Stats/Solutions_Activity_1.html)
+[Activity 2 solutions](./Activity_2_Boxplots/Activity_2_Boxplots_Solutions.html)
+
+
 
 
 [If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)

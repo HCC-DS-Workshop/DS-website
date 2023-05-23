@@ -405,7 +405,6 @@
 <ul>
 <li class="fragment">Find the median population from 2017</li>
 </ul></li>
-<li class="fragment"><p>mode()</p></li>
 </ul>
 </div>
 </section>
@@ -424,7 +423,7 @@
 <ul>
 <li class="fragment"><p>fivenum()</p></li>
 <li class="fragment"><p>favstats(~pop2017,data=county, na.rm=TRUE)<sup>1</sup></p></li>
-<li class="fragment"><p>quartile()</p></li>
+<li class="fragment"><p>quantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))</p></li>
 </ul>
 </div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>favstats() is the friendliest and the one we use the most</p></li></ol></aside></section>
