@@ -415,13 +415,13 @@
 <p>We’ll use a couple of different data sets for the different CI and hypothesis tests.</p>
 <ul>
 <li><p>For a proportion we’ll use the <code>exclusive_relationship</code> data set.</p></li>
-<li><p>For a single mean lets use <code>cars93</code>.</p></li>
-<li><p>For a difference of Means test we’ll use the <code>Sleep</code> data frame (captial S).</p></li>
+<li><p>For a single mean lets use <code>HELPrct</code>.</p></li>
+<li><p>For a difference of means test we’ll use the <code>nyc_marathon</code> data frame</p></li>
 </ul>
 </section>
 <section id="proportions" class="slide level2">
 <h2>Proportions</h2>
-<p>If we were to run <code>?proptest</code> we’d find.</p>
+<p>If we were to run <code>?proptest()</code> we’d find.</p>
 <p>x- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.</p>
 <p>n- sample size (successes + failures) or a data frame (for the formula interface).</p>
 <p>conf.level- the confidence level must be between 0 and 1.</p>
@@ -433,7 +433,7 @@
 </section>
 <section id="confidence-interval-for-proportions" class="slide level2">
 <h2>Confidence Interval for Proportions</h2>
-<p>What is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?</p>
+<p>What is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Assume independence</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co">#At least 10 successes/failures</span></span>
@@ -445,7 +445,7 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num <span class="sc">==</span> <span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">prop.test</span>(<span class="sc">~</span>num <span class="sc">==</span> <span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     1-sample proportions test without continuity correction
@@ -463,7 +463,7 @@ sample estimates:
 </section>
 <section id="to-make-the-ci-look-better" class="slide level2">
 <h2>To make the CI look better</h2>
-<p><br> You can use the $ operator <br></p>
+<p><br> You can use the $ operator from base R<br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>results <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>results<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -487,7 +487,7 @@ attr(,"conf.level")
 <blockquote>
 <p><em>A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.</em></p>
 </blockquote>
-<p>A sample size n=603 and 142 successes.</p>
+<p>A sample size n=603 and x=142 successes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span><span class="dv">142</span>,<span class="at">n=</span><span class="dv">603</span>,<span class="at">correct=</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -499,16 +499,18 @@ attr(,"conf.level")
 <section id="a-warning-on-proportions" class="slide level2">
 <h2>A Warning on Proportions</h2>
 <p><code>prop.test(... correct= FALSE)</code> is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .</p>
-<p>If you are using a different problem set and <code>prop.test()</code> doesn’t work, you should check out <code>binom.test()</code>. .</p>
-<p><code>binom.test(... method="Wald")</code> returns the same values that a TI-83 calculator would produce.</p>
+<p>If you are using a different problem set and <code>prop.test()</code> doesn’t work, you could check out <code>binom.test()</code> which is also in Mosaic .</p>
+<p><code>binom.test(... method="Wald")</code> returns the same values that a TI-83 calculator would produce. </p>
+<p>Eric uses a different package.</p>
 </section>
 <section id="proportion-hypothesis-test" class="slide level2 smaller">
 <h2>Proportion Hypothesis Test</h2>
-<p>To make a hypothesis we need two more arguments. <br></p>
+<p>To make a hypothesis we need two additional arguments. <br></p>
 <ul>
 <li><p>p - This is the population proportion from the null hypothesis</p></li>
 <li><p>alternative - c(“two.sided”, “less”, “greater”)</p></li>
 </ul>
+<p>Is the population parameter for the proportion of students 0.30?</p>
 <p><span class="math inline">\(H_0: p= 0.3\)</span></p>
 <p><span class="math inline">\(H_1: p\ne 0.3\)</span></p>
 <p><span class="math inline">\(\alpha=0.05\)</span></p>
@@ -531,20 +533,47 @@ sample estimates:
 </section>
 <section id="the-cheat-sheets" class="slide level2">
 <h2>The cheat sheets</h2>
-<p>There are two statistics related cheat sheets in the resources tab.</p>
+<p>There are two (or three) statistics related cheat sheets in the resources tab.</p>
 <p><br></p>
 <ol type="1">
 <li><p>The mosaic cheat sheet</p>
 <ul>
-<li>This is the official cheat sheet put out by Mosaic</li>
+<li>This is the “official” cheat sheet put out by Mosaic</li>
 </ul></li>
-<li><p>The MTH 142 Intro to Statistics cheat sheet</p>
-<ul>
-<li>Nic made this one for class</li>
-</ul></li>
+<li><p>Nic’s MTH 142 Intro to Statistics cheat sheet.</p></li>
+<li><p>Eric’s MTH 142 Intro to Statistics sheets</p></li>
 </ol>
 <p><br></p>
-<p>Lets take a look a</p>
+</section>
+<section id="single-mean-hypothesis-test" class="slide level2">
+<h2>Single mean Hypothesis Test</h2>
+<p>Use the <code>HELPrct</code> dataset to answer the question:</p>
+<blockquote>
+<p>Is the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) <span class="math inline">\(\mu \ge 15\)</span>?</p>
+</blockquote>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment"><p><span class="math inline">\(p-value \approx 0\)</span>.</p></li>
+<li class="fragment"><p><code>t.test(~cesd, data=HELPrct, mu=15, alternative = "g")</code></p></li>
+</ul>
+</div>
+<p><br></p>
+</section>
+<section id="difference-of-means-test" class="slide level2">
+<h2>Difference of means test</h2>
+<p>Use the <code>nyc_marathon</code> data frame to answer the question:</p>
+<blockquote>
+<p>Is there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?</p>
+</blockquote>
+<div>
+<ul>
+<li class="fragment"><code>t.test(time_hrs ~ division, data=nyc_marathon)</code></li>
+</ul>
+</div>
+</section>
+<section id="end" class="slide level2">
+<h2>End</h2>
 
 <div class="footer footer-default">
 

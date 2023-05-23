@@ -40,13 +40,13 @@ We'll use a couple of different data sets for the different CI and hypothesis te
 
 -   For a proportion we'll use the `exclusive_relationship` data set.
 
--   For a single mean lets use `cars93`.
+-   For a single mean lets use `HELPrct`.
 
--   For a difference of Means test we'll use the `Sleep` data frame (captial S).
+-   For a difference of means test we'll use the `nyc_marathon` data frame
 
 ## Proportions
 
-If we were to run `?proptest` we'd find.
+If we were to run `?proptest()` we'd find.
 
 x- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.
 
@@ -60,7 +60,7 @@ conf.level- the confidence level must be between 0 and 1.
 
 ## Confidence Interval for Proportions
 
-What is the 90% Confidence interval for the proportion of students who have been in exactly 4 relationships?
+What is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?
 
 ```{r tally-conditions}
 #| echo: TRUE
@@ -72,13 +72,13 @@ tally(~num==4, data=exclusive_relationship)
 ```{r exclusive-relationships}
 #| echo: TRUE
 
-prop.test(x= ~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
+prop.test(~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)
 
 ```
 
 ## To make the CI look better
 
-<br> You can use the \$ operator <br>
+<br> You can use the \$ operator from base R<br>
 
 ```{r dollar-sign}
 #| echo: TRUE
@@ -98,7 +98,7 @@ confint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))
 
 > *A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they'd received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they'd received in the mail.*
 
-A sample size n=603 and 142 successes.
+A sample size n=603 and x=142 successes.
 
 ```{r CI-homework}
 #| echo: TRUE
@@ -110,17 +110,21 @@ confint(prop.test(x=142,n=603,correct=FALSE))
 
 `prop.test(... correct= FALSE)` is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. \n.
 
-If you are using a different problem set and `prop.test()` doesn't work, you should check out `binom.test()`. \n.
+If you are using a different problem set and `prop.test()` doesn't work, you could check out `binom.test()` which is also in Mosaic \n.
 
-`binom.test(... method="Wald")` returns the same values that a TI-83 calculator would produce.
+`binom.test(... method="Wald")` returns the same values that a TI-83 calculator would produce. \n
+
+Eric uses a different package.
 
 ## Proportion Hypothesis Test {.smaller}
 
-To make a hypothesis we need two more arguments. <br>
+To make a hypothesis we need two additional arguments. <br>
 
 -   p - This is the population proportion from the null hypothesis
 
 -   alternative - c("two.sided", "less", "greater")
+
+Is the population parameter for the proportion of students 0.30?
 
 $H_0: p= 0.3$
 
@@ -137,18 +141,46 @@ prop.test(x=~num==4, p=0.3, alternative="t", data=exclusive_relationship, conf.l
 
 ## The cheat sheets
 
-There are two statistics related cheat sheets in the resources tab.
+There are two (or three) statistics related cheat sheets in the resources tab.
 
 <br>
 
 1.  The mosaic cheat sheet
 
-    -   This is the official cheat sheet put out by Mosaic
+    -   This is the "official" cheat sheet put out by Mosaic
 
-2.  The MTH 142 Intro to Statistics cheat sheet
+2.  Nic's MTH 142 Intro to Statistics cheat sheet.
 
-    -   Nic made this one for class
+3.  Eric's MTH 142 Intro to Statistics sheets
 
 <br>
 
-Lets take a look a
+## Single mean Hypothesis Test
+
+Use the `HELPrct` dataset to answer the question:
+
+> Is the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) $\mu \ge 15$?
+
+<br>
+
+::: incremental
+-   $p-value \approx 0$.
+
+-   `t.test(~cesd, data=HELPrct, mu=15, alternative = "g")`
+:::
+
+<br>
+
+## Difference of means test
+
+Use the `nyc_marathon` data frame to answer the question:
+
+> Is there a difference in the winning times between the men's and women's divisions in the NYC Marathon?
+
+::: incremental
+-   `t.test(time_hrs ~ division, data=nyc_marathon)`
+
+
+:::
+
+## End

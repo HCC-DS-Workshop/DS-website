@@ -75,11 +75,15 @@ This is the cheatsheet Nic uses for class
 
 Here's the [pptx file](./images/MTH-142-Cheat-Sheet-v8.pptx) if you want to edit it.
 
-# All the R you need
+## Eric's Cheat Sheets (Based on OpenIntro Statistics v4). 
 
-# More toward Data Science
+-   [Chapter 2](https://docs.google.com/document/d/1_Im5H1zIUjUJWclaEdGOLJ5dFC3znTy_/edit)
 
-# Some Data Science Texts
+## [All the R you need](https://github.com/AmeliaMN/STAT220-labs/blob/main/all_the_R_you_need_formula.Rmd)
+
+This is Amelia Mcnamara's cheat sheet that she made for Mosaic. Find and click the download button on her github repo.
+
+# Some Data Science Texts:
 
 ## Modern Data Science with R
 
@@ -90,6 +94,8 @@ This is the text Nic has used to teach MTH 190: Intro to Data Science
 ## Data Science in a box
 
 ![](images/dsbox.png){fig-align="center" width="200"}
+
+# Tidyverse Cheat Sheets and a Style Guide
 
 ## RMarkdown Cheat sheet
 
