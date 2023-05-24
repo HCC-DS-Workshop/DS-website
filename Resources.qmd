@@ -75,7 +75,7 @@ This is the cheatsheet Nic uses for class
 
 Here's the [pptx file](./images/MTH-142-Cheat-Sheet-v8.pptx) if you want to edit it.
 
-## Eric's Cheat Sheets (Based on OpenIntro Statistics v4). 
+## Eric's Cheat Sheets (Based on OpenIntro Statistics v4).
 
 -   [Chapter 2](https://docs.google.com/document/d/1_Im5H1zIUjUJWclaEdGOLJ5dFC3znTy_/edit)
 

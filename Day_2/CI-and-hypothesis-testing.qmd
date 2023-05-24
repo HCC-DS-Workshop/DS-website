@@ -98,6 +98,8 @@ confint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))
 
 > *A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they'd received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they'd received in the mail.*
 
+<br>
+
 A sample size n=603 and x=142 successes.
 
 ```{r CI-homework}
@@ -108,11 +110,11 @@ confint(prop.test(x=142,n=603,correct=FALSE))
 
 ## A Warning on Proportions
 
-`prop.test(... correct= FALSE)` is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. \n.
+`prop.test(... correct= FALSE)` works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. \n.
 
-If you are using a different problem set and `prop.test()` doesn't work, you could check out `binom.test()` which is also in Mosaic \n.
+If `prop.test()` doesn't work, you could check out `binom.test()` \n.
 
-`binom.test(... method="Wald")` returns the same values that a TI-83 calculator would produce. \n
+`binom.test(... method="Wald")` is TI-83ish. \n
 
 Eric uses a different package.
 
@@ -124,7 +126,7 @@ To make a hypothesis we need two additional arguments. <br>
 
 -   alternative - c("two.sided", "less", "greater")
 
-Is the population parameter for the proportion of students 0.30?
+Is the population parameter for the proportion of students who have had four relationships $p=0.30$?
 
 $H_0: p= 0.3$
 
@@ -141,7 +143,7 @@ prop.test(x=~num==4, p=0.3, alternative="t", data=exclusive_relationship, conf.l
 
 ## The cheat sheets
 
-There are two (or three) statistics related cheat sheets in the resources tab.
+There are four statistics related cheat sheets in the resources tab.
 
 <br>
 
@@ -153,6 +155,8 @@ There are two (or three) statistics related cheat sheets in the resources tab.
 
 3.  Eric's MTH 142 Intro to Statistics sheets
 
+4.  Amelia McNamara's All the R you need. 
+
 <br>
 
 ## Single mean Hypothesis Test
@@ -163,11 +167,13 @@ Use the `HELPrct` dataset to answer the question:
 
 <br>
 
-::: incremental
--   $p-value \approx 0$.
+. . . 
+$p-value \approx 0$.
 
--   `t.test(~cesd, data=HELPrct, mu=15, alternative = "g")`
-:::
+. . . 
+
+`t.test(~cesd, data=HELPrct, mu=15, alternative = "g")`
+
 
 <br>
 
@@ -177,10 +183,60 @@ Use the `nyc_marathon` data frame to answer the question:
 
 > Is there a difference in the winning times between the men's and women's divisions in the NYC Marathon?
 
-::: incremental
--   `t.test(time_hrs ~ division, data=nyc_marathon)`
+. . . 
 
+`t.test(time_hrs ~ division, data=nyc_marathon)`
 
-:::
+## How to get data into R. Method 1: `c()`
 
-## End
+The data below represents doctors salaries in thousands of dollars.
+
+| Salary |        |       |        |
+|--------|--------|-------|--------|
+| 96.64  | 87.7   | 94.57 | 91.57  |
+| 92.06  | 102.76 | 94.89 | 88.69  |
+| 94.83  | 89.14  | 89.27 | 111.13 |
+| 97.59  | 102.24 | 88.48 | 87.5   |
+| 84.99  | 76.85  | 92.89 | 98.48  |
+| 85.27  | 85.6   | 84.06 | 104.31 |
+
+## Copy and paste the data into R:
+
+Give your data a good variable name.
+
+```{r}
+#| echo: TRUE
+salary <- c(96.64, 92.06, 94.83, 97.59, 84.99, 85.27, 87.7, 102.76, 89.14, 102.24, 76.85, 85.6, 94.57, 94.89, 89.27, 88.48, 92.89, 84.06, 91.57, 88.69, 111.13, 87.5, 98.48,
+104.31)
+```
+
+Find if the mean salary for a doctor is 90 thousand dollars.
+
+. . .
+
+```{r}
+#| echo: TRUE
+t.test(~salary, mu=90,alternative = "t")
+```
+
+Notice there is no `data=` argument.
+
+## How to get data into R. Method 2: spreadsheets. {.smaller}
+
+[Here's a spreadsheet](https://www.mosaic-web.org/go/datasets/zebra-mussels.csv) on zebra mussel from mosaic-web.org.
+
+1.  Download the spreadsheet.
+
+2a. If R is installed on your computer, find your fine in the files pane.
+
+2b. If using an R server. Click upload, then find the file on your computer.
+
+![](/images/file-pane-upload.png){fig-align="center"}
+
+3.  Once uploaded/located click the file and import.
+
+![](/images/click-file-import.png){fig-align="center"}
+
+4.  Check the import menu then click import dataset.
+
+note: If using this file for an Rmd document, copy and paste the code that appears in the console.

@@ -487,6 +487,7 @@ attr(,"conf.level")
 <blockquote>
 <p><em>A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.</em></p>
 </blockquote>
+<p><br></p>
 <p>A sample size n=603 and x=142 successes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span><span class="dv">142</span>,<span class="at">n=</span><span class="dv">603</span>,<span class="at">correct=</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -498,9 +499,9 @@ attr(,"conf.level")
 </section>
 <section id="a-warning-on-proportions" class="slide level2">
 <h2>A Warning on Proportions</h2>
-<p><code>prop.test(... correct= FALSE)</code> is built into mosaic and works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .</p>
-<p>If you are using a different problem set and <code>prop.test()</code> doesn’t work, you could check out <code>binom.test()</code> which is also in Mosaic .</p>
-<p><code>binom.test(... method="Wald")</code> returns the same values that a TI-83 calculator would produce. </p>
+<p><code>prop.test(... correct= FALSE)</code> works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .</p>
+<p>If <code>prop.test()</code> doesn’t work, you could check out <code>binom.test()</code> .</p>
+<p><code>binom.test(... method="Wald")</code> is TI-83ish. </p>
 <p>Eric uses a different package.</p>
 </section>
 <section id="proportion-hypothesis-test" class="slide level2 smaller">
@@ -510,7 +511,7 @@ attr(,"conf.level")
 <li><p>p - This is the population proportion from the null hypothesis</p></li>
 <li><p>alternative - c(“two.sided”, “less”, “greater”)</p></li>
 </ul>
-<p>Is the population parameter for the proportion of students 0.30?</p>
+<p>Is the population parameter for the proportion of students who have had four relationships <span class="math inline">\(p=0.30\)</span>?</p>
 <p><span class="math inline">\(H_0: p= 0.3\)</span></p>
 <p><span class="math inline">\(H_1: p\ne 0.3\)</span></p>
 <p><span class="math inline">\(\alpha=0.05\)</span></p>
@@ -533,7 +534,7 @@ sample estimates:
 </section>
 <section id="the-cheat-sheets" class="slide level2">
 <h2>The cheat sheets</h2>
-<p>There are two (or three) statistics related cheat sheets in the resources tab.</p>
+<p>There are four statistics related cheat sheets in the resources tab.</p>
 <p><br></p>
 <ol type="1">
 <li><p>The mosaic cheat sheet</p>
@@ -542,6 +543,7 @@ sample estimates:
 </ul></li>
 <li><p>Nic’s MTH 142 Intro to Statistics cheat sheet.</p></li>
 <li><p>Eric’s MTH 142 Intro to Statistics sheets</p></li>
+<li><p>Amelia McNamara’s All the R you need.</p></li>
 </ol>
 <p><br></p>
 </section>
@@ -552,13 +554,11 @@ sample estimates:
 <p>Is the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) <span class="math inline">\(\mu \ge 15\)</span>?</p>
 </blockquote>
 <p><br></p>
-<div>
-<ul>
-<li class="fragment"><p><span class="math inline">\(p-value \approx 0\)</span>.</p></li>
-<li class="fragment"><p><code>t.test(~cesd, data=HELPrct, mu=15, alternative = "g")</code></p></li>
-</ul>
-</div>
+<p>. . . <span class="math inline">\(p-value \approx 0\)</span>.</p>
+<div class="fragment">
+<p><code>t.test(~cesd, data=HELPrct, mu=15, alternative = "g")</code></p>
 <p><br></p>
+</div>
 </section>
 <section id="difference-of-means-test" class="slide level2">
 <h2>Difference of means test</h2>
@@ -566,14 +566,115 @@ sample estimates:
 <blockquote>
 <p>Is there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?</p>
 </blockquote>
-<div>
-<ul>
-<li class="fragment"><code>t.test(time_hrs ~ division, data=nyc_marathon)</code></li>
-</ul>
+<div class="fragment">
+<p><code>t.test(time_hrs ~ division, data=nyc_marathon)</code></p>
 </div>
 </section>
-<section id="end" class="slide level2">
-<h2>End</h2>
+<section id="how-to-get-data-into-r.-method-1-c" class="slide level2">
+<h2>How to get data into R. Method 1: <code>c()</code></h2>
+<p>The data below represents doctors salaries in thousands of dollars.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Salary</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>96.64</td>
+<td>87.7</td>
+<td>94.57</td>
+<td>91.57</td>
+</tr>
+<tr class="even">
+<td>92.06</td>
+<td>102.76</td>
+<td>94.89</td>
+<td>88.69</td>
+</tr>
+<tr class="odd">
+<td>94.83</td>
+<td>89.14</td>
+<td>89.27</td>
+<td>111.13</td>
+</tr>
+<tr class="even">
+<td>97.59</td>
+<td>102.24</td>
+<td>88.48</td>
+<td>87.5</td>
+</tr>
+<tr class="odd">
+<td>84.99</td>
+<td>76.85</td>
+<td>92.89</td>
+<td>98.48</td>
+</tr>
+<tr class="even">
+<td>85.27</td>
+<td>85.6</td>
+<td>84.06</td>
+<td>104.31</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="copy-and-paste-the-data-into-r" class="slide level2">
+<h2>Copy and paste the data into R:</h2>
+<p>Give your data a good variable name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>salary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">96.64</span>, <span class="fl">92.06</span>, <span class="fl">94.83</span>, <span class="fl">97.59</span>, <span class="fl">84.99</span>, <span class="fl">85.27</span>, <span class="fl">87.7</span>, <span class="fl">102.76</span>, <span class="fl">89.14</span>, <span class="fl">102.24</span>, <span class="fl">76.85</span>, <span class="fl">85.6</span>, <span class="fl">94.57</span>, <span class="fl">94.89</span>, <span class="fl">89.27</span>, <span class="fl">88.48</span>, <span class="fl">92.89</span>, <span class="fl">84.06</span>, <span class="fl">91.57</span>, <span class="fl">88.69</span>, <span class="fl">111.13</span>, <span class="fl">87.5</span>, <span class="fl">98.48</span>,</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fl">104.31</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Find if the mean salary for a doctor is 90 thousand dollars.</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">t.test</span>(<span class="sc">~</span>salary, <span class="at">mu=</span><span class="dv">90</span>,<span class="at">alternative =</span> <span class="st">"t"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  salary
+t = 1.6359, df = 23, p-value = 0.1155
+alternative hypothesis: true mean is not equal to 90
+95 percent confidence interval:
+ 89.32194 95.80389
+sample estimates:
+mean of x 
+ 92.56292 </code></pre>
+</div>
+</div>
+<p>Notice there is no <code>data=</code> argument.</p>
+</div>
+</section>
+<section id="how-to-get-data-into-r.-method-2-spreadsheets." class="slide level2 smaller">
+<h2>How to get data into R. Method 2: spreadsheets.</h2>
+<p><a href="https://www.mosaic-web.org/go/datasets/zebra-mussels.csv">Here’s a spreadsheet</a> on zebra mussel from mosaic-web.org.</p>
+<ol type="1">
+<li>Download the spreadsheet.</li>
+</ol>
+<p>2a. If R is installed on your computer, find your fine in the files pane.</p>
+<p>2b. If using an R server. Click upload, then find the file on your computer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/file-pane-upload.png"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Once uploaded/located click the file and import.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/click-file-import.png"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Check the import menu then click import dataset.</li>
+</ol>
+<p>note: If using this file for an Rmd document, copy and paste the code that appears in the console.</p>
 
 <div class="footer footer-default">
 

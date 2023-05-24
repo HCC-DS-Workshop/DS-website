@@ -49,10 +49,6 @@ Break
 
 -   Activity 5
 
-[Cheatsheets](../Resources.html)
-
-Getting Data into R and some Latex Notation
-
 Regression
 
 -   Activity 6
