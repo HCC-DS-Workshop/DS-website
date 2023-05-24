@@ -43,11 +43,7 @@ Break
 
 [Probability](./SLIDES_Day2-Probabilty_CLT.pdf)
 
--   Activity 4
-
 [Inference Confidence Intervals and Hypothesis Testing](./CI-and-hypothesis-testing.html)
-
--   Activity 5
 
 Regression
 
