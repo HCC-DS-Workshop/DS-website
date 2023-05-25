@@ -326,7 +326,7 @@
     "href": "Day_3/day_3_main.html",
     "title": "Day 3: Additional Topics",
     "section": "",
-    "text": "Getting Data Into R\nLinear Regression\n\nAdvanced: Logistic and Multiple Regression\n\nANOVA\n\nAdvanced: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nAdvanced: Explore the tidyverse tutorials\n\nPedagogy discussion. Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+    "text": "Getting Data Into R\nLinear Regression\n\nActivity: Logistic and Multiple Regression\n\nANOVA\n\nActivity: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nActivity: Explore some basic tidyverse functions\n\nPedagogy discussion. Bringing R into the classroom:\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto come with new version of RStudio.\n\nMore intuitive interface\nQuarto- videoby Mine C.R.\nQuarto website\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
   },
   {
     "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
@@ -628,5 +628,26 @@
     "title": "One Way ANOVA",
     "section": "To do an ANOVA homework problem.",
     "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students."
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html#tutorials",
+    "href": "Day_3/Tidyverse.html#tutorials",
+    "title": "Find the Tidyverse",
+    "section": "Tutorials",
+    "text": "Tutorials\nIn RStudio there is the tutorial pane in the upper right.\n\nWithin that there are three tutorial videos.\n\nThe first is called “Filter observations”\nThe second is called “Create new variables”\nThe third is called “Summarise Tables”\n\nThese three tutorials will get you started with the basic verbs for manipulating data.\n\nfilter()\nselect()\ngroup_by()\nmutate()\nsummarize()"
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html",
+    "href": "Day_3/Tidyverse.html",
+    "title": "Find the Tidyverse",
+    "section": "",
+    "text": "The Tidyverse is made up of the packages below."
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html#there-are-so-many-websites-teaching-the-tidyverse.",
+    "href": "Day_3/Tidyverse.html#there-are-so-many-websites-teaching-the-tidyverse.",
+    "title": "Find the Tidyverse",
+    "section": "There are so many websites teaching the tidyverse.",
+    "text": "There are so many websites teaching the tidyverse.\nLots tutorials exist online.\nHave Fun."
   }
 ]

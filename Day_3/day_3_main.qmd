@@ -7,29 +7,29 @@ editor: visual
 
 Linear Regression
 
--   Advanced: Logistic and Multiple Regression
+-   Activity: Logistic and Multiple Regression
 
-ANOVA
+[ANOVA](./ANOVA.html)
 
--   Advanced: Two way ANOVA
+-   Activity: Two way ANOVA
 
 Super brief Intro to Tidyverse filtering to remove outliers.
 
--   Advanced: Explore the tidyverse tutorials
+-   [Activity: Explore some basic tidyverse functions](./Tidyverse.html)
 
 Pedagogy discussion. Bringing R into the classroom:
-
--   Pitfalls
-
--   Our favorite Data sets from Mosaic and Open Intro and why
-
--   MyOpenMath
 
 Introduction to Modern Statistics
 
 -   A text that uses the tidyverse
 
-Quarto- the newer rmd
+Quarto come with new version of RStudio.
+
+-   More intuitive interface
+
+-   [Quarto- video ](https://www.youtube.com/watch?v=_f3latmOhew)by Mine C.R.
+
+-   [Quarto website](https://quarto.org/)
 
 Wrap up Discussion
 

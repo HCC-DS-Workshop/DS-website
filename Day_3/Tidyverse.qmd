@@ -1,0 +1,40 @@
+---
+title: "Find the Tidyverse"
+editor: visual
+---
+
+The Tidyverse is made up of the packages below.
+
+![](../images/tidyverse2.png)
+
+## Tutorials
+
+In RStudio there is the tutorial pane in the upper right.
+
+![](../images/tutorial-pane.png)
+
+Within that there are three tutorial videos.
+
+1.  The first is called "Filter observations"
+
+2.  The second is called "Create new variables"
+
+3.  The third is called "Summarise Tables"
+
+These three tutorials will get you started with the basic verbs for manipulating data.
+
+-   filter()
+
+-   select()
+
+-   group_by()
+
+-   mutate()
+
+-   summarize()
+
+## There are so many websites teaching the tidyverse. 
+
+Lots tutorials exist online.
+
+Have Fun.
