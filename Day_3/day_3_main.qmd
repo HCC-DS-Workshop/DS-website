@@ -3,17 +3,25 @@ title: "Day 3: Additional Topics"
 editor: visual
 ---
 
-Bringing R into the classroom:
+Linear Regression
+
+-   Advanced: Logistic and Multiple Regression
+
+ANOVA
+
+-   Advanced: Two way ANOVA
+
+Super brief Intro to Tidyverse filtering to remove outliers.
+
+-   Advanced: Explore the tidyverse tutorials
+
+Pedagogy discussion. Bringing R into the classroom:
 
 -   Pitfalls
 
 -   Our favorite Data sets from Mosaic and Open Intro and why
 
 -   MyOpenMath
-
-Intro to tidyverse. 
-
--   To remove outliers: filter()
 
 Introduction to Modern Statistics
 
@@ -23,4 +31,4 @@ Quarto- the newer rmd
 
 Wrap up Discussion
 
-[If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)
+[Are you interested in having a group to work on this over the summer?](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)
