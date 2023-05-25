@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.475">
 
-  <title>Intro Stats with R - Confidence Interval and Hypothesis Testing</title>
+  <title>Intro Stats with R - One Way ANOVA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,193 +386,112 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="hotpink" class="quarto-title-block center">
-  <h1 class="title">Confidence Interval and Hypothesis Testing</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">One Way ANOVA</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="functions-for-confidence-intervals" class="slide level2">
-<h2>Functions for Confidence Intervals</h2>
+<section class="slide level2">
+
 <div class="cell">
 
 </div>
-<p><br></p>
-<p>These are the functions for confidence intervals.</p>
-<p><br></p>
+</section>
+<section id="data-must-be-in-tidy-format." class="slide level2">
+<h2>Data must be in tidy format.</h2>
 <ul>
-<li><p>prop.test(…., correct =FALSE)</p></li>
-<li><p>t.test()</p></li>
-</ul>
-<p><br></p>
-<p>The same functions are used for hypothesis testing.</p>
-</section>
-<section id="the-data-sets" class="slide level2">
-<h2>The Data Sets</h2>
-<p><br></p>
-<p>We’ll use a couple of different data sets for the different CI and hypothesis tests.</p>
+<li><p>All rows are observations</p></li>
+<li><p>All columns are variables</p>
 <ul>
-<li><p>For a proportion we’ll use the <code>exclusive_relationship</code> data set.</p></li>
-<li><p>For a single mean lets use <code>HELPrct</code>.</p></li>
-<li><p>For a difference of means test we’ll use the <code>nyc_marathon</code> data frame</p></li>
-</ul>
-</section>
-<section id="proportions" class="slide level2">
-<h2>Proportions</h2>
-<p>If we were to run <code>?proptest()</code> we’d find.</p>
-<p>x- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.</p>
-<p>n- sample size (successes + failures) or a data frame (for the formula interface).</p>
-<p>conf.level- the confidence level must be between 0 and 1.</p>
-<div>
-<ul>
-<li class="fragment">The “correct” argument is not listed.</li>
-</ul>
-</div>
-</section>
-<section id="confidence-interval-for-proportions" class="slide level2">
-<h2>Confidence Interval for Proportions</h2>
-<p>What is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Assume independence</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#At least 10 successes/failures</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">tally</span>(<span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>, <span class="at">data=</span>exclusive_relationship)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>num == 4
- TRUE FALSE  &lt;NA&gt; 
-   53   150    15 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">prop.test</span>(<span class="sc">~</span>num <span class="sc">==</span> <span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    1-sample proportions test without continuity correction
-
-data:  exclusive_relationship$num == 4  [with success = TRUE]
-X-squared = 46.35, df = 1, p-value = 9.892e-12
-alternative hypothesis: true p is not equal to 0.5
-90 percent confidence interval:
- 0.2137559 0.3146963
-sample estimates:
-        p 
-0.2610837 </code></pre>
-</div>
-</div>
-</section>
-<section id="to-make-the-ci-look-better" class="slide level2">
-<h2>To make the CI look better</h2>
-<p><br> You can use the $ operator from base R<br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>results <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>results<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2137559 0.3146963
-attr(,"conf.level")
-[1] 0.9</code></pre>
-</div>
-</div>
-<p><br> or you can use the wrapper confint() <br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          p     lower     upper level
-1 0.2610837 0.2114776 0.3172773   0.9</code></pre>
-</div>
-</div>
-</section>
-<section id="you-can-also-make-a-ci-from-a-homework-problem." class="slide level2 smaller">
-<h2>You can also make a CI from a homework problem.</h2>
-<blockquote>
-<p><em>A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.</em></p>
-</blockquote>
-<p><br></p>
-<p>A sample size n=603 and x=142 successes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span><span class="dv">142</span>,<span class="at">n=</span><span class="dv">603</span>,<span class="at">correct=</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          p     lower    upper level
-1 0.2354892 0.2033633 0.270964  0.95</code></pre>
-</div>
-</div>
-</section>
-<section id="a-warning-on-proportions" class="slide level2">
-<h2>A Warning on Proportions</h2>
-<p><code>prop.test(... correct= FALSE)</code> works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .</p>
-<p>If <code>prop.test()</code> doesn’t work, you could check out <code>binom.test()</code> .</p>
-<p><code>binom.test(... method="Wald")</code> is TI-83ish. </p>
-<p>Eric uses a different package.</p>
-</section>
-<section id="proportion-hypothesis-test" class="slide level2 smaller">
-<h2>Proportion Hypothesis Test</h2>
-<p>To make a hypothesis we need two additional arguments. <br></p>
-<ul>
-<li><p>p - This is the population proportion from the null hypothesis</p></li>
-<li><p>alternative - c(“two.sided”, “less”, “greater”)</p></li>
-</ul>
-<p>Is the population parameter for the proportion of students who have had four relationships <span class="math inline">\(p=0.30\)</span>?</p>
-<p><span class="math inline">\(H_0: p= 0.3\)</span></p>
-<p><span class="math inline">\(H_1: p\ne 0.3\)</span></p>
-<p><span class="math inline">\(\alpha=0.05\)</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">prop.test</span>(<span class="at">x=</span><span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>, <span class="at">p=</span><span class="fl">0.3</span>, <span class="at">alternative=</span><span class="st">"t"</span>, <span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    1-sample proportions test without continuity correction
-
-data:  exclusive_relationship$num == 4  [with success = TRUE]
-X-squared = 1.464, df = 1, p-value = 0.2263
-alternative hypothesis: true p is not equal to 0.3
-90 percent confidence interval:
- 0.2137559 0.3146963
-sample estimates:
-        p 
-0.2610837 </code></pre>
-</div>
-</div>
-</section>
-<section id="the-cheat-sheets" class="slide level2">
-<h2>The cheat sheets</h2>
-<p>There are four statistics related cheat sheets in the resources tab.</p>
-<p><br></p>
-<ol type="1">
-<li><p>The mosaic cheat sheet</p>
-<ul>
-<li>This is the “official” cheat sheet put out by Mosaic</li>
+<li>The things you are comparing must be levels of the same variable.</li>
 </ul></li>
-<li><p>Nic’s MTH 142 Intro to Statistics cheat sheet.</p></li>
-<li><p>Eric’s MTH 142 Intro to Statistics sheets</p></li>
-<li><p>Amelia McNamara’s All the R you need.</p></li>
-</ol>
-<p><br></p>
+</ul>
 </section>
-<section id="single-mean-hypothesis-test" class="slide level2">
-<h2>Single mean Hypothesis Test</h2>
-<p>Use the <code>HELPrct</code> dataset to answer the question:</p>
-<blockquote>
-<p>Is the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) <span class="math inline">\(\mu \ge 15\)</span>?</p>
-</blockquote>
-<p><br></p>
-<p>. . . <span class="math inline">\(p-value \approx 0\)</span>.</p>
-<div class="fragment">
-<p><code>t.test(~cesd, data=HELPrct, mu=15, alternative = "g")</code></p>
-<p><br></p>
+<section id="example-are-average-quiz-scores-and-test-scores-the-same" class="slide level2">
+<h2>Example: Are average quiz scores and test scores the same?</h2>
+<p>This would not work in R.<sup>1</sup></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+  name   quiz1 quiz2 test1
+  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 Harper    NA    60    80
+2 Emily     80    NA    NA
+3 Ethan     70    30    90
+4 Samuel    80    40    86</code></pre>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>This example comes from <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html" class="uri">https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html</a></p></li></ol></aside></section>
+<section id="this-table-is-tidy" class="slide level2">
+<h2>This table is tidy</h2>
+<p>This would work in R.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   name   assessment grade
+   &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;
+ 1 Emily  quiz1         80
+ 2 Emily  quiz2         NA
+ 3 Emily  test1         NA
+ 4 Ethan  quiz1         70
+ 5 Ethan  quiz2         30
+ 6 Ethan  test1         90
+ 7 Harper quiz1         NA
+ 8 Harper quiz2         60
+ 9 Harper test1         80
+10 Samuel quiz1         80
+11 Samuel quiz2         40
+12 Samuel test1         86</code></pre>
+</div>
 </div>
 </section>
-<section id="difference-of-means-test" class="slide level2">
-<h2>Difference of means test</h2>
-<p>Use the <code>nyc_marathon</code> data frame to answer the question:</p>
-<blockquote>
-<p>Is there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?</p>
-</blockquote>
-<div class="fragment">
-<p><code>t.test(time_hrs ~ division, data=nyc_marathon)</code></p>
+<section id="there-is-a-way-to-do-this-in-r" class="slide level2">
+<h2>There is a way to do this in R</h2>
+<p>But its gross.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>classroom <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="sc">~</span>name,    <span class="sc">~</span>quiz1, <span class="sc">~</span>quiz2, <span class="sc">~</span>test1,</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="st">"Billy"</span>,  <span class="cn">NA</span>,     <span class="st">"60"</span>,    <span class="st">"80"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="st">"Suzy"</span>,   <span class="st">"80"</span>,    <span class="cn">NA</span>,     <span class="cn">NA</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="st">"Lionel"</span>, <span class="st">"70"</span>,    <span class="st">"30"</span>,    <span class="st">"90"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="st">"Jenny"</span>,  <span class="st">"80"</span>,    <span class="st">"40"</span>,    <span class="st">"86"</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  )</span>
+<span id="cb3-8"><a href="#cb3-8"></a>classroom2 <span class="ot">&lt;-</span> classroom <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">pivot_longer</span>(quiz1<span class="sc">:</span>test1, <span class="at">names_to =</span> <span class="st">"assessment"</span>, <span class="at">values_to =</span> <span class="st">"grade"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">arrange</span>(name, assessment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="i-have-students-do-this-is-a-spreadsheet." class="slide level2">
+<h2>I have students do this is a spreadsheet.</h2>
+<p>More on this momentarily.</p>
+</section>
+<section id="example-are-average-quiz-scores-and-test-scores-the-same-1" class="slide level2">
+<h2>Example: Are average quiz scores and test scores the same?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>results <span class="ot">&lt;-</span> <span class="fu">aov</span>(grade<span class="sc">~</span>assessment, <span class="at">data =</span> classroom2)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">summary</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+assessment   2   2950  1475.1   15.15 0.00451 **
+Residuals    6    584    97.3                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+3 observations deleted due to missingness</code></pre>
+</div>
+</div>
+</section>
+<section id="to-do-an-anova-homework-problem." class="slide level2">
+<h2>To do an ANOVA homework problem.</h2>
+<p>Context: Starting wage for work study students.</p>
 
-<div class="footer footer-default">
+
+<img data-src="../images/ANOVA-question.png" class="r-stretch"><div class="footer footer-default">
 
 </div>
-</div>
 </section>
+
     </div>
   </div>
 

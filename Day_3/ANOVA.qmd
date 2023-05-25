@@ -1,0 +1,83 @@
+---
+title: "One Way ANOVA"
+format: revealjs
+editor: visual
+---
+
+```{r setup}
+ 
+library(mosaic)
+library(openintro)
+library(tidyverse)
+```
+
+## Data must be in tidy format.  
+
+-   All rows are observations
+
+-   All columns are variables
+
+    -   The things you are comparing must be levels of the same variable.
+
+## Example: Are average quiz scores and test scores the same?
+
+This would not work in R.[^1]
+
+[^1]: This example comes from <https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html>
+
+```{r untidy-table, echo=FALSE}
+
+classroom <- tribble(
+  ~name,    ~quiz1, ~quiz2, ~test1,
+  "Harper",  NA,     60,    80,
+  "Emily",  80,    NA,     NA,
+  "Ethan",     70,    30,   90,
+  "Samuel",    80,    40,    86
+  )
+classroom
+```
+
+## This table is tidy
+
+This would work in R.
+
+```{r tidy-table, echo=FALSE}
+classroom2 <- classroom %>% 
+  pivot_longer(quiz1:test1, names_to = "assessment", values_to = "grade") %>% 
+  arrange(name, assessment)
+head(classroom2,12)
+```
+
+## There is a way to do this in R
+
+But its gross.
+
+```{r R-method, echo=TRUE, eval=FALSE}
+classroom <- tribble(
+  ~name,    ~quiz1, ~quiz2, ~test1,
+  "Billy",  NA,     "60",    "80",
+  "Suzy",   "80",    NA,     NA,
+  "Lionel", "70",    "30",    "90",
+  "Jenny",  "80",    "40",    "86"
+  )
+classroom2 <- classroom %>% 
+  pivot_longer(quiz1:test1, names_to = "assessment", values_to = "grade") %>% 
+  arrange(name, assessment)
+```
+
+## I have students do this is a spreadsheet. 
+
+More on this momentarily.
+
+## Example: Are average quiz scores and test scores the same?
+
+```{r ANOA, echo=TRUE}
+results <- aov(grade~assessment, data = classroom2)
+summary(results)
+```
+
+## To do an ANOVA homework problem. 
+
+Context: Starting wage for work study students.
+
+![](/images/ANOVA-question.png)

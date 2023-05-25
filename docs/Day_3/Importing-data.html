@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.475">
 
-  <title>Intro Stats with R - Confidence Interval and Hypothesis Testing</title>
+  <title>Intro Stats with R - Getting Data Into R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,193 +386,149 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="hotpink" class="quarto-title-block center">
-  <h1 class="title">Confidence Interval and Hypothesis Testing</h1>
+<section id="title-slide" data-background-color="orange" class="quarto-title-block center">
+  <h1 class="title">Getting Data Into R</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="functions-for-confidence-intervals" class="slide level2">
-<h2>Functions for Confidence Intervals</h2>
+<section class="slide level2">
+
 <div class="cell">
 
 </div>
-<p><br></p>
-<p>These are the functions for confidence intervals.</p>
-<p><br></p>
-<ul>
-<li><p>prop.test(…., correct =FALSE)</p></li>
-<li><p>t.test()</p></li>
-</ul>
-<p><br></p>
-<p>The same functions are used for hypothesis testing.</p>
 </section>
-<section id="the-data-sets" class="slide level2">
-<h2>The Data Sets</h2>
-<p><br></p>
-<p>We’ll use a couple of different data sets for the different CI and hypothesis tests.</p>
-<ul>
-<li><p>For a proportion we’ll use the <code>exclusive_relationship</code> data set.</p></li>
-<li><p>For a single mean lets use <code>HELPrct</code>.</p></li>
-<li><p>For a difference of means test we’ll use the <code>nyc_marathon</code> data frame</p></li>
-</ul>
+<section id="section" class="slide level2">
+<h2></h2>
 </section>
-<section id="proportions" class="slide level2">
-<h2>Proportions</h2>
-<p>If we were to run <code>?proptest()</code> we’d find.</p>
-<p>x- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.</p>
-<p>n- sample size (successes + failures) or a data frame (for the formula interface).</p>
-<p>conf.level- the confidence level must be between 0 and 1.</p>
-<div>
-<ul>
-<li class="fragment">The “correct” argument is not listed.</li>
-</ul>
-</div>
+<section id="how-to-get-data-into-r.-method-1-c" class="slide level2">
+<h2>How to get data into R. Method 1: <code>c()</code></h2>
+<p>The data below represents doctors salaries in thousands of dollars.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Salary</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>96.64</td>
+<td>87.7</td>
+<td>94.57</td>
+<td>91.57</td>
+</tr>
+<tr class="even">
+<td>92.06</td>
+<td>102.76</td>
+<td>94.89</td>
+<td>88.69</td>
+</tr>
+<tr class="odd">
+<td>94.83</td>
+<td>89.14</td>
+<td>89.27</td>
+<td>111.13</td>
+</tr>
+<tr class="even">
+<td>97.59</td>
+<td>102.24</td>
+<td>88.48</td>
+<td>87.5</td>
+</tr>
+<tr class="odd">
+<td>84.99</td>
+<td>76.85</td>
+<td>92.89</td>
+<td>98.48</td>
+</tr>
+<tr class="even">
+<td>85.27</td>
+<td>85.6</td>
+<td>84.06</td>
+<td>104.31</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="confidence-interval-for-proportions" class="slide level2">
-<h2>Confidence Interval for Proportions</h2>
-<p>What is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?</p>
+<section id="copy-and-paste-the-data-into-r" class="slide level2">
+<h2>Copy and paste the data into R:</h2>
+<p>Make a vector and give your data a good variable name.</p>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Assume independence</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#At least 10 successes/failures</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">tally</span>(<span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>, <span class="at">data=</span>exclusive_relationship)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>num == 4
- TRUE FALSE  &lt;NA&gt; 
-   53   150    15 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">prop.test</span>(<span class="sc">~</span>num <span class="sc">==</span> <span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    1-sample proportions test without continuity correction
-
-data:  exclusive_relationship$num == 4  [with success = TRUE]
-X-squared = 46.35, df = 1, p-value = 9.892e-12
-alternative hypothesis: true p is not equal to 0.5
-90 percent confidence interval:
- 0.2137559 0.3146963
-sample estimates:
-        p 
-0.2610837 </code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>salary <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">96.64</span>, <span class="fl">92.06</span>, <span class="fl">94.83</span>, <span class="fl">97.59</span>, <span class="fl">84.99</span>, <span class="fl">85.27</span>, <span class="fl">87.7</span>, <span class="fl">102.76</span>, <span class="fl">89.14</span>, <span class="fl">102.24</span>, <span class="fl">76.85</span>, <span class="fl">85.6</span>, <span class="fl">94.57</span>, <span class="fl">94.89</span>, <span class="fl">89.27</span>, <span class="fl">88.48</span>, <span class="fl">92.89</span>, <span class="fl">84.06</span>, <span class="fl">91.57</span>, <span class="fl">88.69</span>, <span class="fl">111.13</span>, <span class="fl">87.5</span>, <span class="fl">98.48</span>,</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fl">104.31</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="to-make-the-ci-look-better" class="slide level2">
-<h2>To make the CI look better</h2>
-<p><br> You can use the $ operator from base R<br></p>
+<section id="do-a-t.test" class="slide level2">
+<h2>Do a t.test()</h2>
+<p>…to test if the average doctor’s salary is $90k.</p>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>results <span class="ot">&lt;-</span> <span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>results<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">pval</span>(<span class="fu">t.test</span>(<span class="sc">~</span>salary, <span class="at">mu=</span><span class="dv">90</span>,<span class="at">alternative =</span> <span class="st">"t"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2137559 0.3146963
-attr(,"conf.level")
-[1] 0.9</code></pre>
+<pre><code>  p.value 
+0.1154803 </code></pre>
 </div>
 </div>
-<p><br> or you can use the wrapper confint() <br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span> <span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>,<span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          p     lower     upper level
-1 0.2610837 0.2114776 0.3172773   0.9</code></pre>
-</div>
+<p>Notice there is no <code>data=</code> argument.</p>
 </div>
 </section>
-<section id="you-can-also-make-a-ci-from-a-homework-problem." class="slide level2 smaller">
-<h2>You can also make a CI from a homework problem.</h2>
-<blockquote>
-<p><em>A store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.</em></p>
-</blockquote>
-<p><br></p>
-<p>A sample size n=603 and x=142 successes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">confint</span>(<span class="fu">prop.test</span>(<span class="at">x=</span><span class="dv">142</span>,<span class="at">n=</span><span class="dv">603</span>,<span class="at">correct=</span><span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>          p     lower    upper level
-1 0.2354892 0.2033633 0.270964  0.95</code></pre>
-</div>
-</div>
-</section>
-<section id="a-warning-on-proportions" class="slide level2">
-<h2>A Warning on Proportions</h2>
-<p><code>prop.test(... correct= FALSE)</code> works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .</p>
-<p>If <code>prop.test()</code> doesn’t work, you could check out <code>binom.test()</code> .</p>
-<p><code>binom.test(... method="Wald")</code> is TI-83ish. </p>
-<p>Eric uses a different package.</p>
-</section>
-<section id="proportion-hypothesis-test" class="slide level2 smaller">
-<h2>Proportion Hypothesis Test</h2>
-<p>To make a hypothesis we need two additional arguments. <br></p>
-<ul>
-<li><p>p - This is the population proportion from the null hypothesis</p></li>
-<li><p>alternative - c(“two.sided”, “less”, “greater”)</p></li>
-</ul>
-<p>Is the population parameter for the proportion of students who have had four relationships <span class="math inline">\(p=0.30\)</span>?</p>
-<p><span class="math inline">\(H_0: p= 0.3\)</span></p>
-<p><span class="math inline">\(H_1: p\ne 0.3\)</span></p>
-<p><span class="math inline">\(\alpha=0.05\)</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">prop.test</span>(<span class="at">x=</span><span class="sc">~</span>num<span class="sc">==</span><span class="dv">4</span>, <span class="at">p=</span><span class="fl">0.3</span>, <span class="at">alternative=</span><span class="st">"t"</span>, <span class="at">data=</span>exclusive_relationship, <span class="at">conf.level =</span> <span class="fl">0.90</span>, <span class="at">correct=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    1-sample proportions test without continuity correction
-
-data:  exclusive_relationship$num == 4  [with success = TRUE]
-X-squared = 1.464, df = 1, p-value = 0.2263
-alternative hypothesis: true p is not equal to 0.3
-90 percent confidence interval:
- 0.2137559 0.3146963
-sample estimates:
-        p 
-0.2610837 </code></pre>
-</div>
-</div>
-</section>
-<section id="the-cheat-sheets" class="slide level2">
-<h2>The cheat sheets</h2>
-<p>There are four statistics related cheat sheets in the resources tab.</p>
-<p><br></p>
+<section id="zebra-mussels1" class="slide level2">
+<h2>Zebra Mussels<sup>1</sup></h2>
+<p><img data-src="../images/zebra-mussel-photo.jpg"></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>https://commons.wikimedia.org/wiki/File:Dreissena_polymorpha_%28I1957%29_0265_%2839449820624%29.jpg</p></li></ol></aside></section>
+<section id="how-to-get-data-into-r.-method-2-spreadsheets." class="slide level2">
+<h2>How to get data into R. Method 2: spreadsheets.</h2>
+<p><a href="https://www.mosaic-web.org/go/datasets/zebra-mussels.csv">Here’s a spreadsheet</a> on zebra mussels from mosaic-web.org.</p>
 <ol type="1">
-<li><p>The mosaic cheat sheet</p>
-<ul>
-<li>This is the “official” cheat sheet put out by Mosaic</li>
-</ul></li>
-<li><p>Nic’s MTH 142 Intro to Statistics cheat sheet.</p></li>
-<li><p>Eric’s MTH 142 Intro to Statistics sheets</p></li>
-<li><p>Amelia McNamara’s All the R you need.</p></li>
+<li>Download the spreadsheet.</li>
 </ol>
-<p><br></p>
+<p>2a. If R is installed on your computer, find your file in the files pane.</p>
+<p>2b. If using an R server. Click upload, then find the file on your computer.</p>
+
+<img data-src="../images/file-pane-upload.png" class="r-stretch quarto-figure-center"></section>
+<section id="importing-the-data" class="slide level2">
+<h2>Importing the data</h2>
+<ol start="3" type="1">
+<li>Once uploaded/located <strong>click</strong> the file and import.</li>
+</ol>
+
+<img data-src="../images/click-file-import.png" class="r-stretch quarto-figure-center"><ol start="4" type="1">
+<li>Check the import menu then click import dataset.</li>
+</ol>
 </section>
-<section id="single-mean-hypothesis-test" class="slide level2">
-<h2>Single mean Hypothesis Test</h2>
-<p>Use the <code>HELPrct</code> dataset to answer the question:</p>
-<blockquote>
-<p>Is the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) <span class="math inline">\(\mu \ge 15\)</span>?</p>
-</blockquote>
+<section id="copy-the-line-of-code" class="slide level2">
+<h2>Copy the line of code</h2>
+<p>note: If using this file for an Rmd document: in the setup chunk, copy and paste the code that appears in the console.</p>
 <p><br></p>
-<p>. . . <span class="math inline">\(p-value \approx 0\)</span>.</p>
+<p><code>library(readr)</code></p>
+<p><code>zebra_mussels &lt;- read_csv("../images/zebra-mussels(1).csv")</code></p>
+<p><br></p>
+<p>Its helpful if your data is in the same folder as your .csv file.</p>
+</section>
+<section id="try-a-difference-of-means-hypothesis-test-with-this-data." class="slide level2">
+<h2>Try a difference of means hypothesis test with this data.</h2>
+<p>Is there a difference in the dry.mass of a zebra mussel based on the attachment?</p>
 <div class="fragment">
-<p><code>t.test(~cesd, data=HELPrct, mu=15, alternative = "g")</code></p>
-<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">pval</span>(<span class="fu">t.test</span>(dry.mass<span class="sc">~</span>attachment,<span class="at">data=</span>zebra_mussels))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> p.value 
+0.023054 </code></pre>
 </div>
-</section>
-<section id="difference-of-means-test" class="slide level2">
-<h2>Difference of means test</h2>
-<p>Use the <code>nyc_marathon</code> data frame to answer the question:</p>
-<blockquote>
-<p>Is there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?</p>
-</blockquote>
-<div class="fragment">
-<p><code>t.test(time_hrs ~ division, data=nyc_marathon)</code></p>
+</div>
 
 <div class="footer footer-default">
 
 </div>
 </div>
 </section>
+
     </div>
   </div>
 
