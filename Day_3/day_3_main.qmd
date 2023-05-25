@@ -3,6 +3,8 @@ title: "Day 3: Additional Topics"
 editor: visual
 ---
 
+Getting Data Into R
+
 Linear Regression
 
 -   Advanced: Logistic and Multiple Regression

@@ -326,7 +326,7 @@
     "href": "Day_3/day_3_main.html",
     "title": "Day 3: Additional Topics",
     "section": "",
-    "text": "Linear Regression\n\nAdvanced: Logistic and Multiple Regression\n\nANOVA\n\nAdvanced: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nAdvanced: Explore the tidyverse tutorials\n\nPedagogy discussion. Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+    "text": "Getting Data Into R\nLinear Regression\n\nAdvanced: Logistic and Multiple Regression\n\nANOVA\n\nAdvanced: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nAdvanced: Explore the tidyverse tutorials\n\nPedagogy discussion. Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
   },
   {
     "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
