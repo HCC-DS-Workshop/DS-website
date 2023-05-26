@@ -57,7 +57,7 @@ ANOVA
 
 Solutions
 
-[Activity 3](../Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
+[Activity 3 Lab on CAtegorical Data Scatter Plots and Correlation 3](../Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
 
 Notebook solutions soonish.
 
