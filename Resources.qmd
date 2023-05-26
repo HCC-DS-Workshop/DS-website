@@ -35,7 +35,7 @@ This video compares Moasic, Base R and Tidyverse in an introductory statistics c
 
 # **Some Open Stats Books:**
 
-## The link below has a list of stats books produced by Project Mosaic.
+## [This link has a list of stats books produced by Project Mosaic.](https://www.mosaic-web.org/mosaic-books.html)
 
 [![](https://avatars.githubusercontent.com/u/11564185?s=200&v=4){fig-align="center" width="190"}](https://www.mosaic-web.org/mosaic-books.html)
 
@@ -45,19 +45,19 @@ Project MOSAIC: [Graph Examples.](https://www.mosaic-web.org/ggformula/articles/
 
 ## OpenIntro Statistics
 
-This is the text Eric and Nic currently use, there is no explicit mention of R.
+[This is the text Eric and Nic currently use, there is no explicit mention of R.](https://www.openintro.org/book/os/)
 
 [![](https://d2sofvawe08yqg.cloudfront.net/os/s_hero?1620484636){fig-align="center" width="200"}](https://www.openintro.org/book/os/)
 
 ## Modern Dive
 
-Modern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse.
+[Modern Dive is a Statistics Text with Data Science Flavor. It relies heavily on the tidyverse.](https://moderndive.com/index.html)
 
 [![](images/ModernDive.png){fig-align="center" width="200"}](https://moderndive.com/index.html)
 
 ## Introduction to Modern Statistics.
 
-IMS teaches Statistics with the tidyverse.
+[IMS teaches Statistics with the tidyverse.](https://moderndive.com/index.html)
 
 [![](https://d2sofvawe08yqg.cloudfront.net/imstat/s_hero?1624230565){fig-align="center" width="200"}](https://moderndive.com/index.html)
 
@@ -87,13 +87,13 @@ This is Amelia Mcnamara's cheat sheet that she made for Mosaic. Find and click t
 
 ## Modern Data Science with R
 
-This is the text Nic has used to teach MTH 190: Intro to Data Science
+[This is the text](https://mdsr-book.github.io/mdsr2e/) Nic has used to teach MTH 190: Intro to Data Science
 
-![](https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png){fig-align="center" width="200"}
+[![](https://mdsr-book.github.io/mdsr2e/gfx/mdsr2e_cover.png){fig-align="center" width="200"}](https://mdsr-book.github.io/mdsr2e/)
 
 ## Data Science in a box
 
-![](images/dsbox.png){fig-align="center" width="200"}
+[![](images/dsbox.png){fig-align="center" width="200"}](https://datasciencebox.org/)
 
 # Tidyverse Cheat Sheets and a Style Guide
 

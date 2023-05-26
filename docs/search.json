@@ -4,7 +4,7 @@
     "href": "Day_3/day_3_main.html",
     "title": "Day 3: Additional Topics",
     "section": "",
-    "text": "Getting Data Into R\nLinear Regression\n\nNotebook: Regression\nNotebook: solutions\nLab: Regression\n\nANOVA\nShort: Filtering to remove outliers.\n\nLonger: Explore some basic tidyverse functions\nMSDR Problem #11 is fun\n\nPedagogy discussion.\nQuarto comes with new version of RStudio.\n\nQuarto- video by Mine C.R.\nQuarto website\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+    "text": "Getting Data Into R\nLinear Regression\n\nNotebook: Regression\nNotebook: solutions\nLab: Regression\n\nANOVA\nShort: Filtering to remove outliers.\n\nLonger: Explore some basic tidyverse functions\nMDSR Problem #11 is fun\n\nPedagogy discussion.\nQuarto comes with new version of RStudio.\n\nQuarto- video by Mine C.R.\nQuarto website\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
   },
   {
     "objectID": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
@@ -649,5 +649,12 @@
     "title": "One Way ANOVA",
     "section": "Run the ANOVA.",
     "text": "Run the ANOVA.\n\n\nwage_results <- aov(wage~group, data= ANOVA_wage_ex)\n\nsummary(wage_results)"
+  },
+  {
+    "objectID": "Resources.html#this-link-has-a-list-of-stats-books-produced-by-project-mosaic.",
+    "href": "Resources.html#this-link-has-a-list-of-stats-books-produced-by-project-mosaic.",
+    "title": "Intro Stats with R",
+    "section": "This link has a list of stats books produced by Project Mosaic.",
+    "text": "This link has a list of stats books produced by Project Mosaic.\n\n\n\n\n\nProject MOSAIC: Exhaustive list of graphs.\nProject MOSAIC: Graph Examples."
   }
 ]
