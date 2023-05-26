@@ -326,7 +326,7 @@
     "href": "Day_3/day_3_main.html",
     "title": "Day 3: Additional Topics",
     "section": "",
-    "text": "Getting Data Into R\nLinear Regression\n\nAdvanced: Logistic and Multiple Regression\n\nANOVA\n\nAdvanced: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nAdvanced: Explore the tidyverse tutorials\n\nPedagogy discussion. Bringing R into the classroom:\n\nPitfalls\nOur favorite Data sets from Mosaic and Open Intro and why\nMyOpenMath\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto- the newer rmd\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+    "text": "Getting Data Into R\nLinear Regression\n\nActivity: Logistic and Multiple Regression\n\nANOVA\n\nActivity: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nActivity: Explore some basic tidyverse functions\n\nPedagogy discussion. Bringing R into the classroom:\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto come with new version of RStudio.\n\nMore intuitive interface\nQuarto- videoby Mine C.R.\nQuarto website\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
   },
   {
     "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
@@ -627,6 +627,7 @@
     "href": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
     "title": "One Way ANOVA",
     "section": "To do an ANOVA homework problem.",
+<<<<<<< HEAD
     "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students.\n\nTidy this data frame in a spreadsheet and upload it to the server (or find it on your computer)\nNote: Variable or level names with spaces or colons can cause problems use underscores.\nMake the two variables wage and group."
   },
   {
@@ -642,5 +643,6 @@
     "title": "One Way ANOVA",
     "section": "Two way and more.",
     "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
+
   }
 ]
