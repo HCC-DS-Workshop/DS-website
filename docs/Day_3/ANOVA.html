@@ -449,7 +449,7 @@
 </section>
 <section id="there-is-a-way-to-do-this-in-r" class="slide level2">
 <h2>There is a way to do this in R</h2>
-<p>But its gross.</p>
+<p>But it is gross.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>classroom <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="sc">~</span>name,    <span class="sc">~</span>quiz1, <span class="sc">~</span>quiz2, <span class="sc">~</span>test1,</span>
@@ -486,8 +486,36 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <h2>To do an ANOVA homework problem.</h2>
 <p>Context: Starting wage for work study students.</p>
 
+<img data-src="../images/ANOVA-question.png" width="400" class="r-stretch quarto-figure-center"><p>Tidy <a href="https://docs.google.com/spreadsheets/d/1O2fdUieDTu5tn-vp5FTbXbt_A62nv0bS57-jsEdGINw/copy?usp=sharing">this data frame</a> in a spreadsheet and upload it to the server (or find it on your computer)</p>
+<p>Note: Variable or level names with spaces or colons can cause problems use underscores.</p>
+<p>Make the two variables <strong>wage</strong> and <strong>group</strong>.</p>
+</section>
+<section id="run-the-avona." class="slide level2">
+<h2>Run the AVONA.</h2>
+<div class="fragment">
+<p>wage_results &lt;- aov(wage~group, data= ANOVA_wage_ex)</p>
+<p>summary(wage_results)</p>
+</div>
+</section>
+<section id="two-way-and-more." class="slide level2">
+<h2>Two way and more.</h2>
+<p>Two way ANOVA is possible.</p>
+<p>You add + categorical variables.</p>
+<p>To test interaction use *</p>
+<p>example:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+sex           1   2287  2286.7    15.2 0.000112 ***
+homeless      1    782   782.5     5.2 0.023057 *  
+Residuals   450  67719   150.5                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>I found <a href="https://www.scribbr.com/statistics/two-way-anova/">this site</a> helpful in both explaining two way and showing it in R.</p>
 
-<img data-src="../images/ANOVA-question.png" class="r-stretch"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
 </section>

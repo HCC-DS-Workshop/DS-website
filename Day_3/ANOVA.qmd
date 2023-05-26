@@ -50,7 +50,7 @@ head(classroom2,12)
 
 ## There is a way to do this in R
 
-But its gross.
+But it is gross.
 
 ```{r R-method, echo=TRUE, eval=FALSE}
 classroom <- tribble(
@@ -80,4 +80,38 @@ summary(results)
 
 Context: Starting wage for work study students.
 
-![](/images/ANOVA-question.png)
+![](/images/ANOVA-question.png){fig-align="center" width="400"}
+
+Tidy [this data frame](https://docs.google.com/spreadsheets/d/1O2fdUieDTu5tn-vp5FTbXbt_A62nv0bS57-jsEdGINw/copy?usp=sharing) in a spreadsheet and upload it to the server (or find it on your computer)
+
+Note: Variable or level names with spaces or colons can cause problems use underscores.
+
+Make the two variables **wage** and **group**.
+
+## Run the AVONA. 
+
+. . .
+
+wage_results \<- aov(wage\~group, data= ANOVA_wage_ex)
+
+summary(wage_results)
+
+## Two way and more. 
+
+Two way ANOVA is possible.
+
+You add + categorical variables.
+
+To test interaction use \*
+
+example:
+
+```{r}
+
+# cesd is a measure of depression
+
+cesd_results <- aov(cesd ~ sex + homeless,data=HELPrct)
+summary(cesd_results)
+```
+
+I found [this site](https://www.scribbr.com/statistics/two-way-anova/) helpful in both explaining two way and showing it in R.

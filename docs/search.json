@@ -599,7 +599,7 @@
     "href": "Day_3/ANOVA.html#there-is-a-way-to-do-this-in-r",
     "title": "One Way ANOVA",
     "section": "There is a way to do this in R",
-    "text": "There is a way to do this in R\nBut its gross.\n\nclassroom <- tribble(\n  ~name,    ~quiz1, ~quiz2, ~test1,\n  \"Billy\",  NA,     \"60\",    \"80\",\n  \"Suzy\",   \"80\",    NA,     NA,\n  \"Lionel\", \"70\",    \"30\",    \"90\",\n  \"Jenny\",  \"80\",    \"40\",    \"86\"\n  )\nclassroom2 <- classroom %>% \n  pivot_longer(quiz1:test1, names_to = \"assessment\", values_to = \"grade\") %>% \n  arrange(name, assessment)"
+    "text": "There is a way to do this in R\nBut it is gross.\n\nclassroom <- tribble(\n  ~name,    ~quiz1, ~quiz2, ~test1,\n  \"Billy\",  NA,     \"60\",    \"80\",\n  \"Suzy\",   \"80\",    NA,     NA,\n  \"Lionel\", \"70\",    \"30\",    \"90\",\n  \"Jenny\",  \"80\",    \"40\",    \"86\"\n  )\nclassroom2 <- classroom %>% \n  pivot_longer(quiz1:test1, names_to = \"assessment\", values_to = \"grade\") %>% \n  arrange(name, assessment)"
   },
   {
     "objectID": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
@@ -627,6 +627,20 @@
     "href": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
     "title": "One Way ANOVA",
     "section": "To do an ANOVA homework problem.",
-    "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students."
+    "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students.\n\nTidy this data frame in a spreadsheet and upload it to the server (or find it on your computer)\nNote: Variable or level names with spaces or colons can cause problems use underscores.\nMake the two variables wage and group."
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#run-the-avona.",
+    "href": "Day_3/ANOVA.html#run-the-avona.",
+    "title": "One Way ANOVA",
+    "section": "Run the AVONA.",
+    "text": "Run the AVONA.\n\nwage_results <- aov(wage~group, data= ANOVA_wage_ex)\nsummary(wage_results)"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#two-way-and-more.",
+    "href": "Day_3/ANOVA.html#two-way-and-more.",
+    "title": "One Way ANOVA",
+    "section": "Two way and more.",
+    "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
   }
 ]
