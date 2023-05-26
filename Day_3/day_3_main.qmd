@@ -16,7 +16,7 @@ editor: visual
 [Short: Filtering to remove outliers.](./outliers.html)
 
 -   [Longer: Explore some basic tidyverse functions](./Tidyverse.html)
--   MSDR Problem
+-   [MSDR Problem #11 is fun](https://mdsr-book.github.io/mdsr2e/ch-dataI.html#dataI-exercises)
 
 [Pedagogy discussion.](./pedagogy.html)
 
