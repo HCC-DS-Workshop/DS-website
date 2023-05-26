@@ -7,9 +7,9 @@ editor: visual
 
 [Linear Regression](./SLIDES_Day3-Regression.pdf){target="_blank"}
 
--   [Notebook: Regression](https://drive.google.com/uc?export=download&id=1zsuX5RSlSmdAlN7Wngo9oKuGygh5HPAn)
+-   [Notebook: Regression](https://drive.google.com/uc?export=download&id=1W-i-QUIeN-zEtlfofJrEfcsMXAqZ90JW)
 -   [Notebook: solutions](./Notebook_WSDAY3_SOLUTIONS_Regression.pdf){target="_blank"}
--   [Lab: Regression](https://drive.google.com/uc?export=download&id=1W-i-QUIeN-zEtlfofJrEfcsMXAqZ90JW)
+-   [Lab: Regression](https://drive.google.com/uc?export=download&id=1zsuX5RSlSmdAlN7Wngo9oKuGygh5HPAn)
 
 [ANOVA](./ANOVA.html)
 
