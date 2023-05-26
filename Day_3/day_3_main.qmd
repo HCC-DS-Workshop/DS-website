@@ -11,25 +11,22 @@ Linear Regression
 
 [ANOVA](./ANOVA.html)
 
--   Activity: Two way ANOVA
+[Short: Filtering to remove outliers.](./outliers.html)
 
-Super brief Intro to Tidyverse filtering to remove outliers.
+-   [Longer: Explore some basic tidyverse functions](./Tidyverse.html)
+-   MSDR Problem
 
--   [Activity: Explore some basic tidyverse functions](./Tidyverse.html)
+[Pedagogy discussion.](./pedagogy.html)
 
-Pedagogy discussion. Bringing R into the classroom:
+Quarto comes with new version of RStudio.
 
-Introduction to Modern Statistics
-
--   A text that uses the tidyverse
-
-Quarto come with new version of RStudio.
-
--   More intuitive interface
-
--   [Quarto- video ](https://www.youtube.com/watch?v=_f3latmOhew)by Mine C.R.
+-   [Quarto- video](https://www.youtube.com/watch?v=_f3latmOhew) by Mine C.R.
 
 -   [Quarto website](https://quarto.org/)
+
+[Introduction to Modern Statistics](https://www.openintro.org/book/ims/)
+
+-   A text that uses the tidyverse
 
 Wrap up Discussion
 

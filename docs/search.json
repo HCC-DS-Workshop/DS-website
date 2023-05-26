@@ -1,10 +1,304 @@
 [
   {
+    "objectID": "Day_3/day_3_main.html",
+    "href": "Day_3/day_3_main.html",
+    "title": "Day 3: Additional Topics",
+    "section": "",
+    "text": "Getting Data Into R\nLinear Regression\n\nActivity: Logistic and Multiple Regression\n\nANOVA\nShort: Filtering to remove outliers.\n\nLonger: Explore some basic tidyverse functions\nMSDR Problem\n\nPedagogy discussion.\nQuarto comes with new version of RStudio.\n\nQuarto- video by Mine C.R.\nQuarto website\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
+    "href": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
+    "title": "One Way ANOVA",
+    "section": "Data must be in tidy format.",
+    "text": "Data must be in tidy format.\n\nAll rows are observations\nAll columns are variables\n\nThe things you are comparing must be levels of the same variable."
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same",
+    "href": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same",
+    "title": "One Way ANOVA",
+    "section": "Example: Are average quiz scores and test scores the same?",
+    "text": "Example: Are average quiz scores and test scores the same?\nThis would not work in R.1\n\n\n# A tibble: 4 × 4\n  name   quiz1 quiz2 test1\n  <chr>  <dbl> <dbl> <dbl>\n1 Harper    NA    60    80\n2 Emily     80    NA    NA\n3 Ethan     70    30    90\n4 Samuel    80    40    86\n\n\nThis example comes from https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#this-table-is-tidy",
+    "href": "Day_3/ANOVA.html#this-table-is-tidy",
+    "title": "One Way ANOVA",
+    "section": "This table is tidy",
+    "text": "This table is tidy\nThis would work in R.\n\n\n# A tibble: 12 × 3\n   name   assessment grade\n   <chr>  <chr>      <dbl>\n 1 Emily  quiz1         80\n 2 Emily  quiz2         NA\n 3 Emily  test1         NA\n 4 Ethan  quiz1         70\n 5 Ethan  quiz2         30\n 6 Ethan  test1         90\n 7 Harper quiz1         NA\n 8 Harper quiz2         60\n 9 Harper test1         80\n10 Samuel quiz1         80\n11 Samuel quiz2         40\n12 Samuel test1         86"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#there-is-a-way-to-do-this-in-r",
+    "href": "Day_3/ANOVA.html#there-is-a-way-to-do-this-in-r",
+    "title": "One Way ANOVA",
+    "section": "There is a way to do this in R",
+    "text": "There is a way to do this in R\nBut it is gross.\n\nclassroom <- tribble(\n  ~name,    ~quiz1, ~quiz2, ~test1,\n  \"Billy\",  NA,     \"60\",    \"80\",\n  \"Suzy\",   \"80\",    NA,     NA,\n  \"Lionel\", \"70\",    \"30\",    \"90\",\n  \"Jenny\",  \"80\",    \"40\",    \"86\"\n  )\nclassroom2 <- classroom %>% \n  pivot_longer(quiz1:test1, names_to = \"assessment\", values_to = \"grade\") %>% \n  arrange(name, assessment)"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#i-have-students-do-this-is-a-spreadsheet.",
+    "href": "Day_3/ANOVA.html#i-have-students-do-this-is-a-spreadsheet.",
+    "title": "One Way ANOVA",
+    "section": "I have students do this is a spreadsheet.",
+    "text": "I have students do this is a spreadsheet.\nMore on this momentarily."
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same-1",
+    "href": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same-1",
+    "title": "One Way ANOVA",
+    "section": "Example: Are average quiz scores and test scores the same?",
+    "text": "Example: Are average quiz scores and test scores the same?\n\nresults <- aov(grade~assessment, data = classroom2)\nsummary(results)\n\n            Df Sum Sq Mean Sq F value  Pr(>F)   \nassessment   2   2950  1475.1   15.15 0.00451 **\nResiduals    6    584    97.3                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n3 observations deleted due to missingness"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
+    "href": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
+    "title": "One Way ANOVA",
+    "section": "To do an ANOVA homework problem.",
+    "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students.\n\nTidy this data frame in a spreadsheet and upload it to the server (or find it on your computer)\nNote: Variable or level names with spaces or colons can cause problems use underscores.\nMake the two variables wage and group."
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#run-the-avona.",
+    "href": "Day_3/ANOVA.html#run-the-avona.",
+    "title": "One Way ANOVA",
+    "section": "Run the AVONA.",
+    "text": "Run the AVONA.\n\nwage_results <- aov(wage~group, data= ANOVA_wage_ex)\nsummary(wage_results)"
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#two-way-and-more.",
+    "href": "Day_3/ANOVA.html#two-way-and-more.",
+    "title": "One Way ANOVA",
+    "section": "Two way and more.",
+    "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-1-c",
+    "href": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-1-c",
+    "title": "Getting Data Into R",
+    "section": "How to get data into R. Method 1: c()",
+    "text": "How to get data into R. Method 1: c()\nThe data below represents doctors salaries in thousands of dollars.\n\n\n\nSalary\n\n\n\n\n\n\n\n96.64\n87.7\n94.57\n91.57\n\n\n92.06\n102.76\n94.89\n88.69\n\n\n94.83\n89.14\n89.27\n111.13\n\n\n97.59\n102.24\n88.48\n87.5\n\n\n84.99\n76.85\n92.89\n98.48\n\n\n85.27\n85.6\n84.06\n104.31"
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#copy-and-paste-the-data-into-r",
+    "href": "Day_3/Importing-data.html#copy-and-paste-the-data-into-r",
+    "title": "Getting Data Into R",
+    "section": "Copy and paste the data into R:",
+    "text": "Copy and paste the data into R:\nMake a vector and give your data a good variable name.\n\n\nsalary <- c(96.64, 92.06, 94.83, 97.59, 84.99, 85.27, 87.7, 102.76, 89.14, 102.24, 76.85, 85.6, 94.57, 94.89, 89.27, 88.48, 92.89, 84.06, 91.57, 88.69, 111.13, 87.5, 98.48,\n104.31)"
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#do-a-t.test",
+    "href": "Day_3/Importing-data.html#do-a-t.test",
+    "title": "Getting Data Into R",
+    "section": "Do a t.test()",
+    "text": "Do a t.test()\n…to test if the average doctor’s salary is $90k.\n\n\npval(t.test(~salary, mu=90,alternative = \"t\"))\n\n  p.value \n0.1154803 \n\n\nNotice there is no data= argument."
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#zebra-mussels1",
+    "href": "Day_3/Importing-data.html#zebra-mussels1",
+    "title": "Getting Data Into R",
+    "section": "Zebra Mussels1",
+    "text": "Zebra Mussels1\n\nhttps://commons.wikimedia.org/wiki/File:Dreissena_polymorpha_%28I1957%29_0265_%2839449820624%29.jpg"
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-2-spreadsheets.",
+    "href": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-2-spreadsheets.",
+    "title": "Getting Data Into R",
+    "section": "How to get data into R. Method 2: spreadsheets.",
+    "text": "How to get data into R. Method 2: spreadsheets.\nHere’s a spreadsheet on zebra mussels from mosaic-web.org.\n\nDownload the spreadsheet.\n\n2a. If R is installed on your computer, find your file in the files pane.\n2b. If using an R server. Click upload, then find the file on your computer."
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#importing-the-data",
+    "href": "Day_3/Importing-data.html#importing-the-data",
+    "title": "Getting Data Into R",
+    "section": "Importing the data",
+    "text": "Importing the data\n\nOnce uploaded/located click the file and import.\n\n\n\nCheck the import menu then click import dataset."
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#copy-the-line-of-code",
+    "href": "Day_3/Importing-data.html#copy-the-line-of-code",
+    "title": "Getting Data Into R",
+    "section": "Copy the line of code",
+    "text": "Copy the line of code\nnote: If using this file for an Rmd document: in the setup chunk, copy and paste the code that appears in the console.\n\nlibrary(readr)\nzebra_mussels <- read_csv(\"../images/zebra-mussels(1).csv\")\n\nIts helpful if your data is in the same folder as your .csv file."
+  },
+  {
+    "objectID": "Day_3/Importing-data.html#try-a-difference-of-means-hypothesis-test-with-this-data.",
+    "href": "Day_3/Importing-data.html#try-a-difference-of-means-hypothesis-test-with-this-data.",
+    "title": "Getting Data Into R",
+    "section": "Try a difference of means hypothesis test with this data.",
+    "text": "Try a difference of means hypothesis test with this data.\nIs there a difference in the dry.mass of a zebra mussel based on the attachment?\n\n\npval(t.test(dry.mass~attachment,data=zebra_mussels))\n\n p.value \n0.023054"
+  },
+  {
+    "objectID": "Day_3/outliers.html#lets-say-you-have-outliers-you-want-to-remove.",
+    "href": "Day_3/outliers.html#lets-say-you-have-outliers-you-want-to-remove.",
+    "title": "outliers",
+    "section": "Let’s say you have outliers you want to remove.",
+    "text": "Let’s say you have outliers you want to remove.\n\ngf_boxplot(base~degree, data = teacher)"
+  },
+  {
+    "objectID": "Day_3/outliers.html#filter",
+    "href": "Day_3/outliers.html#filter",
+    "title": "outliers",
+    "section": "filter()",
+    "text": "filter()\n\nno_outs_teacher <- filter(teacher, \n                          degree == \"BA\"|degree == \"MA\" & base >25000)"
+  },
+  {
+    "objectID": "Day_3/outliers.html#new-plot",
+    "href": "Day_3/outliers.html#new-plot",
+    "title": "outliers",
+    "section": "new plot",
+    "text": "new plot\n\ngf_boxplot(base~degree, data = no_outs_teacher)"
+  },
+  {
+    "objectID": "Day_3/pedagogy.html",
+    "href": "Day_3/pedagogy.html",
+    "title": "Pedagogy",
+    "section": "",
+    "text": "in person - Eric\nonline - Nic"
+  },
+  {
+    "objectID": "Day_3/pedagogy.html#things-that-are-hard",
+    "href": "Day_3/pedagogy.html#things-that-are-hard",
+    "title": "Pedagogy",
+    "section": "Things that are hard",
+    "text": "Things that are hard"
+  },
+  {
+    "objectID": "Day_3/pedagogy.html#great-things",
+    "href": "Day_3/pedagogy.html#great-things",
+    "title": "Pedagogy",
+    "section": "Great things",
+    "text": "Great things"
+  },
+  {
+    "objectID": "Day_3/pedagogy.html#what-we-are-working-on",
+    "href": "Day_3/pedagogy.html#what-we-are-working-on",
+    "title": "Pedagogy",
+    "section": "What we are working on",
+    "text": "What we are working on\nEric - self paced\nNic - updating tutorials"
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html",
+    "href": "Day_3/Tidyverse.html",
+    "title": "Find the Tidyverse",
+    "section": "",
+    "text": "The Tidyverse is made up of the packages below."
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html#tutorials",
+    "href": "Day_3/Tidyverse.html#tutorials",
+    "title": "Find the Tidyverse",
+    "section": "Tutorials",
+    "text": "Tutorials\nIn RStudio there is the tutorial pane in the upper right.\n\nWithin that there are three tutorial videos.\n\nThe first is called “Filter observations”\nThe second is called “Create new variables”\nThe third is called “Summarise Tables”\n\nThese three tutorials will get you started with the basic verbs for manipulating data.\n\nfilter()\nselect()\ngroup_by()\nmutate()\nsummarize()"
+  },
+  {
+    "objectID": "Day_3/Tidyverse.html#there-are-so-many-websites-teaching-the-tidyverse.",
+    "href": "Day_3/Tidyverse.html#there-are-so-many-websites-teaching-the-tidyverse.",
+    "title": "Find the Tidyverse",
+    "section": "There are so many websites teaching the tidyverse.",
+    "text": "There are so many websites teaching the tidyverse.\nLots tutorials exist online.\nHave Fun."
+  },
+  {
+    "objectID": "Day_2/day_2_main.html",
+    "href": "Day_2/day_2_main.html",
+    "title": "Day 2: Probability and Inference",
+    "section": "",
+    "text": "Notes from Monday\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\nInference Confidence Intervals and Hypothesis Testing\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions posted later \nIf you want to leave feedback or have ideas"
+  },
+  {
+    "objectID": "Day_2/Notes-From-Monday.html",
+    "href": "Day_2/Notes-From-Monday.html",
+    "title": "Notes from Monday",
+    "section": "",
+    "text": "Notes from Monday:\n\nHow to find specific percentiles with the quantile() function.\n\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))\n\n\nGraphs In the resources tab there are two links:\n\nThe first one is to a list of different plots in the mosaic package.\nThe second (and more helpful) is a list of examples.\nThe links are under the colorful squares that represent Project Mosaic.\n\n\n\n\nAmelia McNamera’s video comparison of R syntax in resources.\n\nShe did an experiment where she compared the three different types of R syntax that Eric mentioned in the Introduction on Monday.\n\n\nSage The sage manual for interface to RStudio is here.\n\nCheat Sheets\n\nMosaic Cheat Sheet The link to the mosaic library in resources is fixed. Here is a direct link.\nNic’s MTH142CheatSheet The pptx file of Nic’s cheat sheet is in resources. You can edit it to make it your own, or better.\nEric’s cheat sheet is posted to Resources"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "href": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Functions for Confidence Intervals",
+    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The Data Sets",
+    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use HELPrct.\nFor a difference of means test we’ll use the nyc_marathon data frame"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportions",
+    "text": "Proportions\nIf we were to run ?proptest() we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Confidence Interval for Proportions",
+    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "href": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "To make the CI look better",
+    "text": "To make the CI look better\n You can use the $ operator from base R\n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "href": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "You can also make a CI from a homework problem.",
+    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\n\nA sample size n=603 and x=142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "href": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "A Warning on Proportions",
+    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf prop.test() doesn’t work, you could check out binom.test() .\nbinom.test(... method=\"Wald\") is TI-83ish. \nEric uses a different package."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "href": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Proportion Hypothesis Test",
+    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two additional arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\nIs the population parameter for the proportion of students who have had four relationships \\(p=0.30\\)?\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "href": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "The cheat sheets",
+    "text": "The cheat sheets\nThere are four statistics related cheat sheets in the resources tab.\n\n\nThe mosaic cheat sheet\n\nThis is the “official” cheat sheet put out by Mosaic\n\nNic’s MTH 142 Intro to Statistics cheat sheet.\nEric’s MTH 142 Intro to Statistics sheets\nAmelia McNamara’s All the R you need."
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test",
+    "href": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Single mean Hypothesis Test",
+    "text": "Single mean Hypothesis Test\nUse the HELPrct dataset to answer the question:\n\nIs the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) \\(\\mu \\ge 15\\)?\n\n\n. . . \\(p-value \\approx 0\\).\n\nt.test(~cesd, data=HELPrct, mu=15, alternative = \"g\")"
+  },
+  {
+    "objectID": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test",
+    "href": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test",
+    "title": "Confidence Interval and Hypothesis Testing",
+    "section": "Difference of means test",
+    "text": "Difference of means test\nUse the nyc_marathon data frame to answer the question:\n\nIs there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?\n\n\nt.test(time_hrs ~ division, data=nyc_marathon)"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Info and schedule",
     "section": "",
     "text": "Workshop information\n\n\nDay 1: Descriptive Statistics and Visualizations\n\n\nDay 2: Probability and Inference\n\n\nDay 3: Topics"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "credits.html",
@@ -21,13 +315,6 @@
     "text": "These are the solutions to Activity 2: Boxplots. You should try that one first.\nBoxplots are another common way of displaying numeric data. Let’s continue our exploration of births14. I’ve loaded the libraries below for you.\nWe’re going to be using the boxplot function type ?gf_boxplot() into the console or a new chunk to get a sense of the argument this function takes.\nRecall where we left off with Activity 1.\n\nfavstats(weight~sex,data=births14)\n\n     sex  min    Q1 median    Q3   max     mean       sd   n missing\n1 female 0.75 6.435   7.19 7.785  9.68 7.017253 1.271234 495       0\n2   male 1.12 6.690   7.44 8.240 10.62 7.375485 1.318031 505       0\n\n\nThe mosaic package is nice, because all of the functions have very similar setups.\n\nMake a boxplot with the function gf_boxplot(). Copy and past the arguments from the favstats function above (don’t copy the favstats part).\n\n\ngf_boxplot(weight~sex,data=births14)\n\n\n\n\n\nNotice all of the outliers! We don’t know how to remove them yet, but we will later. We can pretend they are not there by adjusting the coef argument. Set coef=5. Do that in the chunk below.\n\n\ngf_boxplot(weight~sex,data=births14,coef = 5)\n\n\n\n\nIf you remember the formula for calculating outliers (Q1-1.5 *IQR, Q3+1.5 * IQR), this is the formula R uses by default. coef = 5 changes the 1.5 to 5.\n\nPut the outliers back and figure out how to change their shape and stroke. Just like with histograms we can add change the x and y labels and add a title. Add the chunk below and change the outliers shape.\n\n\ngf_boxplot(weight~sex,data=births14,outlier.shape = 3,outlier.stroke = 2, xlab=\"Child's Birth Sex\",ylab=\"Birthweight In Pounds\",title = \"Babies Weigh A Little When Born\")\n\n\n\n\n\nCan you map the color (or fill) argument to the smoking habit of the mother, so we can see three variables at once?\n\n\ngf_boxplot(weight~sex,data=births14, fill=~habit, xlab=\"Child's Birth Sex\",ylab=\"Birthweight In Pounds\",title = \"New Born Babies' Weight By Mother's Smoking Habit\")\n\n\n\n\nI promise when we get to Day 3 we’ll talk about removing outliers. We have to use the filter function."
   },
   {
-    "objectID": "Day_1/Activity_1_Descriptive_Stats/Solutions_Activity_1.html",
-    "href": "Day_1/Activity_1_Descriptive_Stats/Solutions_Activity_1.html",
-    "title": "Solutions Activity Descriptive Stats",
-    "section": "",
-    "text": "These are some solutions, you should do the activity first.\n\nWe should always attempt to understand our data first.\n\nview births14 in the chunk below. You can also use the ? operator to learn more.\n\n#view(births14)\nbirths14\n\n# A tibble: 1,000 × 13\n    fage  mage mature     weeks premie visits gained weight lowbirthweight sex  \n   <int> <dbl> <chr>      <dbl> <chr>   <dbl>  <dbl>  <dbl> <chr>          <chr>\n 1    34    34 younger m…    37 full …     14     28   6.96 not low        male \n 2    36    31 younger m…    41 full …     12     41   8.86 not low        fema…\n 3    37    36 mature mom    37 full …     10     28   7.51 not low        fema…\n 4    NA    16 younger m…    38 full …     NA     29   6.19 not low        male \n 5    32    31 younger m…    36 premie     12     48   6.75 not low        fema…\n 6    32    26 younger m…    39 full …     14     45   6.69 not low        fema…\n 7    37    36 mature mom    36 premie     10     20   6.13 not low        fema…\n 8    29    24 younger m…    40 full …     13     65   6.74 not low        male \n 9    30    32 younger m…    39 full …     15     25   8.94 not low        fema…\n10    29    26 younger m…    39 full …     11     22   9.12 not low        male \n# ℹ 990 more rows\n# ℹ 3 more variables: habit <chr>, marital <chr>, whitemom <chr>\n\n?births14\n\nThe grey rectangles are called code chunks.\nTo make a new code chunk you can type three tick marks ``` (the tick is above the tab key) and a curly bracket with the letter r in the middle {r}. You end a chunk with three more tick marks, like the chunks above.\n\nMake a chunk below and use favstats() to get an idea of the summary statistics for a baby’s birthweight. You can give it a name after the r like understand-data above. No space allowed in chunk names.\n\n\nfavstats(~weight,data=births14)\n\n  min    Q1 median Q3   max    mean       sd    n missing\n 0.75 6.545   7.31  8 10.62 7.19816 1.306775 1000       0\n\n\n\nUse favstats() and a formula (use the ~) to break up the weight summary statistics by the sex of the child.\n\n\nfavstats(weight~sex, data=births14)\n\n     sex  min    Q1 median    Q3   max     mean       sd   n missing\n1 female 0.75 6.435   7.19 7.785  9.68 7.017253 1.271234 495       0\n2   male 1.12 6.690   7.44 8.240 10.62 7.375485 1.318031 505       0\n\n\n\nChallenge: Add another variable to your favstats: whether the mother was a smoker or nonsmoker. The formula will be similar to the chunk above but will include a plus sign after the second variable.\n\n\nfavstats(weight~sex + habit , data=births14)\n\n         sex.habit  min     Q1 median     Q3   max     mean       sd   n\n1 female.nonsmoker 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2   male.nonsmoker 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n3    female.smoker 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n4      male.smoker 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nWhat happens when you switch the sex and habit variables in the chunk above?\n\nA: The summaries are the same, but is listed differently. For more examples see ?favstats()\n\nfavstats(weight~habit + sex , data=births14)\n\n         habit.sex  min     Q1 median     Q3   max     mean       sd   n\n1 nonsmoker.female 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2    smoker.female 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n3   nonsmoker.male 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n4      smoker.male 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nCan you use the same formulas above for the mean() and IQR() functions?\n\nA: Yes you can!\n\nmean(weight~habit + sex , data=births14)\n\nnonsmoker.female    smoker.female   nonsmoker.male      smoker.male \n        7.095724         6.430377         7.445231         6.891639"
-  },
-  {
     "objectID": "Day_1/descriptive_statistics.html#how-to-follow-along.",
     "href": "Day_1/descriptive_statistics.html#how-to-follow-along.",
     "title": "Descriptive statistics",
@@ -39,7 +326,7 @@
     "href": "Day_1/descriptive_statistics.html#lets-talk-about-counties",
     "title": "Descriptive statistics",
     "section": "Lets talk about counties",
-    "text": "Lets talk about counties\n\n\nPassing 3 addresses to the Nominatim single address geocoder\n\n\nQuery completed in: 3 seconds"
+    "text": "Lets talk about counties"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#load-the-libraries",
@@ -81,7 +368,7 @@
     "href": "Day_1/descriptive_statistics.html#all-summary-stats",
     "title": "Descriptive statistics",
     "section": "All summary stats()",
-    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))"
+    "text": "All summary stats()\n\n\nfivenum()\nfavstats(~pop2017,data=county, na.rm=TRUE)1\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))\n\n\nfavstats() is the friendliest and the one we use the most"
   },
   {
     "objectID": "Day_1/descriptive_statistics.html#get-specific-details-on-each-state",
@@ -95,7 +382,7 @@
     "href": "Day_1/descriptive_statistics.html#activity",
     "title": "Descriptive statistics",
     "section": "Activity",
-    "text": "Activity\nOpen a new blank .rmd file\n\n\n\n\n\nPaste this text into it."
+    "text": "Activity\nOpen a new blank .rmd file\n\nPaste this text into it."
   },
   {
     "objectID": "Day_1/histograms.html#how-to-follow-along",
@@ -116,7 +403,7 @@
     "href": "Day_1/histograms.html#histograms-and-boxplots",
     "title": "Histograms and Boxplots",
     "section": "Histograms and Boxplots",
-    "text": "Histograms and Boxplots\nLet’s consider the county data frame.\n\ncounty\n\n# A tibble: 3,142 × 15\n   name           state pop2000 pop2010 pop2017 pop_change poverty homeownership\n   <chr>          <fct>   <dbl>   <dbl>   <int>      <dbl>   <dbl>         <dbl>\n 1 Autauga County Alab…   43671   54571   55504       1.48    13.7          77.5\n 2 Baldwin County Alab…  140415  182265  212628       9.19    11.8          76.7\n 3 Barbour County Alab…   29038   27457   25270      -6.22    27.2          68  \n 4 Bibb County    Alab…   20826   22915   22668       0.73    15.2          82.9\n 5 Blount County  Alab…   51024   57322   58013       0.68    15.6          82  \n 6 Bullock County Alab…   11714   10914   10309      -2.28    28.5          76.9\n 7 Butler County  Alab…   21399   20947   19825      -2.69    24.4          69  \n 8 Calhoun County Alab…  112249  118572  114728      -1.51    18.6          70.7\n 9 Chambers Coun… Alab…   36583   34215   33713      -1.2     18.8          71.4\n10 Cherokee Coun… Alab…   23988   25989   25857      -0.6     16.1          77.5\n# ℹ 3,132 more rows\n# ℹ 7 more variables: multi_unit <dbl>, unemployment_rate <dbl>, metro <fct>,\n#   median_edu <fct>, per_capita_income <dbl>, median_hh_income <int>,\n#   smoking_ban <fct>"
+    "text": "Histograms and Boxplots\nLet’s consider the county data frame.\n\ncounty\n\n# A tibble: 3,142 × 15\n   name    state pop2000 pop2010 pop2017 pop_c…¹ poverty homeo…² multi…³ unemp…⁴\n   <chr>   <fct>   <dbl>   <dbl>   <int>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>\n 1 Autaug… Alab…   43671   54571   55504    1.48    13.7    77.5     7.2    3.86\n 2 Baldwi… Alab…  140415  182265  212628    9.19    11.8    76.7    22.6    3.99\n 3 Barbou… Alab…   29038   27457   25270   -6.22    27.2    68      11.1    5.9 \n 4 Bibb C… Alab…   20826   22915   22668    0.73    15.2    82.9     6.6    4.39\n 5 Blount… Alab…   51024   57322   58013    0.68    15.6    82       3.7    4.02\n 6 Bulloc… Alab…   11714   10914   10309   -2.28    28.5    76.9     9.9    4.93\n 7 Butler… Alab…   21399   20947   19825   -2.69    24.4    69      13.7    5.49\n 8 Calhou… Alab…  112249  118572  114728   -1.51    18.6    70.7    14.3    4.93\n 9 Chambe… Alab…   36583   34215   33713   -1.2     18.8    71.4     8.7    4.08\n10 Cherok… Alab…   23988   25989   25857   -0.6     16.1    77.5     4.3    4.05\n# … with 3,132 more rows, 5 more variables: metro <fct>, median_edu <fct>,\n#   per_capita_income <dbl>, median_hh_income <int>, smoking_ban <fct>, and\n#   abbreviated variable names ¹​pop_change, ²​homeownership, ³​multi_unit,\n#   ⁴​unemployment_rate"
   },
   {
     "objectID": "Day_1/histograms.html#a-simple-histogram",
@@ -187,6 +474,13 @@
     "title": "NOTEBOOK: Workshop Day 1",
     "section": "",
     "text": "Categorical Variables\n\nContingency Tables\nThe tally function counts the levels of a categorical variable. For the loans_full_schema data frame, count the levels of the homeownership variable.\n\n\n\nCount all combinations of homeownership and application_type.\n\n\n\nAdd row/column totals using margin argument.\n\n\n\n\n\nBar Plots\nCreate bar plot of a categorical variable with counts on the y-axis.\n\n\n\nProportions on the y-axis.\n\n\n\nPercents on the y-axis.\n\n\n\nTwo Categorical variable Stacked Bar Plot.\n\n\n\nSide-By-Side Stacked Bar Plot.\n\n\n\n\n\nMosaic Plots\n\n\n\nScatterplots\nWe start with the Births78 data frame in the mosaicData package. Plot births on the y-axis, date on the x-axis.\n\n\n\nLet’s add a color and label the axes and give it a title.\n\n\n\nColor the points according to the variable wday.\n\n\n\nFacet.\n\n\n\nFacet with a mosaic function gf_facet_wrap().\n\n\n\nWith mtcars, Map as many variables as we can to the plot! In the console, type ?mtcars to learn about the variables.\n\n\n\n\n\nCorrelation\nWe can add linear and non-linear models to a scatterplot. Let’s plot mpg on the y-axis against drat, hp, wt. mpg ~ drat mpg ~ hp mpg ~ wt\nCompute correlations for each of the three cases."
+  },
+  {
+    "objectID": "Day_1/Activity_1_Descriptive_Stats/Solutions_Activity_1.html",
+    "href": "Day_1/Activity_1_Descriptive_Stats/Solutions_Activity_1.html",
+    "title": "Solutions Activity Descriptive Stats",
+    "section": "",
+    "text": "These are some solutions, you should do the activity first.\n\nWe should always attempt to understand our data first.\n\nview births14 in the chunk below. You can also use the ? operator to learn more.\n\n#view(births14)\nbirths14\n\n# A tibble: 1,000 × 13\n    fage  mage mature      weeks premie visits gained weight lowbi…¹ sex   habit\n   <int> <dbl> <chr>       <dbl> <chr>   <dbl>  <dbl>  <dbl> <chr>   <chr> <chr>\n 1    34    34 younger mom    37 full …     14     28   6.96 not low male  nons…\n 2    36    31 younger mom    41 full …     12     41   8.86 not low fema… nons…\n 3    37    36 mature mom     37 full …     10     28   7.51 not low fema… nons…\n 4    NA    16 younger mom    38 full …     NA     29   6.19 not low male  nons…\n 5    32    31 younger mom    36 premie     12     48   6.75 not low fema… nons…\n 6    32    26 younger mom    39 full …     14     45   6.69 not low fema… nons…\n 7    37    36 mature mom     36 premie     10     20   6.13 not low fema… nons…\n 8    29    24 younger mom    40 full …     13     65   6.74 not low male  nons…\n 9    30    32 younger mom    39 full …     15     25   8.94 not low fema… nons…\n10    29    26 younger mom    39 full …     11     22   9.12 not low male  nons…\n# … with 990 more rows, 2 more variables: marital <chr>, whitemom <chr>, and\n#   abbreviated variable name ¹​lowbirthweight\n\n?births14\n\nThe grey rectangles are called code chunks.\nTo make a new code chunk you can type three tick marks ``` (the tick is above the tab key) and a curly bracket with the letter r in the middle {r}. You end a chunk with three more tick marks, like the chunks above.\n\nMake a chunk below and use favstats() to get an idea of the summary statistics for a baby’s birthweight. You can give it a name after the r like understand-data above. No space allowed in chunk names.\n\n\nfavstats(~weight,data=births14)\n\n  min    Q1 median Q3   max    mean       sd    n missing\n 0.75 6.545   7.31  8 10.62 7.19816 1.306775 1000       0\n\n\n\nUse favstats() and a formula (use the ~) to break up the weight summary statistics by the sex of the child.\n\n\nfavstats(weight~sex, data=births14)\n\n     sex  min    Q1 median    Q3   max     mean       sd   n missing\n1 female 0.75 6.435   7.19 7.785  9.68 7.017253 1.271234 495       0\n2   male 1.12 6.690   7.44 8.240 10.62 7.375485 1.318031 505       0\n\n\n\nChallenge: Add another variable to your favstats: whether the mother was a smoker or nonsmoker. The formula will be similar to the chunk above but will include a plus sign after the second variable.\n\n\nfavstats(weight~sex + habit , data=births14)\n\n         sex.habit  min     Q1 median     Q3   max     mean       sd   n\n1 female.nonsmoker 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2   male.nonsmoker 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n3    female.smoker 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n4      male.smoker 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nWhat happens when you switch the sex and habit variables in the chunk above?\n\nA: The summaries are the same, but is listed differently. For more examples see ?favstats()\n\nfavstats(weight~habit + sex , data=births14)\n\n         habit.sex  min     Q1 median     Q3   max     mean       sd   n\n1 nonsmoker.female 1.19 6.4850   7.19 7.8100  9.68 7.095724 1.160877 435\n2    smoker.female 0.75 5.5000   6.94 7.5800  9.25 6.430377 1.759516  53\n3   nonsmoker.male 1.81 6.7775   7.50 8.2875 10.42 7.445231 1.278858 432\n4      smoker.male 1.12 6.1100   7.13 7.8900  9.12 6.891639 1.420373  61\n  missing\n1       0\n2       0\n3       0\n4       0\n\n\n\nCan you use the same formulas above for the mean() and IQR() functions?\n\nA: Yes you can!\n\nmean(weight~habit + sex , data=births14)\n\nnonsmoker.female    smoker.female   nonsmoker.male      smoker.male \n        7.095724         6.430377         7.445231         6.891639"
   },
   {
     "objectID": "Day_1/to_do.html",
@@ -273,6 +567,20 @@
     "text": "MTH 142: Intro to Stats Cheat Sheet\nThis is the cheatsheet Nic uses for class\n\n\n\n\n\nHere’s the pptx file if you want to edit it."
   },
   {
+    "objectID": "Resources.html#erics-cheat-sheets-based-on-openintro-statistics-v4.",
+    "href": "Resources.html#erics-cheat-sheets-based-on-openintro-statistics-v4.",
+    "title": "Intro Stats with R",
+    "section": "Eric’s Cheat Sheets (Based on OpenIntro Statistics v4).",
+    "text": "Eric’s Cheat Sheets (Based on OpenIntro Statistics v4).\n\nChapter 2"
+  },
+  {
+    "objectID": "Resources.html#all-the-r-you-need",
+    "href": "Resources.html#all-the-r-you-need",
+    "title": "Intro Stats with R",
+    "section": "All the R you need",
+    "text": "All the R you need\nThis is Amelia Mcnamara’s cheat sheet that she made for Mosaic. Find and click the download button on her github repo."
+  },
+  {
     "objectID": "Resources.html#modern-data-science-with-r",
     "href": "Resources.html#modern-data-science-with-r",
     "title": "Intro Stats with R",
@@ -320,329 +628,5 @@
     "title": "Intro Stats with R",
     "section": "Style Guide",
     "text": "Style Guide\nThe Tidyverse Style Guide"
-  },
-  {
-    "objectID": "Day_3/day_3_main.html",
-    "href": "Day_3/day_3_main.html",
-    "title": "Day 3: Additional Topics",
-    "section": "",
-    "text": "Getting Data Into R\nLinear Regression\n\nActivity: Logistic and Multiple Regression\n\nANOVA\n\nActivity: Two way ANOVA\n\nSuper brief Intro to Tidyverse filtering to remove outliers.\n\nActivity: Explore some basic tidyverse functions\n\nPedagogy discussion. Bringing R into the classroom:\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nQuarto come with new version of RStudio.\n\nMore intuitive interface\nQuarto- videoby Mine C.R.\nQuarto website\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "href": "Day_2/CI-and-hypothesis-testing.html#functions-for-confidence-intervals",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Functions for Confidence Intervals",
-    "text": "Functions for Confidence Intervals\n\n\n\n\nThese are the functions for confidence intervals.\n\n\nprop.test(…., correct =FALSE)\nt.test()\n\n\nThe same functions are used for hypothesis testing."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
-    "href": "Day_2/CI-and-hypothesis-testing.html#the-data-sets",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "The Data Sets",
-    "text": "The Data Sets\n\nWe’ll use a couple of different data sets for the different CI and hypothesis tests.\n\nFor a proportion we’ll use the exclusive_relationship data set.\nFor a single mean lets use HELPrct.\nFor a difference of means test we’ll use the nyc_marathon data frame"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportions",
-    "text": "Proportions\nIf we were to run ?proptest() we’d find.\nx- count of successes, length 2 vector of success and failure counts, a formula, or a character, numeric, or factor vector containing raw data.\nn- sample size (successes + failures) or a data frame (for the formula interface).\nconf.level- the confidence level must be between 0 and 1.\n\n\nThe “correct” argument is not listed."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#confidence-interval-for-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Confidence Interval for Proportions",
-    "text": "Confidence Interval for Proportions\nWhat is the 90% Confidence interval for the proportion of undergraduate students who have been in exactly 4 relationships?\n\n#Assume independence\n#At least 10 successes/failures\ntally(~num==4, data=exclusive_relationship)\n\nnum == 4\n TRUE FALSE  <NA> \n   53   150    15 \n\n\n\nprop.test(~num == 4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 46.35, df = 1, p-value = 9.892e-12\nalternative hypothesis: true p is not equal to 0.5\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "href": "Day_2/CI-and-hypothesis-testing.html#to-make-the-ci-look-better",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "To make the CI look better",
-    "text": "To make the CI look better\n You can use the $ operator from base R\n\nresults <- prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\nresults$conf.int\n\n[1] 0.2137559 0.3146963\nattr(,\"conf.level\")\n[1] 0.9\n\n\n or you can use the wrapper confint() \n\nconfint(prop.test(x= ~num==4,data=exclusive_relationship, conf.level = 0.90))\n\n          p     lower     upper level\n1 0.2610837 0.2114776 0.3172773   0.9"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#you-can-also-make-a-ci-from-a-homework-problem.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "You can also make a CI from a homework problem.",
-    "text": "You can also make a CI from a homework problem.\n\nA store randomly samples 603 shoppers over the course of a year and finds that 142 of them made their visit because of a coupon they’d received in the mail. Construct a 95% confidence interval for the fraction of all shoppers during the year whose visit was because of a coupon they’d received in the mail.\n\n\nA sample size n=603 and x=142 successes.\n\nconfint(prop.test(x=142,n=603,correct=FALSE))\n\n          p     lower    upper level\n1 0.2354892 0.2033633 0.270964  0.95"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "href": "Day_2/CI-and-hypothesis-testing.html#a-warning-on-proportions",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "A Warning on Proportions",
-    "text": "A Warning on Proportions\nprop.test(... correct= FALSE) works well with problems based on the OpenIntroStats text on MyOpenMath made by Adam Gilbert. .\nIf prop.test() doesn’t work, you could check out binom.test() .\nbinom.test(... method=\"Wald\") is TI-83ish. \nEric uses a different package."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "href": "Day_2/CI-and-hypothesis-testing.html#proportion-hypothesis-test",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Proportion Hypothesis Test",
-    "text": "Proportion Hypothesis Test\nTo make a hypothesis we need two additional arguments. \n\np - This is the population proportion from the null hypothesis\nalternative - c(“two.sided”, “less”, “greater”)\n\nIs the population parameter for the proportion of students who have had four relationships \\(p=0.30\\)?\n\\(H_0: p= 0.3\\)\n\\(H_1: p\\ne 0.3\\)\n\\(\\alpha=0.05\\)\n\nprop.test(x=~num==4, p=0.3, alternative=\"t\", data=exclusive_relationship, conf.level = 0.90, correct=FALSE)\n\n\n    1-sample proportions test without continuity correction\n\ndata:  exclusive_relationship$num == 4  [with success = TRUE]\nX-squared = 1.464, df = 1, p-value = 0.2263\nalternative hypothesis: true p is not equal to 0.3\n90 percent confidence interval:\n 0.2137559 0.3146963\nsample estimates:\n        p \n0.2610837"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
-    "href": "Day_2/CI-and-hypothesis-testing.html#the-cheat-sheets",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "The cheat sheets",
-    "text": "The cheat sheets\nThere are four statistics related cheat sheets in the resources tab.\n\n\nThe mosaic cheat sheet\n\nThis is the “official” cheat sheet put out by Mosaic\n\nNic’s MTH 142 Intro to Statistics cheat sheet.\nEric’s MTH 142 Intro to Statistics sheets\nAmelia McNamara’s All the R you need."
-  },
-  {
-    "objectID": "Day_2/day_2_main.html",
-    "href": "Day_2/day_2_main.html",
-    "title": "Day 2: Probability and Inference",
-    "section": "",
-    "text": "Notes from Monday\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\nInference Confidence Intervals and Hypothesis Testing\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions posted later \nIf you want to leave feedback or have ideas"
-  },
-  {
-    "objectID": "Day_2/Notes-From-Monday.html",
-    "href": "Day_2/Notes-From-Monday.html",
-    "title": "Notes from Monday",
-    "section": "",
-    "text": "Notes from Monday:\n\nHow to find specific percentiles with the quantile() function.\n\nquantile(~pop2017,data=county, na.rm=TRUE, prob=c(0.10,0.30,0.70))\n\n\nGraphs In the resources tab there are two links:\n\nThe first one is to a list of different plots in the mosaic package.\nThe second (and more helpful) is a list of examples.\nThe links are under the colorful squares that represent Project Mosaic.\n\n\n\n\nAmelia McNamera’s video comparison of R syntax in resources.\n\nShe did an experiment where she compared the three different types of R syntax that Eric mentioned in the Introduction on Monday.\n\n\nSage The sage manual for interface to RStudio is here.\n\nCheat Sheets\n\nMosaic Cheat Sheet The link to the mosaic library in resources is fixed. Here is a direct link.\nNic’s MTH142CheatSheet The pptx file of Nic’s cheat sheet is in resources. You can edit it to make it your own, or better.\nEric’s cheat sheet is posted to Resources"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#lets-read-the-mosaic-cheat-sheet-together.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#lets-read-the-mosaic-cheat-sheet-together.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Let’s read the mosaic cheat sheet together.",
-    "text": "Let’s read the mosaic cheat sheet together."
-  },
-  {
-    "objectID": "Resources.html#erics-cheat-sheets-based-on-openintro-statistics-v4.",
-    "href": "Resources.html#erics-cheat-sheets-based-on-openintro-statistics-v4.",
-    "title": "Intro Stats with R",
-    "section": "Eric’s Cheat Sheets (Based on OpenIntro Statistics v4).",
-    "text": "Eric’s Cheat Sheets (Based on OpenIntro Statistics v4).\n\nChapter 2"
-  },
-  {
-    "objectID": "Resources.html#all-the-r-you-need",
-    "href": "Resources.html#all-the-r-you-need",
-    "title": "Intro Stats with R",
-    "section": "All the R you need",
-    "text": "All the R you need\nThis is Amelia Mcnamara’s cheat sheet that she made for Mosaic. Find and click the download button on her github repo."
-  },
-  {
-    "objectID": "Day_1/descriptive_statistics.html",
-    "href": "Day_1/descriptive_statistics.html",
-    "title": "Descriptive statistics",
-    "section": "",
-    "text": "── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.3.6      ✔ purrr   0.3.4 \n✔ tibble  3.1.8      ✔ dplyr   1.0.10\n✔ tidyr   1.2.1      ✔ stringr 1.4.1 \n✔ readr   2.1.2      ✔ forcats 0.5.2 \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\nAttaching package: 'maps'\n\n\nThe following object is masked from 'package:purrr':\n\n    map"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#difference-of-mean-hypothesis-test.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#difference-of-mean-hypothesis-test.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Difference of mean Hypothesis Test.",
-    "text": "Difference of mean Hypothesis Test.\nUse the HELPrct dataset to answer the question:\n\nIs the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) \\(\\mu \\ge 15\\)?\n\n\n\\(p-value \\approx 0\\).\nt.test(~cesd, data=HELPrct, mu=15, alternative = \"g\")"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Single mean Hypothesis Test.",
-    "text": "Single mean Hypothesis Test.\nUse the HELPrct dataset to answer the question:\n\nIs the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) \\(\\mu \\ge 15\\)?\n\n\n\n\\(p-value \\approx 0\\).\nt.test(~cesd, data=HELPrct, mu=15, alternative = \"g\")"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Difference of means test.",
-    "text": "Difference of means test.\nUse the nyc_marathon data frame to answer the question:\n\nIs there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?\n\n\n\nt.test(time_hrs ~ division, data=nyc_marathon)"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#end",
-    "href": "Day_2/CI-and-hypothesis-testing.html#end",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "End",
-    "text": "End"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test",
-    "href": "Day_2/CI-and-hypothesis-testing.html#single-mean-hypothesis-test",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Single mean Hypothesis Test",
-    "text": "Single mean Hypothesis Test\nUse the HELPrct dataset to answer the question:\n\nIs the average Center for Epidemiologic Studies Depression measure at baseline (depression measure of individuals going through detoxification) \\(\\mu \\ge 15\\)?\n\n\n. . . \\(p-value \\approx 0\\).\n\nt.test(~cesd, data=HELPrct, mu=15, alternative = \"g\")"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test",
-    "href": "Day_2/CI-and-hypothesis-testing.html#difference-of-means-test",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Difference of means test",
-    "text": "Difference of means test\nUse the nyc_marathon data frame to answer the question:\n\nIs there a difference in the winning times between the men’s and women’s divisions in the NYC Marathon?\n\n\nt.test(time_hrs ~ division, data=nyc_marathon)"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#how-to-get-data-into-r.-method-1-c",
-    "href": "Day_2/CI-and-hypothesis-testing.html#how-to-get-data-into-r.-method-1-c",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "How to get data into R. Method 1: c()",
-    "text": "How to get data into R. Method 1: c()\nThe data below represents doctors salaries in thousands of dollars.\n\n\n\nSalary\n\n\n\n\n\n\n\n96.64\n87.7\n94.57\n91.57\n\n\n92.06\n102.76\n94.89\n88.69\n\n\n94.83\n89.14\n89.27\n111.13\n\n\n97.59\n102.24\n88.48\n87.5\n\n\n84.99\n76.85\n92.89\n98.48\n\n\n85.27\n85.6\n84.06\n104.31"
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#copy-and-paste-the-data-into-r",
-    "href": "Day_2/CI-and-hypothesis-testing.html#copy-and-paste-the-data-into-r",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "Copy and paste the data into R:",
-    "text": "Copy and paste the data into R:\nGive your data a good variable name.\n\nsalary <- c(96.64, 92.06, 94.83, 97.59, 84.99, 85.27, 87.7, 102.76, 89.14, 102.24, 76.85, 85.6, 94.57, 94.89, 89.27, 88.48, 92.89, 84.06, 91.57, 88.69, 111.13, 87.5, 98.48,\n104.31)\n\nFind if the mean salary for a doctor is 90 thousand dollars.\n\n\nt.test(~salary, mu=90,alternative = \"t\")\n\n\n    One Sample t-test\n\ndata:  salary\nt = 1.6359, df = 23, p-value = 0.1155\nalternative hypothesis: true mean is not equal to 90\n95 percent confidence interval:\n 89.32194 95.80389\nsample estimates:\nmean of x \n 92.56292 \n\n\nNotice there is no data= argument."
-  },
-  {
-    "objectID": "Day_2/CI-and-hypothesis-testing.html#how-to-get-data-into-r.-method-2-spreadsheets.",
-    "href": "Day_2/CI-and-hypothesis-testing.html#how-to-get-data-into-r.-method-2-spreadsheets.",
-    "title": "Confidence Interval and Hypothesis Testing",
-    "section": "How to get data into R. Method 2: spreadsheets.",
-    "text": "How to get data into R. Method 2: spreadsheets.\nHere’s a spreadsheet on zebra mussel from mosaic-web.org.\n\nDownload the spreadsheet.\n\n2a. If R is installed on your computer, find your fine in the files pane.\n2b. If using an R server. Click upload, then find the file on your computer.\n\n\n\n\n\n\nOnce uploaded/located click the file and import.\n\n\n\n\n\n\n\nCheck the import menu then click import dataset.\n\nnote: If using this file for an Rmd document, copy and paste the code that appears in the console."
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-1-c",
-    "href": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-1-c",
-    "title": "Getting Data Into R",
-    "section": "How to get data into R. Method 1: c()",
-    "text": "How to get data into R. Method 1: c()\nThe data below represents doctors salaries in thousands of dollars.\n\n\n\nSalary\n\n\n\n\n\n\n\n96.64\n87.7\n94.57\n91.57\n\n\n92.06\n102.76\n94.89\n88.69\n\n\n94.83\n89.14\n89.27\n111.13\n\n\n97.59\n102.24\n88.48\n87.5\n\n\n84.99\n76.85\n92.89\n98.48\n\n\n85.27\n85.6\n84.06\n104.31"
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#copy-and-paste-the-data-into-r",
-    "href": "Day_3/Importing-data.html#copy-and-paste-the-data-into-r",
-    "title": "Getting Data Into R",
-    "section": "Copy and paste the data into R:",
-    "text": "Copy and paste the data into R:\nMake a vector and give your data a good variable name.\n\n\nsalary <- c(96.64, 92.06, 94.83, 97.59, 84.99, 85.27, 87.7, 102.76, 89.14, 102.24, 76.85, 85.6, 94.57, 94.89, 89.27, 88.48, 92.89, 84.06, 91.57, 88.69, 111.13, 87.5, 98.48,\n104.31)"
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-2-spreadsheets.",
-    "href": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-2-spreadsheets.",
-    "title": "Getting Data Into R",
-    "section": "How to get data into R. Method 2: spreadsheets.",
-    "text": "How to get data into R. Method 2: spreadsheets.\nHere’s a spreadsheet on zebra mussels from mosaic-web.org.\n\nDownload the spreadsheet.\n\n2a. If R is installed on your computer, find your file in the files pane.\n2b. If using an R server. Click upload, then find the file on your computer."
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#importing-the-data",
-    "href": "Day_3/Importing-data.html#importing-the-data",
-    "title": "Getting Data Into R",
-    "section": "Importing the data",
-    "text": "Importing the data\n\nOnce uploaded/located click the file and import.\n\n\n\nCheck the import menu then click import dataset."
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#copy-the-line-of-code",
-    "href": "Day_3/Importing-data.html#copy-the-line-of-code",
-    "title": "Getting Data Into R",
-    "section": "Copy the line of code",
-    "text": "Copy the line of code\nnote: If using this file for an Rmd document: in the setup chunk, copy and paste the code that appears in the console.\n\nlibrary(readr)\nzebra_mussels <- read_csv(\"../images/zebra-mussels(1).csv\")\n\nIts helpful if your data is in the same folder as your .csv file."
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#to-do-a-difference-of-means-hypothesis-test-with-this-data.",
-    "href": "Day_3/Importing-data.html#to-do-a-difference-of-means-hypothesis-test-with-this-data.",
-    "title": "Getting Data Into R",
-    "section": "To do a difference of means hypothesis test with this data.",
-    "text": "To do a difference of means hypothesis test with this data.\n\nt.test(dry.mass~attachment,data=zebra_mussels_1_)\n\n\n    Welch Two Sample t-test\n\ndata:  dry.mass by attachment\nt = 2.5076, df = 16.345, p-value = 0.02305\nalternative hypothesis: true difference in means between group Amblema and group Rock is not equal to 0\n95 percent confidence interval:\n 0.03095341 0.36572088\nsample estimates:\nmean in group Amblema    mean in group Rock \n            0.6845571             0.4862200"
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#try-a-difference-of-means-hypothesis-test-with-this-data.",
-    "href": "Day_3/Importing-data.html#try-a-difference-of-means-hypothesis-test-with-this-data.",
-    "title": "Getting Data Into R",
-    "section": "Try a difference of means hypothesis test with this data.",
-    "text": "Try a difference of means hypothesis test with this data.\nIs there a difference in the dry.mass of a zebra mussel based on the attachment?\n\n\npval(t.test(dry.mass~attachment,data=zebra_mussels))\n\n p.value \n0.023054"
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#do-a-t.test",
-    "href": "Day_3/Importing-data.html#do-a-t.test",
-    "title": "Getting Data Into R",
-    "section": "Do a t.test()",
-    "text": "Do a t.test()\n…to test if the average doctor’s salary is $90k.\n\n\npval(t.test(~salary, mu=90,alternative = \"t\"))\n\n  p.value \n0.1154803 \n\n\nNotice there is no data= argument."
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#zebra-mussels",
-    "href": "Day_3/Importing-data.html#zebra-mussels",
-    "title": "Getting Data Into R",
-    "section": "Zebra Mussels",
-    "text": "Zebra Mussels"
-  },
-  {
-    "objectID": "Day_3/Importing-data.html#zebra-mussels1",
-    "href": "Day_3/Importing-data.html#zebra-mussels1",
-    "title": "Getting Data Into R",
-    "section": "Zebra Mussels1",
-    "text": "Zebra Mussels1\n\nhttps://commons.wikimedia.org/wiki/File:Dreissena_polymorpha_%28I1957%29_0265_%2839449820624%29.jpg"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#one-way-anova-in-r.",
-    "href": "Day_3/ANOVA.html#one-way-anova-in-r.",
-    "title": "ANOVA",
-    "section": "One Way ANOVA in R.",
-    "text": "One Way ANOVA in R.\nData must be in tidy format.\n\nAll rows are observations\nAll columns are variables\n\nThe things you are comparing must be levels of the same variable."
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same",
-    "href": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same",
-    "title": "One Way ANOVA",
-    "section": "Example: Are average quiz scores and test scores the same?",
-    "text": "Example: Are average quiz scores and test scores the same?\nThis would not work in R.1\n\n\n# A tibble: 4 × 4\n  name   quiz1 quiz2 test1\n  <chr>  <dbl> <dbl> <dbl>\n1 Harper    NA    60    80\n2 Emily     80    NA    NA\n3 Ethan     70    30    90\n4 Samuel    80    40    86\n\n\nThis example comes from https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#this-table-is-tidy",
-    "href": "Day_3/ANOVA.html#this-table-is-tidy",
-    "title": "One Way ANOVA",
-    "section": "This table is tidy",
-    "text": "This table is tidy\nThis would work in R.\n\n\n# A tibble: 12 × 3\n   name   assessment grade\n   <chr>  <chr>      <dbl>\n 1 Emily  quiz1         80\n 2 Emily  quiz2         NA\n 3 Emily  test1         NA\n 4 Ethan  quiz1         70\n 5 Ethan  quiz2         30\n 6 Ethan  test1         90\n 7 Harper quiz1         NA\n 8 Harper quiz2         60\n 9 Harper test1         80\n10 Samuel quiz1         80\n11 Samuel quiz2         40\n12 Samuel test1         86"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#there-is-a-way-to-do-this-in-r",
-    "href": "Day_3/ANOVA.html#there-is-a-way-to-do-this-in-r",
-    "title": "One Way ANOVA",
-    "section": "There is a way to do this in R",
-    "text": "There is a way to do this in R\nBut it is gross.\n\nclassroom <- tribble(\n  ~name,    ~quiz1, ~quiz2, ~test1,\n  \"Billy\",  NA,     \"60\",    \"80\",\n  \"Suzy\",   \"80\",    NA,     NA,\n  \"Lionel\", \"70\",    \"30\",    \"90\",\n  \"Jenny\",  \"80\",    \"40\",    \"86\"\n  )\nclassroom2 <- classroom %>% \n  pivot_longer(quiz1:test1, names_to = \"assessment\", values_to = \"grade\") %>% \n  arrange(name, assessment)"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
-    "href": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
-    "title": "One Way ANOVA",
-    "section": "Data must be in tidy format.",
-    "text": "Data must be in tidy format.\n\nAll rows are observations\nAll columns are variables\n\nThe things you are comparing must be levels of the same variable."
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#i-have-students-do-this-is-a-spreadsheet.",
-    "href": "Day_3/ANOVA.html#i-have-students-do-this-is-a-spreadsheet.",
-    "title": "One Way ANOVA",
-    "section": "I have students do this is a spreadsheet.",
-    "text": "I have students do this is a spreadsheet.\nMore on this momentarily."
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same-1",
-    "href": "Day_3/ANOVA.html#example-are-average-quiz-scores-and-test-scores-the-same-1",
-    "title": "One Way ANOVA",
-    "section": "Example: Are average quiz scores and test scores the same?",
-    "text": "Example: Are average quiz scores and test scores the same?\n\nresults <- aov(grade~assessment, data = classroom2)\nsummary(results)\n\n            Df Sum Sq Mean Sq F value  Pr(>F)   \nassessment   2   2950  1475.1   15.15 0.00451 **\nResiduals    6    584    97.3                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n3 observations deleted due to missingness"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
-    "href": "Day_3/ANOVA.html#to-do-an-anova-homework-problem.",
-    "title": "One Way ANOVA",
-    "section": "To do an ANOVA homework problem.",
-<<<<<<< HEAD
-    "text": "To do an ANOVA homework problem.\nContext: Starting wage for work study students.\n\nTidy this data frame in a spreadsheet and upload it to the server (or find it on your computer)\nNote: Variable or level names with spaces or colons can cause problems use underscores.\nMake the two variables wage and group."
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#run-the-avona.",
-    "href": "Day_3/ANOVA.html#run-the-avona.",
-    "title": "One Way ANOVA",
-    "section": "Run the AVONA.",
-    "text": "Run the AVONA.\n\nwage_results <- aov(wage~group, data= ANOVA_wage_ex)\nsummary(wage_results)"
-  },
-  {
-    "objectID": "Day_3/ANOVA.html#two-way-and-more.",
-    "href": "Day_3/ANOVA.html#two-way-and-more.",
-    "title": "One Way ANOVA",
-    "section": "Two way and more.",
-    "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
-
   }
 ]

@@ -1,0 +1,35 @@
+---
+title: "outliers"
+format: revealjs
+editor: visual
+
+title-slide-attributes:
+  data-background-color: "yellow"
+---
+
+```{r}
+library(mosaic)
+library(openintro)
+library(tidyverse)
+```
+
+## Let's say you have outliers you want to remove.
+
+```{r echo=TRUE}
+
+gf_boxplot(base~degree, data = teacher)
+```
+
+## filter()
+
+```{r echo=TRUE}
+no_outs_teacher <- filter(teacher, 
+                          degree == "BA"|degree == "MA" & base >25000)
+```
+
+## new plot
+
+```{r echo=TRUE}
+
+gf_boxplot(base~degree, data = no_outs_teacher)
+```
