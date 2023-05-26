@@ -2,6 +2,8 @@
 title: "Info and schedule"
 ---
 
+# [Stay in Touch](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)
+
 # [Workshop information](./Day_1/to_do.html)
 
 # [Day 1: Descriptive Statistics and Visualizations](./Day_1/day_1_main.html)
