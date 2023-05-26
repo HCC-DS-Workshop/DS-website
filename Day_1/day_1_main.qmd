@@ -15,13 +15,13 @@ Welcome
 
 [Descriptive Statistics](./descriptive_statistics.html){target="_blank"}
 
--   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt)
+-   [Activity 1 with Descriptive Statistics and births14](./Activity_1_Descriptive_Stats/Activity_1.txt){target="_blank"}
 
 Lunch
 
 [Numeric Data Histograms and Boxplots](./histograms.html){target="_blank"}
 
--   [Activity 2 with Boxplots and births14](./Activity_2_Boxplots/Boxplots.txt)
+-   [Activity 2 with Boxplots and births14](./Activity_2_Boxplots/Boxplots.txt){target="_blank"}
 
 End 1:30
 

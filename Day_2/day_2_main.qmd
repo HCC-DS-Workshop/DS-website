@@ -5,7 +5,7 @@ editor: visual
 
 [Notes from Monday](./Notes-From-Monday.html)
 
-[Categorical Data Scatter Plots and Correlations](../Day_1/Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf)
+[Categorical Data Scatter Plots and Correlations](../Day_1/Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf){target="_blank"}
 
 <!-- ::: download_btn -->
 
@@ -41,17 +41,11 @@ Break
 
 -   [Activity 3 Lab on Categorical Data Scatter Plots and Correlation](https://drive.google.com/uc?export=download&id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan)
 
-[Probability](./SLIDES_Day2-Probabilty_CLT.pdf)
+[Probability](./SLIDES_Day2-Probabilty_CLT.pdf){target="_blank"}
 
 [Inference Confidence Intervals and Hypothesis Testing](./CI-and-hypothesis-testing.html)
 
-Regression
 
--   Activity 6
-
-ANOVA
-
--   Activity 7
 
 ------------------------------------------------------------------------
 

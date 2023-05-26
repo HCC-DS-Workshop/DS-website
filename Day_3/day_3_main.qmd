@@ -5,10 +5,10 @@ editor: visual
 
 [Getting Data Into R](./Importing-data.html)
 
-[Linear Regression](./SLIDES_Day3-Regression.pdf)
+[Linear Regression](./SLIDES_Day3-Regression.pdf){target="_blank"}
 
 -   [Notebook: Regression](https://drive.google.com/uc?export=download&id=1zsuX5RSlSmdAlN7Wngo9oKuGygh5HPAn)
--   [Notebook: solutions](./Notebook_WSDAY3_SOLUTIONS_Regression.pdf)
+-   [Notebook: solutions](./Notebook_WSDAY3_SOLUTIONS_Regression.pdf){target="_blank"}
 -   [Lab: Regression](https://drive.google.com/uc?export=download&id=1W-i-QUIeN-zEtlfofJrEfcsMXAqZ90JW)
 
 [ANOVA](./ANOVA.html)
@@ -16,17 +16,17 @@ editor: visual
 [Short: Filtering to remove outliers.](./outliers.html)
 
 -   [Longer: Explore some basic tidyverse functions](./Tidyverse.html)
--   [MSDR Problem #11 is fun](https://mdsr-book.github.io/mdsr2e/ch-dataI.html#dataI-exercises)
+-   [MSDR Problem #11 is fun](https://mdsr-book.github.io/mdsr2e/ch-dataI.html#dataI-exercises){target="_blank"}
 
 [Pedagogy discussion.](./pedagogy.html)
 
 Quarto comes with new version of RStudio.
 
--   [Quarto- video](https://www.youtube.com/watch?v=_f3latmOhew) by Mine C.R.
+-   [Quarto- video](https://www.youtube.com/watch?v=_f3latmOhew){target="_blank"} by Mine C.R.
 
--   [Quarto website](https://quarto.org/)
+-   [Quarto website](https://quarto.org/){target="_blank"}
 
-[Introduction to Modern Statistics](https://www.openintro.org/book/ims/)
+[Introduction to Modern Statistics](https://www.openintro.org/book/ims/){target="_blank"}
 
 -   A text that uses the tidyverse
 
