@@ -4,7 +4,7 @@
     "href": "Day_3/day_3_main.html",
     "title": "Day 3: Additional Topics",
     "section": "",
-    "text": "Getting Data Into R\nLinear Regression\n\nActivity: Logistic and Multiple Regression\n\nANOVA\nShort: Filtering to remove outliers.\n\nLonger: Explore some basic tidyverse functions\nMSDR Problem\n\nPedagogy discussion.\nQuarto comes with new version of RStudio.\n\nQuarto- video by Mine C.R.\nQuarto website\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
+    "text": "Getting Data Into R\nLinear Regression\n\nNotebook: Regression\nNotebook: solutions\nLab: Regression\n\nANOVA\nShort: Filtering to remove outliers.\n\nLonger: Explore some basic tidyverse functions\nMSDR Problem\n\nPedagogy discussion.\nQuarto comes with new version of RStudio.\n\nQuarto- video by Mine C.R.\nQuarto website\n\nIntroduction to Modern Statistics\n\nA text that uses the tidyverse\n\nWrap up Discussion\nAre you interested in having a group to work on this over the summer?"
   },
   {
     "objectID": "Day_3/ANOVA.html#data-must-be-in-tidy-format.",
@@ -200,7 +200,7 @@
     "href": "Day_2/day_2_main.html",
     "title": "Day 2: Probability and Inference",
     "section": "",
-    "text": "Notes from Monday\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\nInference Confidence Intervals and Hypothesis Testing\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions posted later \nIf you want to leave feedback or have ideas"
+    "text": "Notes from Monday\nCategorical Data Scatter Plots and Correlations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebook Categorical Data Scatter Plots and Correlation\n\nBreak\n\nActivity 3 Lab on Categorical Data Scatter Plots and Correlation\n\nProbability\nInference Confidence Intervals and Hypothesis Testing\nRegression\n\nActivity 6\n\nANOVA\n\nActivity 7\n\n\nSolutions\n[Activity 3](../Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)\nIf you want to leave feedback or have ideas"
   },
   {
     "objectID": "Day_2/Notes-From-Monday.html",
@@ -628,5 +628,19 @@
     "title": "Intro Stats with R",
     "section": "Style Guide",
     "text": "Style Guide\nThe Tidyverse Style Guide"
+  },
+  {
+    "objectID": "Day_3/Notebook_WSDAY3_Regression.html",
+    "href": "Day_3/Notebook_WSDAY3_Regression.html",
+    "title": "Notebook: R Workshop Day 3",
+    "section": "",
+    "text": "Simple Linear Regression\nIn the openintro, view the possum data frame.\nMake a scatterplot of head length plotted against total length.\n\n\n\nCompute the correlation.\n\n\n\nFit the linear model using the lm(y ~ x) function.\n\n\n\nType just the name of the model to see what has been stored in this variable.\n\n\n\nUse the summary() function to see more details.\n(NOTE: The function msummary() is a mosaic function that gives terser output.)\n\n\n\nUse makeFun() to make a function of the model and test it out!\n\n\n\nTry the extractor functions: coef() and confint()\n\n\n\nThere are also extractor functions rsquared(), fitted() and resid(). The latter two will give a vector of all the fitted values and of all the residuals.\n\nModel Diagnostics\nHistogram of residuals. Use resid(model)\n\n\n\nQQ plot using gf_qq().\n\n\n\nPlot of Residual vs Fitted Values: resid(model) ~ fitted(model)\n\n\n\nThe mplot() function from the mosaic package gives useful model diagnoistic plots. There is more than one mplot function, so if the function gives you no output specify the package with mosaic::mplot()\n\n\n\nConfidence and Prediction Bands.\n\n\n\n\n\n\nMultiple Linear Regression\nBuild a model of possum data using all variables: lm(head_l ~ ., data = possum)\n\n\n\n\n\nLogistic Regression\nIn the ISLR package, there is a data set called Default.\nInstall the ISLR package, then type ?Default in the console for more information.\n“A simulated data set containing information on ten thousand customers. The aim here is to predict which customers will default on their credit card debt.”\nThe response variable of interest is Y = default, a binary categorical variable with levels “Yes” and “No”. Let’s examine the relation of variables balance and income with default.\nFirst, a scatterplot of balance vs income, setting color and shape according to default variable.\n\n\n\nWhat can we conclude from this?\nLet’s further confirm with boxplots.\n\n\n\nIncome broken down default status.\n\n\n\nBalance broken down default status.\n\n\n\nBefore proceeding, a little Data Science trick. Let’s convert “Yes” and “No” into “1” and “0”. We use a tidyverse function called mutate() to create a new variable (column) called default01. We will need to plot the model.\n\n\n\nNext, let’s fit the model.\nPlot of Regression Fit Line\n\n\n\nInterpreting the Balance Coefficient.\nThe parameter estimate for balance is on a log-odds scale: it tells us how much of an increase in log-odds is associated with a one-unit increase in balance.\nTaking exponential of the coefficients is useful for interpretation.\nFor every one dollar increase in monthly balance carried, this tells us what factor the odds of the customer defaulting increases by.\nPrediction\nSubstitute the parameter estimates into the probability model to estimate the probability of default for a balance of x = 1000.\nSubstitute the parameter estimates into the probability model to estimate the probability of default for a balance of x = 2000.\nUse the predict() function."
+  },
+  {
+    "objectID": "Day_3/LAB_WSDAY3_Regression.html",
+    "href": "Day_3/LAB_WSDAY3_Regression.html",
+    "title": "LAB ACTIVITY: R Workshop Day 3",
+    "section": "",
+    "text": "Simple Linear Regression\n\nUsing the mtcars data frame, build a simple linear regression model of mile per gallon (mpg) and weight of car (mt). Examine model summary.\nExamine diagnositic plots to assess the model.\nMake a function of the model and use it to predict mpg values.\n\n\n\nMultiple Linear Regression\n\nBuild a multiple regression model of mpg using all variables in the data. Examine model summary.\nUse the step() function to perform model selection using backward elimination. Determine which values have been kept, which have been eliminated.\n\n\n\nLogistic Regression\n\nUse the resume data frame to build a simple logistic regression model of the categorical variable received_callback using one of the 29 variables as a predictor.\n\nBuild a multiple logistic regression model of the categorical variable received_callback using the predictors: job_city + college_degree + years_experience + honors + military + has_email_address + race + and gender.\n\nUsing Backward elimination to see if any variables can be eliminated."
   }
 ]

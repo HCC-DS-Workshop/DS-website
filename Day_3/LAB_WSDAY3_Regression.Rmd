@@ -1,0 +1,42 @@
+---
+title: "LAB ACTIVITY: R Workshop Day 3"
+subtitle: "Regression - Simple, Multiple, Logistic"
+author: "Your Name Goes Here!"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    fig_height: 4
+    fig_width: 6
+  word_document:
+    fig_height: 4
+    fig_width: 6
+  html_document:
+    fig_height: 4
+    fig_width: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(mosaic)
+library(openintro)
+library(dplyr)
+```
+
+# Simple Linear Regression   
+1) Using the **mtcars** data frame, build a simple linear regression model of mile per gallon (mpg) and weight of car (mt). Examine model summary.   
+
+2) Examine diagnositic plots to assess the model.  
+
+3) Make a function of the model and use it to predict mpg values. 
+
+# Multiple Linear Regression 
+1)  Build a multiple regression model of mpg using all variables in the data. Examine model summary.   
+
+2) Use the step() function to perform model selection using backward elimination. Determine which values have been kept, which have been eliminated.   
+
+# Logistic Regression   
+1) Use the **resume** data frame to build a simple logistic regression model of the categorical variable *received_callback* using one of the 29 variables as a predictor.
+
+Build a multiple logistic regression model of the categorical variable *received_callback* using the predictors: job_city + college_degree + years_experience + honors + military + has_email_address + race + and gender.   
+
+2)  Using Backward elimination to see if any variables can be eliminated.   

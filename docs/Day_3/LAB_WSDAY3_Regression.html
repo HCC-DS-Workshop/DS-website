@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name Goes Here!">
+<meta name="dcterms.date" content="2023-05-26">
 
-<title>Intro Stats with R - Day 2: Probability and Inference</title>
+<title>Intro Stats with R - LAB ACTIVITY: R Workshop Day 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,14 +116,27 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Day 2: Probability and Inference</h1>
+<h1 class="title">LAB ACTIVITY: R Workshop Day 3</h1>
+<p class="subtitle lead">Regression - Simple, Multiple, Logistic</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name Goes Here! </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 26, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -129,45 +144,33 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><a href="./Notes-From-Monday.html">Notes from Monday</a></p>
-<p><a href="../Day_1/Activity_3_Categorical_Vars/SLIDES_Day1-Categorial-Data_Correlation.pdf">Categorical Data Scatter Plots and Correlations</a></p>
-<!-- ::: download_btn -->
-<!-- ```{r} -->
-<!-- #| echo: false -->
-<!-- library(downloadthis) -->
-<!-- download_link( -->
-<!--   link = "https://github.com/HCC-R-Workshop/R-workshop-website/blob/main/Day_1/Activity_3_Categorical_Vars/Notebook_WSDay1_Categorical_Data_ScatterPlots_Correlation.Rmd", -->
-<!--   button_label = "Download Categorical Rmd", -->
-<!--   button_type = c("success"), -->
-<!--   has_icon = TRUE, -->
-<!--   icon = "fa fa-save", -->
-<!--   self_contained = FALSE -->
-<!-- ) -->
-<!-- ``` -->
-<!-- ::: -->
-<ul>
-<li><a href="https://drive.google.com/uc?export=download&amp;id=1UDrEYbRr_gSGkxLTPQaNlajx9J1bRAVL">Notebook Categorical Data Scatter Plots and Correlation</a></li>
-</ul>
-<p>Break</p>
-<ul>
-<li><a href="https://drive.google.com/uc?export=download&amp;id=15WwJxqTw7vHn4wNWaeeCge4d6jhRONan">Activity 3 Lab on Categorical Data Scatter Plots and Correlation</a></li>
-</ul>
-<p><a href="./SLIDES_Day2-Probabilty_CLT.pdf">Probability</a></p>
-<p><a href="./CI-and-hypothesis-testing.html">Inference Confidence Intervals and Hypothesis Testing</a></p>
-<p>Regression</p>
-<ul>
-<li>Activity 6</li>
-</ul>
-<p>ANOVA</p>
-<ul>
-<li>Activity 7</li>
-</ul>
-<hr>
-<p>Solutions</p>
-<p>[Activity 3](../Day_1/Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)</p>
-<p><a href="https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing">If you want to leave feedback or have ideas</a></p>
+<section id="simple-linear-regression" class="level1">
+<h1>Simple Linear Regression</h1>
+<ol type="1">
+<li><p>Using the <strong>mtcars</strong> data frame, build a simple linear regression model of mile per gallon (mpg) and weight of car (mt). Examine model summary.</p></li>
+<li><p>Examine diagnositic plots to assess the model.</p></li>
+<li><p>Make a function of the model and use it to predict mpg values.</p></li>
+</ol>
+</section>
+<section id="multiple-linear-regression" class="level1">
+<h1>Multiple Linear Regression</h1>
+<ol type="1">
+<li><p>Build a multiple regression model of mpg using all variables in the data. Examine model summary.</p></li>
+<li><p>Use the step() function to perform model selection using backward elimination. Determine which values have been kept, which have been eliminated.</p></li>
+</ol>
+</section>
+<section id="logistic-regression" class="level1">
+<h1>Logistic Regression</h1>
+<ol type="1">
+<li>Use the <strong>resume</strong> data frame to build a simple logistic regression model of the categorical variable <em>received_callback</em> using one of the 29 variables as a predictor.</li>
+</ol>
+<p>Build a multiple logistic regression model of the categorical variable <em>received_callback</em> using the predictors: job_city + college_degree + years_experience + honors + military + has_email_address + race + and gender.</p>
+<ol start="2" type="1">
+<li>Using Backward elimination to see if any variables can be eliminated.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

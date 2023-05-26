@@ -1,0 +1,159 @@
+---
+title: "Notebook: R Workshop Day 3"
+subtitle: "Regression - Simple, Multiple, Logistic"
+author: "Your Name Goes Here!"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    fig_height: 4
+    fig_width: 6
+  word_document:
+    fig_height: 4
+    fig_width: 6
+  html_document:
+    fig_height: 4
+    fig_width: 6
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(mosaic)
+library(openintro)
+library(ISLR)
+library(dplyr)
+```
+
+# Simple Linear Regression   
+In the openintro, view the **possum** data frame.   
+
+Make a scatterplot of head length plotted against total length.  
+```{r}
+
+```
+
+Compute the correlation.   
+```{r}
+
+```
+
+
+Fit the linear model using the lm(y ~ x) function. 
+```{r}
+
+```
+   
+Type just the name of the model to see what has been stored in this variable.  
+```{r}
+
+```
+
+Use the summary() function to see more details.  
+(NOTE: The function msummary() is a mosaic function that gives terser output.)    
+```{r}
+
+```
+
+Use makeFun() to make a function of the model and test it out!  
+```{r}
+
+```
+
+Try the extractor functions:  coef()   and confint()
+```{r}
+
+```
+
+There are also extractor functions rsquared(), fitted() and resid(). The latter two will give a vector of all the fitted values and of all the residuals.   
+
+### Model Diagnostics
+
+Histogram of residuals. Use resid(model)  
+```{r}
+
+```
+
+QQ plot using gf_qq().   
+```{r}
+
+```
+
+Plot of Residual vs Fitted Values:  resid(model) ~ fitted(model)
+```{r}
+
+```
+
+The mplot() function from the mosaic package gives useful model diagnoistic plots. There is more than one mplot function, so if the function gives you no output specify the package with mosaic::mplot()   
+ 
+```{r}
+
+```
+
+Confidence and Prediction Bands.   
+```{r}
+
+```
+# Multiple Linear Regression   
+Build a model of possum data using all variables:  lm(head_l ~ ., data = possum)
+```{r}
+
+```
+
+
+# Logistic Regression
+In the ISLR package, there is a data set called Default.     
+   
+Install the ISLR package, then type ?Default in the console for more information.  
+   
+"A simulated data set containing information on ten thousand customers. The aim here is to predict which customers will default on their credit card debt."  
+   
+The response variable of interest is Y = default, a binary categorical variable with levels "Yes" and "No". Let's examine the relation of variables balance and income with default.   
+   
+First, a scatterplot of balance vs income, setting color and shape according to default variable.  
+```{r}
+
+```
+
+What can we conclude from this?   
+   
+Let's further confirm with boxplots.  
+```{r}
+
+```
+    
+Income broken down default status.   
+```{r}
+
+```
+    
+Balance broken down default status.   
+```{r}
+
+```
+
+    
+Before proceeding, a little Data Science trick.  Let's convert "Yes" and "No" into "1" and "0".  We use a tidyverse function called *mutate()* to create a new variable (column) called *default01*. 
+We will need to plot the model.  
+```{r}
+
+```
+   
+Next, let's fit the model.   
+   
+**Plot of Regression Fit Line**   
+```{r}
+
+```
+
+   
+**Interpreting the Balance Coefficient.**        
+The parameter estimate for balance is on a log-odds scale: it tells us how much of an increase in log-odds is associated with a one-unit increase in balance.   
+Taking exponential of the coefficients is useful for interpretation.   
+   
+For every one dollar increase in monthly balance carried, this tells us what factor the odds of the customer defaulting increases by.   
+   
+**Prediction**   
+Substitute the parameter estimates into the probability model to estimate the probability of default for a balance of x = 1000.  
+    
+Substitute the parameter estimates into the probability model to estimate the probability of default for a balance of x = 2000.    
+   
+Use the predict() function.

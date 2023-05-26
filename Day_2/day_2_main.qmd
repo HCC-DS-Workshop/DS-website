@@ -55,6 +55,8 @@ ANOVA
 
 ------------------------------------------------------------------------
 
-*Solutions posted later* <!-- # [Activity 3](./Activity_3_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf) -->
+Solutions
+
+\[Activity 3\](../Day_1/Activity_3\_Categorical_Vars/LAB_WSDay1_SOLUTIONS_Categorical-Data_Scatterplots_Correlation.pdf)
 
 [If you want to leave feedback or have ideas](https://docs.google.com/document/d/1YnoZr6WPz0dvW3B-PQ_dDob-ieUepgFqYbG8FOzJuFc/edit?usp=sharing)

@@ -5,9 +5,11 @@ editor: visual
 
 [Getting Data Into R](./Importing-data.html)
 
-Linear Regression
+[Linear Regression](./SLIDES_Day3-Regression.pdf)
 
--   Activity: Logistic and Multiple Regression
+-   [Notebook: Regression](https://drive.google.com/uc?export=download&id=1zsuX5RSlSmdAlN7Wngo9oKuGygh5HPAn)
+-   [Notebook: solutions](./Notebook_WSDAY3_SOLUTIONS_Regression.pdf)
+-   [Lab: Regression](https://drive.google.com/uc?export=download&id=1W-i-QUIeN-zEtlfofJrEfcsMXAqZ90JW)
 
 [ANOVA](./ANOVA.html)
 
