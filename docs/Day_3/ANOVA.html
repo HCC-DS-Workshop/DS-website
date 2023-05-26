@@ -490,11 +490,14 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <p>Note: Variable or level names with spaces or colons can cause problems use underscores.</p>
 <p>Make the two variables <strong>wage</strong> and <strong>group</strong>.</p>
 </section>
-<section id="run-the-avona." class="slide level2">
-<h2>Run the AVONA.</h2>
+<section id="run-the-anova." class="slide level2">
+<h2>Run the ANOVA.</h2>
 <div class="fragment">
-<p>wage_results &lt;- aov(wage~group, data= ANOVA_wage_ex)</p>
-<p>summary(wage_results)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>wage_results <span class="ot">&lt;-</span> <span class="fu">aov</span>(wage<span class="sc">~</span>group, <span class="at">data=</span> ANOVA_wage_ex)</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">summary</span>(wage_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="two-way-and-more." class="slide level2">
@@ -504,6 +507,10 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <p>To test interaction use *</p>
 <p>example:</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># cesd is a measure of depression</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>cesd_results <span class="ot">&lt;-</span> <span class="fu">aov</span>(cesd <span class="sc">~</span> sex <span class="sc">+</span> homeless,<span class="at">data=</span>HELPrct)</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">summary</span>(cesd_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 sex           1   2287  2286.7    15.2 0.000112 ***

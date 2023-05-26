@@ -67,7 +67,7 @@
     "href": "Day_3/ANOVA.html#two-way-and-more.",
     "title": "One Way ANOVA",
     "section": "Two way and more.",
-    "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
+    "text": "Two way and more.\nTwo way ANOVA is possible.\nYou add + categorical variables.\nTo test interaction use *\nexample:\n\n# cesd is a measure of depression\n\ncesd_results <- aov(cesd ~ sex + homeless,data=HELPrct)\nsummary(cesd_results)\n\n             Df Sum Sq Mean Sq F value   Pr(>F)    \nsex           1   2287  2286.7    15.2 0.000112 ***\nhomeless      1    782   782.5     5.2 0.023057 *  \nResiduals   450  67719   150.5                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nI found this site helpful in both explaining two way and showing it in R."
   },
   {
     "objectID": "Day_3/Importing-data.html#how-to-get-data-into-r.-method-1-c",
@@ -642,5 +642,12 @@
     "title": "LAB ACTIVITY: R Workshop Day 3",
     "section": "",
     "text": "Simple Linear Regression\n\nUsing the mtcars data frame, build a simple linear regression model of mile per gallon (mpg) and weight of car (mt). Examine model summary.\nExamine diagnositic plots to assess the model.\nMake a function of the model and use it to predict mpg values.\n\n\n\nMultiple Linear Regression\n\nBuild a multiple regression model of mpg using all variables in the data. Examine model summary.\nUse the step() function to perform model selection using backward elimination. Determine which values have been kept, which have been eliminated.\n\n\n\nLogistic Regression\n\nUse the resume data frame to build a simple logistic regression model of the categorical variable received_callback using one of the 29 variables as a predictor.\n\nBuild a multiple logistic regression model of the categorical variable received_callback using the predictors: job_city + college_degree + years_experience + honors + military + has_email_address + race + and gender.\n\nUsing Backward elimination to see if any variables can be eliminated."
+  },
+  {
+    "objectID": "Day_3/ANOVA.html#run-the-anova.",
+    "href": "Day_3/ANOVA.html#run-the-anova.",
+    "title": "One Way ANOVA",
+    "section": "Run the ANOVA.",
+    "text": "Run the ANOVA.\n\n\nwage_results <- aov(wage~group, data= ANOVA_wage_ex)\n\nsummary(wage_results)"
   }
 ]

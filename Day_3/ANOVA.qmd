@@ -11,7 +11,7 @@ library(openintro)
 library(tidyverse)
 ```
 
-## Data must be in tidy format.  
+## Data must be in tidy format.
 
 -   All rows are observations
 
@@ -65,7 +65,7 @@ classroom2 <- classroom %>%
   arrange(name, assessment)
 ```
 
-## I have students do this is a spreadsheet. 
+## I have students do this is a spreadsheet.
 
 More on this momentarily.
 
@@ -76,7 +76,7 @@ results <- aov(grade~assessment, data = classroom2)
 summary(results)
 ```
 
-## To do an ANOVA homework problem. 
+## To do an ANOVA homework problem.
 
 Context: Starting wage for work study students.
 
@@ -88,15 +88,17 @@ Note: Variable or level names with spaces or colons can cause problems use under
 
 Make the two variables **wage** and **group**.
 
-## Run the AVONA. 
+## Run the ANOVA.
 
 . . .
 
-wage_results \<- aov(wage\~group, data= ANOVA_wage_ex)
+```{r wage-results, echo=TRUE, eval=FALSE}
+wage_results <- aov(wage~group, data= ANOVA_wage_ex)
 
 summary(wage_results)
+```
 
-## Two way and more. 
+## Two way and more.
 
 Two way ANOVA is possible.
 
@@ -106,7 +108,7 @@ To test interaction use \*
 
 example:
 
-```{r}
+```{r, echo=TRUE}
 
 # cesd is a measure of depression
 
