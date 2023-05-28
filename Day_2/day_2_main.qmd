@@ -43,9 +43,12 @@ Break
 
 [Probability](./SLIDES_Day2-Probabilty_CLT.pdf){target="_blank"}
 
+-   [Notebook for probability lecture](https://drive.google.com/uc?export=download&id=13CEuFxcaWfWwbVDfPoLnZtOqxZ61YqPZ)
+-   [Lab on probability](https://drive.google.com/uc?export=download&id=1qiw-mVqe3QmN_risn7PX0kJ57hfHO8Hd)
+-   [Lab solutions](https://drive.google.com/uc?export=download&id=1yC1efD8KhhnozgsrD5ZgemsKt9dUIF4t)
+
+
 [Inference Confidence Intervals and Hypothesis Testing](./CI-and-hypothesis-testing.html)
-
-
 
 ------------------------------------------------------------------------
 

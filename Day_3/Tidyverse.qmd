@@ -33,7 +33,7 @@ These three tutorials will get you started with the basic verbs for manipulating
 
 -   summarize()
 
-## There are so many websites teaching the tidyverse. 
+## There are so many websites teaching the tidyverse.
 
 Lots tutorials exist online.
 

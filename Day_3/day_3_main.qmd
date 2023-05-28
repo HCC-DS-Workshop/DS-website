@@ -1,5 +1,5 @@
 ---
-title: "Day 3: Additional Topics"
+title: "Day 3: Regression, ANOVA, and importing data"
 editor: visual
 ---
 
@@ -8,7 +8,9 @@ editor: visual
 [Linear Regression](./SLIDES_Day3-Regression.pdf){target="_blank"}
 
 -   [Notebook: Regression](https://drive.google.com/uc?export=download&id=1W-i-QUIeN-zEtlfofJrEfcsMXAqZ90JW)
+
 -   [Notebook: solutions](./Notebook_WSDAY3_SOLUTIONS_Regression.pdf){target="_blank"}
+
 -   [Lab: Regression](https://drive.google.com/uc?export=download&id=1zsuX5RSlSmdAlN7Wngo9oKuGygh5HPAn)
 
 [ANOVA](./ANOVA.html)
@@ -16,7 +18,8 @@ editor: visual
 [Short: Filtering to remove outliers.](./outliers.html)
 
 -   [Longer: Explore some basic tidyverse functions](./Tidyverse.html)
--   [MDSR Problem #11 is fun](https://mdsr-book.github.io/mdsr2e/ch-dataI.html#dataI-exercises){target="_blank"}
+-   [MDSR Chapter 4 Problem #11 is fun](https://mdsr-book.github.io/mdsr2e/ch-dataI.html#dataI-exercises){target="_blank"}
+-   [Here is the rmd solution to MDSR Chapter 4 \# 11](https://drive.google.com/uc?export=download&id=19YojF8gdq0C7KOu3clcfwRD2O7O86cZ6)
 
 [Pedagogy discussion.](./pedagogy.html)
 
